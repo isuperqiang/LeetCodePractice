@@ -10,7 +10,7 @@ public class E_003 {
      * 旋转数组
      *
      * <p>
-     * 地址：https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/1/array/23/
+     * 地址：https://leetcode-cn.com/problems/rotate-array/description/
      * </p>
      *
      * <p>
