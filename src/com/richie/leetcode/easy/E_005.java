@@ -5,6 +5,23 @@ package com.richie.leetcode.easy;
  */
 public class E_005 {
 
+    /**
+     * 删除链表的结点
+     *
+     * <p>
+     * 地址：https://leetcode-cn.com/problems/delete-node-in-a-linked-list/description/
+     * </p>
+     *
+     * <p>
+     * 描述：请编写一个函数，使其可以删除某个链表中给定的（非末尾的）节点，您将只被给予要求被删除的节点。
+     * 比如：假设该链表为 1 -> 2 -> 3 -> 4  ，给定您的为该链表中值为 3 的第三个节点，那么在调用了您的函数之后，该链表则应变成 1 -> 2 -> 4 。
+     * </p>
+     *
+     * <p>
+     * 解答：给定了要被删除的节点，而单向链表又无法回溯，因此可以将下一个节点删除，并将值赋给要被删除的节点，这样也可以算作删除了给定的节点。
+     * </p>
+     */
+
     public static void main(String[] args) {
         //1 -> 2 -> 3 -> 4
         ListNode listNode4 = new ListNode(4);
@@ -31,23 +48,6 @@ public class E_005 {
         node.next = next.next;
         node.val = next.val;
     }
-
-    /**
-     * 删除链表的结点
-     *
-     * <p>
-     * 地址：https://leetcode-cn.com/problems/delete-node-in-a-linked-list/description/
-     * </p>
-     *
-     * <p>
-     * 描述：请编写一个函数，使其可以删除某个链表中给定的（非末尾的）节点，您将只被给予要求被删除的节点。
-     * 比如：假设该链表为 1 -> 2 -> 3 -> 4  ，给定您的为该链表中值为 3 的第三个节点，那么在调用了您的函数之后，该链表则应变成 1 -> 2 -> 4 。
-     * </p>
-     *
-     * <p>
-     * 解答：给定了要被删除的节点，而单向链表又无法回溯，因此可以将下一个节点删除，并将值赋给要被删除的节点，这样也可以算作删除了给定的节点。
-     * </p>
-     */
 
     public static class ListNode {
         int val;
