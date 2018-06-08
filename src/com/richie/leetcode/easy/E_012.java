@@ -17,7 +17,7 @@ public class E_012 {
      * </p>
      *
      * <p>
-     * 解答：先从字符串提取出字符和数字，然后对新的字符串进行处理，比较中轴两边的字符是否相等。
+     * 解答：定义头尾指针，从头尾遍历字符串，非数字/字母则跳过，判断字符是否相等。
      * </p>
      */
 
@@ -33,20 +33,23 @@ public class E_012 {
             return false;
         }
 
+        s = s.toLowerCase();
         char[] chars = s.toCharArray();
-        StringBuilder stringBuilder = new StringBuilder();
-        int length = chars.length;
-        for (int i = 0; i < length; i++) {
-            if (Character.isDigit(chars[i]) || Character.isLetter(chars[i])) {
-                stringBuilder.append(chars[i]);
-            }
-        }
-        String newS = stringBuilder.toString();
-        char[] newChars = newS.toCharArray();
-        int newLength = newChars.length;
-        for (int i = 0; i < newLength / 2; i++) {
-            if (Character.toLowerCase(newChars[i]) != Character.toLowerCase(newChars[newLength - i - 1])) {
-                return false;
+        int head = 0;
+        int tail = chars.length - 1;
+        while (head < tail) {
+            char headC = chars[head];
+            char tailC = chars[tail];
+            if (!Character.isLetterOrDigit(headC)) {
+                head++;
+            } else if (!Character.isLetterOrDigit(tailC)) {
+                tail--;
+            } else {
+                if (headC != tailC) {
+                    return false;
+                }
+                head++;
+                tail--;
             }
         }
         return true;
