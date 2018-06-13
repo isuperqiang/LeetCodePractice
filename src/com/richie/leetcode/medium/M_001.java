@@ -27,7 +27,7 @@ public class M_001 {
         String s = "1221";
         String palindrome = longestPalindrome(s);
         System.out.println(palindrome);
-        // 输出 12321
+        // 输出 1221
     }
 
     private static String longestPalindrome(String s) {
