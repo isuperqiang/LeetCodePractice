@@ -48,7 +48,7 @@ public class E_021 {
         // 3
     }
 
-    public static int maxDepth(TreeNode root) {
+    private static int maxDepth(TreeNode root) {
         if (root == null) {
             return 0;
         }
