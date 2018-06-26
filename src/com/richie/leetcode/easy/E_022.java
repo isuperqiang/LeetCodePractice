@@ -31,7 +31,6 @@ public class E_022 {
     // you need to treat n as an unsigned value
     private static int hammingWeight(int n) {
         String s = Integer.toBinaryString(n);
-        System.out.println(s);
         int count = 0;
         char[] chars = s.toCharArray();
         for (char aChar : chars) {
