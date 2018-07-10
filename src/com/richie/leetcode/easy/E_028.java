@@ -41,7 +41,7 @@ public class E_028 {
         // ]
     }
 
-    public static void rotate(int[][] matrix) {
+    private static void rotate(int[][] matrix) {
         if (matrix == null) {
             return;
         }
