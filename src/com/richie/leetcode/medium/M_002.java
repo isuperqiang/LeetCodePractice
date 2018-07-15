@@ -15,7 +15,7 @@ public class M_002 {
      * <p>
      * 描述：无重复字符的最长子串
      * 给定一个字符串，找出不含有重复字符的最长子串的长度。
-     * <p>
+     *
      * 示例：
      * 给定 "abcabcbb" ，没有重复字符的最长子串是 "abc" ，那么长度就是3。
      * 给定 "bbbbb" ，最长的子串就是 "b" ，长度是1。
@@ -24,7 +24,7 @@ public class M_002 {
      *
      * <p>
      * 解答：
-     * 滑动窗口
+     * 滑动窗口，使用 map记录自字符的索引
      * http://www.lpnote.com/2017/09/08/leetcode-3-longest-substring-without-repeating-characters/
      * </p>
      */
@@ -49,10 +49,10 @@ public class M_002 {
         int j = 0;
         while (j < len) {
             if (map.containsKey(s.charAt(j))) {
-                i = Math.max(map.get(s.charAt(j)), i);
+                i = Math.max(map.get(s.charAt(j)) + 1, i);
             }
             maxLen = Math.max(maxLen, j - i + 1);
-            map.put(s.charAt(j), ++j);
+            map.put(s.charAt(j), j++);
         }
         return maxLen;
     }
