@@ -12,9 +12,10 @@ public class QuickSort {
      */
 
     public static void main(String[] args) {
-        int[] a = {2, 5, 3, 7, 1};
+        int[] a = {2, 5, 3, 7, 1, 8};
+        System.out.println("排序前：" + Arrays.toString(a));
         quickSort(a, 0, a.length - 1);
-        System.out.println(Arrays.toString(a));
+        System.out.println("排序后：" + Arrays.toString(a));
     }
 
     private static void quickSort(int[] nums, int left, int right) {

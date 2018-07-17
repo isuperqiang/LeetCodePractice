@@ -15,9 +15,10 @@ public class SelectionSort {
      */
 
     public static void main(String[] args) {
-        int[] a = {2, 9, 8, 3, 5};
+        int[] a = {2, 9, 8, 3, 5, 7};
+        System.out.println("排序前：" + Arrays.toString(a));
         selectionSort(a);
-        System.out.println(Arrays.toString(a));
+        System.out.println("排序后：" + Arrays.toString(a));
     }
 
     private static void selectionSort(int[] a) {

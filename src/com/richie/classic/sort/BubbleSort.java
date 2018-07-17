@@ -17,9 +17,10 @@ public class BubbleSort {
      */
 
     public static void main(String[] args) {
-        int[] a = {2, 9, 8, 3, 5};
+        int[] a = {2, 9, 8, 3, 5, 1};
+        System.out.println("排序前：" + Arrays.toString(a));
         bubbleSort(a);
-        System.out.println(Arrays.toString(a));
+        System.out.println("排序后：" + Arrays.toString(a));
     }
 
     private static void bubbleSort(int[] a) {
