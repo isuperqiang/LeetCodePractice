@@ -1,4 +1,4 @@
-package com.richie.leetcode;
+package com.richie.classic.other;
 
 /**
  * @author richie on 2018.06.22
