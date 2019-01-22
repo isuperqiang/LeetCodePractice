@@ -1,12 +1,14 @@
 package com.richie.leetcode.easy;
 
+import java.util.Arrays;
+
 /**
  * @author richie on 2018.05.29
  */
 public class E_001 {
 
     /**
-     * 删除排序数组中的重复项
+     *
      *
      * <p>
      * 地址：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/description/
@@ -24,10 +26,12 @@ public class E_001 {
      */
 
     public static void main(String[] args) {
-        int[] nums = {1, 1, 2};
-        int len = removeDuplicates(nums);
-        System.out.println("len:" + len);
-        // 输出 2
+        int[] nums = {0, 1, 1, 1, 2, 2, 3, 3, 4};
+        int length = removeDuplicates(nums);
+        System.out.println("length:" + length);
+        // 输出 5
+        System.out.println("array:" + Arrays.toString(nums));
+        // [0, 1, 2, 3, 4, 2, 3, 3, 4]
     }
 
     private static int removeDuplicates(int[] nums) {
@@ -37,10 +41,10 @@ public class E_001 {
 
         int fast = 0;
         int slow = 0;
-        while (fast < nums.length) {
+        int length = nums.length;
+        while (fast < length) {
             if (nums[fast] != nums[slow]) {
-                slow++;
-                nums[slow] = nums[fast];
+                nums[++slow] = nums[fast];
             }
             fast++;
         }
