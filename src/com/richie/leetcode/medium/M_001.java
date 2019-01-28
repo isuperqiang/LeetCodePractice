@@ -20,14 +20,17 @@ public class M_001 {
      * 解答：因为回文字符串是以中心轴为对称的，所以如果我们从下标 i 出发，用 2 个指针向 i 的两边扩展判断是否相等，
      * 那么只需要对 0 到 n-1 的下标都做此操作，就可以求出最长的回文子串。但需要注意的是，回文字符串有奇偶对称之分，
      * 即”abcba”与”abba” 2 种类型，因此需要在代码编写时都做判断。
+     *
+     * 事件复杂度：O(n^2)
+     * 空间复杂度：O(1)
      * </p>
      */
 
     public static void main(String[] args) {
-        String s = "1221";
+        String s = "12321";
         String palindrome = longestPalindrome(s);
         System.out.println(palindrome);
-        // 输出 1221
+        // 输出 12321
     }
 
     private static String longestPalindrome(String s) {
@@ -35,14 +38,14 @@ public class M_001 {
             return "";
         }
 
-        int len = s.length();
+        int length = s.length();
         // 记录最大子串起始坐标
         int start = 0;
         int end = 0;
         // 以 i 为轴心，j 为长度向两边扩展
-        for (int i = 0; i < len; i++) {
+        for (int i = 0; i < length; i++) {
             // 奇数, 如 12321
-            for (int j = 0; i - j >= 0 && i + j < len; j++) {
+            for (int j = 0; i - j >= 0 && i + j < length; j++) {
                 if (s.charAt(i - j) != s.charAt(i + j)) {
                     break;
                 }
@@ -53,7 +56,7 @@ public class M_001 {
             }
 
             // 偶数, 如 1221
-            for (int j = 0; i - j >= 0 && i + j + 1 < len; j++) {
+            for (int j = 0; i - j >= 0 && i + j + 1 < length; j++) {
                 if (s.charAt(i - j) != s.charAt(i + j + 1)) {
                     break;
                 }
