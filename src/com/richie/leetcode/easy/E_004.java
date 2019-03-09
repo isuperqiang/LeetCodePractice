@@ -13,10 +13,14 @@ public class E_004 {
      *
      * <p>
      * 描述：给定一个 32 位有符号整数，将整数中的数字进行反转。
+     * <p>
+     * 假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−2^31,  2^31 − 1]。
+     * 请根据这个假设，如果反转后整数溢出那么就返回 0。
      * </p>
      *
      * <p>
-     * 解答：把整数当作字符串反转，然后再转换成整数
+     * 解答：把原数字先对10求余，再将求余后的数字乘以10加上结果数字和，再将原数字除以10，重复以上步骤，直到原数字等于0。
+     *      越界通过与整形的最大值、最小值的比较来判断。
      * </p>
      */
 
@@ -28,31 +32,15 @@ public class E_004 {
     }
 
     private static int reverse(int x) {
-        boolean negative = false;
-        if (x < 0) {
-            negative = true;
-            x = -x;
+        int result = 0;
+        while (x != 0) {
+            int d = x % 10;
+            if (result > Integer.MAX_VALUE / 10 || result < Integer.MIN_VALUE / 10) {
+                return 0;
+            }
+            result = result * 10 + d;
+            x /= 10;
         }
-
-        String s = String.valueOf(x);
-        char[] chars = s.toCharArray();
-        int length = chars.length;
-        int half = length / 2;
-        for (int i = 0; i < half; i++) {
-            char temp = chars[i];
-            chars[i] = chars[length - i - 1];
-            chars[length - i - 1] = temp;
-        }
-
-        int reverted = 0;
-        try {
-            reverted = Integer.parseInt(new String(chars));
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-        }
-        if (negative) {
-            reverted = -reverted;
-        }
-        return reverted;
+        return result;
     }
 }
