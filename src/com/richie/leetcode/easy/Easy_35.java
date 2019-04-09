@@ -17,7 +17,9 @@ public class Easy_35 {
      * </p>
      *
      * <p>
-     * 解答：因为是排序的数组，直接从头遍历，然后找到大于或者等于目标值的索引，就是结果。
+     * 解答：
+     * - 解法一：因为是排序的数组，直接从头遍历，然后找到大于或者等于目标值的索引，就是结果。
+     * - 解法二：使用二分法查找，然后找到目标值或者左边界（low）。
      * </p>
      */
 
@@ -25,10 +27,10 @@ public class Easy_35 {
         int[] nums = {1, 3, 5, 6};
         int target = 2;
         int i = searchInsert(nums, target);
-        System.out.println(i);
+        System.out.println(i); // 1
     }
 
-    public static int searchInsert(int[] nums, int target) {
+    private static int searchInsert(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
@@ -39,5 +41,25 @@ public class Easy_35 {
             }
         }
         return nums.length;
+    }
+
+    private static int searchInsertByBinary(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+
+        int min = 0;
+        int max = nums.length - 1;
+        while (min <= max) {
+            int mid = (max + min) / 2;
+            if (nums[mid] > target) {
+                max = mid - 1;
+            } else if (nums[mid] < target) {
+                min = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+        return min;
     }
 }
