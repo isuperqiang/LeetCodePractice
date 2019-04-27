@@ -15,9 +15,7 @@ public class Easy_20 {
      *
      * <p>
      * 描述：给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
-     * <p>
      * 有效字符串需满足：
-     * <p>
      * 左括号必须用相同类型的右括号闭合。
      * 左括号必须以正确的顺序闭合。
      * 注意空字符串可被认为是有效字符串。
@@ -32,21 +30,11 @@ public class Easy_20 {
     public static void main(String[] args) {
         String s = "()[";
         boolean valid = isValid(s);
-        System.out.println(valid);
-        // false
+        System.out.println(valid); // false
     }
 
     private static boolean isValid(String s) {
         if (s == null) {
-            return false;
-        }
-        if (s.length() == 0) {
-            return true;
-        }
-        if (s.length() % 2 == 1) {
-            return false;
-        }
-        if (!(s.startsWith("(") || s.startsWith("{") || s.startsWith("["))) {
             return false;
         }
         char[] chars = s.toCharArray();
