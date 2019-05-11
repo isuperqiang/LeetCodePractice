@@ -28,15 +28,24 @@ public class Easy_172 {
      */
 
     public static void main(String[] args) {
-        int i = trailingZeroes(20);
-        System.out.println(i); //
+        int i = trailingZeroes1(20);
+        System.out.println(i); // 4
     }
 
-    private static int trailingZeroes(int n) {
+    private static int trailingZeroes1(int n) {
         if (n < 5) {
             return 0;
         } else {
-            return n / 5 + trailingZeroes(n / 5);
+            return n / 5 + trailingZeroes1(n / 5);
         }
+    }
+
+    private static int trailingZeroes2(int n) {
+        int count = 0;
+        while (n >= 5) {
+            count += n / 5;
+            n /= 5;
+        }
+        return count;
     }
 }
