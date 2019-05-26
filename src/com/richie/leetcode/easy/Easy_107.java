@@ -35,7 +35,8 @@ public class Easy_107 {
      * </p>
      *
      * <p>
-     * 解答：广度优先，逐层遍历。
+     * 解答：广度优先，逐层遍历。首先构建数据列表和下层结点列表，遍历当前层的结点列表，把数据添加到数据列表，并把每个结点的子结点添加到下层结点列表。
+     * 遍历完成后，把数据列表放到结果列表的首部，然后把下层结点列表变成当前结点列表，继续遍历。
      * </p>
      */
     public static void main(String[] args) {
@@ -54,26 +55,24 @@ public class Easy_107 {
         }
 
         List<List<Integer>> result = new LinkedList<>();
-        List<TreeNode> nodeList = new LinkedList<>();
-        List<TreeNode> rowList;
-        nodeList.add(root);
-
-        List<Integer> levelList;
-        while (nodeList.size() > 0) {
-            levelList = new LinkedList<>();
-            rowList = new LinkedList<>();
-            for (TreeNode treeNode : nodeList) {
-                levelList.add(treeNode.val);
+        List<TreeNode> currRowList = new LinkedList<>();
+        currRowList.add(root);
+        List<TreeNode> nextRowList;
+        List<Integer> valueList;
+        while (currRowList.size() > 0) {
+            valueList = new LinkedList<>();
+            nextRowList = new LinkedList<>();
+            for (TreeNode treeNode : currRowList) {
+                valueList.add(treeNode.val);
                 if (treeNode.left != null) {
-                    rowList.add(treeNode.left);
+                    nextRowList.add(treeNode.left);
                 }
                 if (treeNode.right != null) {
-                    rowList.add(treeNode.right);
+                    nextRowList.add(treeNode.right);
                 }
             }
-
-            result.add(0, levelList);
-            nodeList = rowList;
+            result.add(0, valueList);
+            currRowList = nextRowList;
         }
         return result;
     }
