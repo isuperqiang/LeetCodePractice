@@ -1,7 +1,7 @@
 package com.richie.leetcode.easy;
 
-import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -53,15 +53,15 @@ public class Easy_107 {
             return Collections.emptyList();
         }
 
-        List<List<Integer>> result = new ArrayList<>();
-        List<TreeNode> nodeList = new ArrayList<>();
+        List<List<Integer>> result = new LinkedList<>();
+        List<TreeNode> nodeList = new LinkedList<>();
         List<TreeNode> rowList;
         nodeList.add(root);
 
-        ArrayList<Integer> levelList;
+        List<Integer> levelList;
         while (nodeList.size() > 0) {
-            levelList = new ArrayList<>();
-            rowList = new ArrayList<>();
+            levelList = new LinkedList<>();
+            rowList = new LinkedList<>();
             for (TreeNode treeNode : nodeList) {
                 levelList.add(treeNode.val);
                 if (treeNode.left != null) {
