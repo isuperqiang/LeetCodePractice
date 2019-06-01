@@ -1,5 +1,7 @@
 package com.richie.leetcode.easy;
 
+import com.richie.leetcode.TreeNode;
+
 /**
  * @author richie on 2018.06.27
  */
@@ -68,27 +70,5 @@ public class Easy_98 {
             return false;
         }
         return valid(root.left, low, root.val) && valid(root.right, root.val, high);
-    }
-
-    /**
-     * Definition for a binary tree node.
-     */
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return "TreeNode{" +
-                    "val=" + val +
-                    ", left=" + left +
-                    ", right=" + right +
-                    '}';
-        }
     }
 }

@@ -1,5 +1,7 @@
 package com.richie.leetcode.easy;
 
+import com.richie.leetcode.ListNode;
+
 /**
  * @author richie on 2019.05.04
  */
@@ -33,7 +35,7 @@ public class Easy_83 {
         head.next.next.next = new ListNode(3);
         head.next.next.next.next = new ListNode(3);
         ListNode listNode = deleteDuplicates(head);
-        printList(listNode); // 1, 2, 3
+        ListNode.printList(listNode); // 1, 2, 3
     }
 
     private static ListNode deleteDuplicates(ListNode head) {
@@ -52,33 +54,4 @@ public class Easy_83 {
         return head;
     }
 
-    private static void printList(ListNode head) {
-        if (head == null) {
-            return;
-        }
-        StringBuilder sb = new StringBuilder();
-        sb.append(head.val).append(", ");
-        ListNode listNode = head;
-        while ((listNode = listNode.next) != null) {
-            sb.append(listNode.val).append(", ");
-        }
-        sb.delete(sb.length() - 2, sb.length());
-        System.out.println(sb);
-    }
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return "ListNode{" +
-                    "val=" + val +
-                    '}';
-        }
-    }
 }

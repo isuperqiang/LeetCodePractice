@@ -1,5 +1,7 @@
 package com.richie.leetcode.easy;
 
+import com.richie.leetcode.ListNode;
+
 /**
  * @author richie on 2018.06.23
  */
@@ -76,23 +78,6 @@ public class Easy_234 {
             head = temp;
         }
         return prev;
-    }
-
-    /**
-     * Definition for singly-linked list.
-     */
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(val) + " -> " + next;
-        }
     }
 
 }

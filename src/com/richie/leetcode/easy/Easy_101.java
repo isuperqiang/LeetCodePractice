@@ -1,5 +1,7 @@
 package com.richie.leetcode.easy;
 
+import com.richie.leetcode.TreeNode;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -97,23 +99,5 @@ public class Easy_101 {
             return isMirror(left.left, right.right) && isMirror(left.right, right.left);
         }
         return false;
-    }
-
-    /*
-     * Definition for a binary tree node.
-     */
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return "val: " + val;
-        }
     }
 }

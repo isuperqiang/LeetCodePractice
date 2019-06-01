@@ -1,5 +1,7 @@
 package com.richie.leetcode.easy;
 
+import com.richie.leetcode.TreeNode;
+
 /**
  * @author richie on 2018.06.25
  */
@@ -55,27 +57,5 @@ public class Easy_104 {
         int left = maxDepth(root.left);
         int right = maxDepth(root.right);
         return left > right ? left + 1 : right + 1;
-    }
-
-    /**
-     * Definition for a binary tree node.
-     */
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return "TreeNode{" +
-                    "val=" + val +
-                    ", left=" + left +
-                    ", right=" + right +
-                    '}';
-        }
     }
 }

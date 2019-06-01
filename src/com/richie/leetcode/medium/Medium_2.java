@@ -1,5 +1,7 @@
 package com.richie.leetcode.medium;
 
+import com.richie.leetcode.ListNode;
+
 /**
  * @author richie on 2018.07.15
  */
@@ -81,19 +83,5 @@ public class Medium_2 {
             next = next.next;
         }
         return var;
-    }
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(val) + " -> " + next;
-        }
     }
 }
