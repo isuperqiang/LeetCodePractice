@@ -72,7 +72,7 @@ public class Easy_1114 {
     /**
      * 通过 Semaphore
      */
-    public static class Foo4 {
+    private static class Foo4 {
         private Semaphore semaphoreSecond = new Semaphore(0);
         private Semaphore semaphoreThird = new Semaphore(0);
 
@@ -99,7 +99,7 @@ public class Easy_1114 {
     /**
      * 通过 Lock 和 Condition
      */
-    public static class Foo3 {
+    private static class Foo3 {
         private Lock lock = new ReentrantLock();
         private Condition condition = lock.newCondition();
         private int state = 1;
@@ -148,7 +148,7 @@ public class Easy_1114 {
     /**
      * 通过对象内置锁
      */
-    public static class Foo2 {
+    private static class Foo2 {
         private final Object lock = new Object();
         private int state = 1;
 
@@ -187,7 +187,7 @@ public class Easy_1114 {
     /**
      * 通过 CountDownLatch
      */
-    public static class Foo1 {
+    private static class Foo1 {
         private CountDownLatch countDownLatchSecond = new CountDownLatch(1);
         private CountDownLatch countDownLatchThird = new CountDownLatch(1);
 
