@@ -15,15 +15,16 @@ public class ListNode {
 
     public static void printList(ListNode head) {
         if (head == null) {
+            System.out.println("Null");
             return;
         }
         StringBuilder sb = new StringBuilder();
-        sb.append(head.val).append(", ");
+        sb.append(head.val).append(" -> ");
         ListNode listNode = head;
         while ((listNode = listNode.next) != null) {
-            sb.append(listNode.val).append(", ");
+            sb.append(listNode.val).append(" -> ");
         }
-        sb.delete(sb.length() - 2, sb.length());
+        sb.delete(sb.length() - 4, sb.length());
         System.out.println(sb);
     }
 
