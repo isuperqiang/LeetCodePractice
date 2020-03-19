@@ -1,7 +1,5 @@
 package com.richie.leetcode.easy;
 
-import java.util.Arrays;
-
 /**
  * @author Richie on 2020.03.19
  */
@@ -33,7 +31,7 @@ public class Easy_409 {
      *
      * <p>
      * 解答：
-     *
+     * 统计每个字符出现的次数，然后把偶数的次数加和，还要区分回文串长度是奇偶数。
      * </p>
      */
 
@@ -47,17 +45,14 @@ public class Easy_409 {
         if (s == null || s.length() == 0) {
             return 0;
         }
-
+        int[] charCount = new int[58];
         char[] chars = s.toCharArray();
-        Arrays.sort(chars);
+        for (char aChar : chars) {
+            charCount[aChar - 'A']++;
+        }
         int result = 0;
-        for (int i = 1, len = chars.length; i < len; ) {
-            if (chars[i - 1] == chars[i]) {
-                result += 2;
-                i += 2;
-            } else {
-                i++;
-            }
+        for (int i : charCount) {
+            result += i / 2 * 2;
         }
         if (result < chars.length && result % 2 == 0) {
             result += 1;
