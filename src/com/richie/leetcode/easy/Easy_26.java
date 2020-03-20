@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class Easy_26 {
 
     /**
-     *
+     * 删除排序数组中的重复项
      *
      * <p>
      * 地址：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/description/
