@@ -27,8 +27,7 @@ public class Easy_876 {
      * </p>
      *
      * <p>
-     * 解答：
-     * 快慢指针。
+     * 解答：快慢指针
      * 快指针每次走两步，慢指针每次走一步。两个指针从头开始走，当快指针走到尾的时候，慢指针正好处在中间位置。
      * </p>
      *
@@ -44,7 +43,7 @@ public class Easy_876 {
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
-        // 1-->2-->3-->4-->5, 3
+        // 1->2->3->4->5, 3
         ListNode middleNode = middleNode(head);
         System.out.println(middleNode);
     }

@@ -25,8 +25,13 @@ public class Easy_141 {
      * </p>
      *
      * <p>
-     * 解答：使用快慢指针，慢指针每次移动一步，而快指针每次移动两步。如果存在环，那么两指针必定相遇。
-     * 空间复杂度 O(1)
+     * 解答：快慢指针
+     * 慢指针每次移动一步，快指针每次移动两步。如果链表中存在环，那么两个指针必定相遇。
+     * </p>
+     *
+     * <p>
+     * 时间复杂度：O(N)
+     * 空间复杂度：O(1)
      * </p>
      */
 
@@ -37,15 +42,15 @@ public class Easy_141 {
         head.next.next = new ListNode(0);
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = ln2;
+        // 3->2->0->4->2, true
         boolean hasCycle = hasCycle(head);
-        System.out.println(hasCycle); // true
+        System.out.println(hasCycle);
     }
 
     private static boolean hasCycle(ListNode head) {
-        if (head == null) {
+        if (head == null || head.next == null) {
             return false;
         }
-
         ListNode slow = head;
         ListNode fast = head;
         while (fast != null && fast.next != null) {
