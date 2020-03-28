@@ -3,7 +3,7 @@ package com.richie.leetcode.easy;
 import com.richie.leetcode.ListNode;
 
 /**
- * @author richie on 2018.06.15
+ * @author Richie on 2018.06.15
  */
 public class Easy_206 {
     /**
@@ -19,23 +19,35 @@ public class Easy_206 {
      * </p>
      *
      * <p>
-     * 解答：采用迭代法，从头节点开始，依次记录当前节点和其指向的下一个节点，并且保存指向后续节点的指针，然后把节点间的指向关系进行反转。
-     * 采用递归法：把反转 1...n 看作反转 1 -> {n}，{n} 是已经反转的链表，然后反转 {n} 中的链表。
+     * 示例：
+     * 输入: 1->2->3->4->5->NULL
+     * 输出: 5->4->3->2->1->NULL
+     * </p>
+     *
+     * <p>
+     * 解答：
+     * 迭代法：从头节点开始，记录当前节点和其指向的下一个节点，并且保存指向后续节点的指针，然后把节点间的指向关系进行反转。
+     * 递归法：把反转 1...n 看作反转 1 -> {n}，{n} 是已经反转的链表，然后反转 {n} 中的链表。
+     * </p>
+     *
+     * <p>
+     * 递归：
+     * - 时间复杂度：O(N)
+     * - 空间复杂度：O(N)
+     * 迭代：
+     * - 时间复杂度：O(N)
+     * - 空间复杂度：O(1)
      * </p>
      */
 
     public static void main(String[] args) {
-        ListNode l3 = new ListNode(3);
-        l3.next = null;
-        ListNode l2 = new ListNode(2);
-        l2.next = l3;
-        ListNode l1 = new ListNode(1);
-        l1.next = l2;
-        System.out.println("before: " + l1);
-        // 1->2->3->null
-        ListNode reverseList = reverseListByIterative(l1);
-        System.out.println("after: " + reverseList);
-        // 3->2->1->null
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
+        ListNode reverseList = reverseListByIterative(head);
+        ListNode.printList(reverseList);
     }
 
     // 迭代解法
@@ -43,18 +55,15 @@ public class Easy_206 {
         if (head == null || head.next == null) {
             return head;
         }
-        ListNode p = head;
-        ListNode q = head.next;
-        ListNode r;
-        head.next = null;
-        while (q != null) {
-            r = q.next;
-            q.next = p;
-            p = q;
-            q = r;
+        ListNode current = head;
+        ListNode previous = null;
+        while (current != null) {
+            ListNode temp = current.next;
+            current.next = previous;
+            previous = current;
+            current = temp;
         }
-        head = p;
-        return head;
+        return previous;
     }
 
     // 递归解法
