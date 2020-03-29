@@ -49,11 +49,11 @@ public class Easy_01_01 {
         }
         int[] counts = new int[26];
         for (int i = 0, length = astr.length(); i < length; i++) {
-            char c = astr.charAt(i);
-            if (counts[c - 'a'] >= 1) {
+            int pos = astr.charAt(i) - 'a';
+            if (counts[pos] >= 1) {
                 return false;
             }
-            counts[c - 'a'] += 1;
+            counts[pos] += 1;
         }
         return true;
     }
