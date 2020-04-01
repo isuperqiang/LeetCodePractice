@@ -34,8 +34,7 @@ public class Easy_01_03 {
      * </p>
      */
     public static void main(String[] args) {
-        String replaceSpaces = replaceSpaces("ds sdfs afs sdfa dfssf asdf             ", 27);
-        //        String replaceSpaces = replaceSpaces("Mr John Smith    ", 13);
+        String replaceSpaces = replaceSpaces("Mr John Smith    ", 13);
         System.out.println(replaceSpaces); // Mr%20John%20Smith
     }
 
