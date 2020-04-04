@@ -64,7 +64,7 @@ public class Easy_01_01 {
         }
         int mark = 0;
         for (int i = 0, length = astr.length(); i < length; i++) {
-            int flag = 1 << astr.charAt(i) - 'a';
+            int flag = 1 << (astr.charAt(i) - 'a');
             if ((mark & flag) != 0) {
                 return false;
             } else {

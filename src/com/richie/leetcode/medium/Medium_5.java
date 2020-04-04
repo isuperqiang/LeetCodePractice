@@ -4,12 +4,11 @@ package com.richie.leetcode.medium;
  * @author richie on 2018.05.29
  */
 public class Medium_5 {
-
     /**
      * 最长回文子串
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/longest-palindromic-substring/description/
+     * 地址：https://leetcode-cn.com/problems/longest-palindromic-substring/
      * </p>
      *
      * <p>
@@ -17,11 +16,20 @@ public class Medium_5 {
      * </p>
      *
      * <p>
-     * 解答：因为回文字符串是以中心轴为对称的，所以如果我们从下标 i 出发，用 2 个指针向 i 的两边扩展判断是否相等，
-     * 那么只需要对 0 到 n-1 的下标都做此操作，就可以求出最长的回文子串。但需要注意的是，回文字符串有奇偶对称之分，
-     * 即”abcba”与”abba” 2 种类型，因此需要在代码编写时都做判断。
+     * 示例：
+     * 输入: "babad"
+     * 输出: "bab"
+     * 注意: "aba" 也是一个有效答案。
+     * </p>
      *
-     * 事件复杂度：O(n^2)
+     * <p>
+     * 解答：中心扩展法
+     * 由于回文串一定是对称的，所以我们可以每次循环选择一个中心，进行左右扩展，判断左右字符是否相等即可。
+     * 由于存在奇数的字符串和偶数的字符串，所以我们需要从一个字符开始扩展，或者从两个字符之间开始扩展，所以总共有 n+(n-1) 个中心。
+     * </p>
+     *
+     * <p>
+     * 时间复杂度：O(n^2)
      * 空间复杂度：O(1)
      * </p>
      */
@@ -37,36 +45,27 @@ public class Medium_5 {
         if (s == null || s.length() == 0) {
             return "";
         }
-
-        int length = s.length();
-        // 记录最大子串起始坐标
         int start = 0;
         int end = 0;
-        // 以 i 为轴心，j 为长度向两边扩展
-        for (int i = 0; i < length; i++) {
-            // 奇数, 如 12321
-            for (int j = 0; i - j >= 0 && i + j < length; j++) {
-                if (s.charAt(i - j) != s.charAt(i + j)) {
-                    break;
-                }
-                if (2 * j + 1 > end - start + 1) {
-                    start = i - j;
-                    end = i + j;
-                }
-            }
-
-            // 偶数, 如 1221
-            for (int j = 0; i - j >= 0 && i + j + 1 < length; j++) {
-                if (s.charAt(i - j) != s.charAt(i + j + 1)) {
-                    break;
-                }
-                if (2 * j + 2 > end - start + 1) {
-                    start = i - j;
-                    end = i + j + 1;
-                }
+        for (int i = 0, length = s.length(); i < length; i++) {
+            int len1 = expandAroundCenter(s, i, i);
+            int len2 = expandAroundCenter(s, i, i + 1);
+            int len = Math.max(len1, len2);
+            if (len > end - start) {
+                start = i - (len - 1) / 2;
+                end = i + len / 2;
             }
         }
         return s.substring(start, end + 1);
     }
 
+    private static int expandAroundCenter(String s, int left, int right) {
+        int L = left;
+        int R = right;
+        while (L >= 0 && R < s.length() && s.charAt(L) == s.charAt(R)) {
+            L--;
+            R++;
+        }
+        return R - L - 1;
+    }
 }
