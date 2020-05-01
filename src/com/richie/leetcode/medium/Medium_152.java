@@ -23,43 +23,26 @@ public class Medium_152 {
      * </p>
      *
      * <p>
-     * 解答：
-     * - 解法一：暴力解法，遍历数组，逐个求出连续子序列的乘积，找到最大值。时间复杂度 O(n^2)。
-     * - 解法二：动态规划，遍历数组，计算当前最大值，并不断更新。当前最大乘积 max，当前最小乘积 min。由于存在负数，会导致最大的变成最小的，
-     * 最小的变成最大的。所以分两种情况讨论：
+     * 解答：动态规划。
+     * 遍历数组，计算当前最大值，并不断更新当前最大乘积 max，当前最小乘积 min。由于存在负数，导致最大的变成最小的，最小的变成最大的。
+     * 所以分两种情况讨论：
      * - nums[i] > 0 时，max = Max(max * nums[i], nums[i]); min = Min(min * num[i], num[i]);
      * - nums[i] < 0 时，max = Max(min * nums[i], nums[i]); min = Min(max * num[i], num[i]);
+     * </p>
+     *
+     * <p>
+     * 时间复杂度：O(N)
+     * 空间复杂度：O(1)
      * </p>
      */
 
     public static void main(String[] args) {
         int[] nums = {2, 3, -2, 4};
-        int i = maxProduct2(nums);
+        int i = maxProduct(nums);
         System.out.println(i); // 6
     }
 
-    private static int maxProduct1(int[] nums) {
-        if (nums == null || nums.length == 0) {
-            return 0;
-        }
-        int max = nums[0];
-        int temp;
-        for (int i = 0; i < nums.length; i++) {
-            temp = nums[i];
-            if (temp > max) {
-                max = temp;
-            }
-            for (int j = i + 1; j < nums.length; j++) {
-                temp *= nums[j];
-                if (temp > max) {
-                    max = temp;
-                }
-            }
-        }
-        return max;
-    }
-
-    private static int maxProduct2(int[] nums) {
+    private static int maxProduct(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
