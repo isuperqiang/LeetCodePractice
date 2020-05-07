@@ -13,6 +13,7 @@ public class Easy_172 {
      *
      * <p>
      * 描述：给定一个整数 n，返回 n! 结果尾数中零的数量。
+     * 说明: 你算法的时间复杂度应为 O(log n) 。
      * </p>
      *
      * <p>
@@ -23,28 +24,26 @@ public class Easy_172 {
      * </p>
      *
      * <p>
-     * 解答：只有 2 * 5 末尾才有零，乘数中 2 的个数肯定比 5 多。n! 为递减阶乘，只要统计乘数里因子 5 的个数就行了。
+     * 解答：只有 2 * 5 末尾才有零，乘数中 2 的个数肯定比 5 多，只要统计乘数里因子 5 的个数就行了。
+     * 同时注意 5 的幂数存在多个 5，最终 5 的个数就是 n / 5 + n / 25 + n / 125 ...
+     * </p>
+     *
+     * <p>
+     * 时间复杂度：O(logN)
+     * 空间复杂度：O(1)
      * </p>
      */
 
     public static void main(String[] args) {
-        int i = trailingZeroes1(20);
+        int i = trailingZeroes(20);
         System.out.println(i); // 4
     }
 
-    private static int trailingZeroes1(int n) {
-        if (n < 5) {
-            return 0;
-        } else {
-            return n / 5 + trailingZeroes1(n / 5);
-        }
-    }
-
-    private static int trailingZeroes2(int n) {
+    private static int trailingZeroes(int n) {
         int count = 0;
-        while (n >= 5) {
-            count += n / 5;
+        while (n > 0) {
             n /= 5;
+            count += n;
         }
         return count;
     }
