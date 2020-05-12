@@ -5,10 +5,10 @@ package com.richie.leetcode.easy;
  */
 public class Easy_191 {
     /**
-     * 位1的个数
+     * 位 1 的个数
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/number-of-1-bits/description/
+     * 地址：https://leetcode-cn.com/problems/number-of-1-bits/
      * </p>
      *
      * <p>
@@ -16,29 +16,38 @@ public class Easy_191 {
      * </p>
      *
      * <p>
-     * 解答：先把整数转换成二进制字符串，然后统计 1 的个数。
+     * 示例：
+     * 输入：00000000000000000000000000001011
+     * 输出：3
+     * 解释：输入的二进制串 00000000000000000000000000001011 中，共有三位为 '1'。
      * </p>
+     *
+     * <p>
+     * 解答：
+     * 遍历整数的 32 位，使用掩码检查每位是否为 1，不断左移掩码，将 1 的个数求和。
+     * </p>
+     *
+     * <p>
+     * 时间复杂度：O(1)
+     * 空间复杂度：O(1)
      */
 
     public static void main(String[] args) {
-        int count = hammingWeight(11);
-        System.out.println(count);
-        // 输入: 11
-        // 输出: 3
-        // 解释: 整数 11 的二进制表示为 00000000000000000000000000001011
+        int count = hammingWeight(0b00000000000000000000000000001011);
+        System.out.println(count); // 3
     }
 
     // you need to treat n as an unsigned value
     private static int hammingWeight(int n) {
-        String s = Integer.toBinaryString(n);
-        int count = 0;
-        char[] chars = s.toCharArray();
-        for (char aChar : chars) {
-            if (aChar == '1') {
-                count++;
+        int bits = 0;
+        int mask = 1;
+        for (int i = 0; i < 32; i++) {
+            if ((n & mask) != 0) {
+                bits++;
             }
+            mask <<= 1;
         }
-        return count;
+        return bits;
     }
 
 }

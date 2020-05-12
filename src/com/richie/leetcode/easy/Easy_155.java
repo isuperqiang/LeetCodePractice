@@ -6,8 +6,6 @@ import java.util.Stack;
  * @author richie on 2019.04.19
  */
 public class Easy_155 {
-    private Stack<Integer> stack = new Stack<>();
-
     /**
      * initialize your data structure here.
      */
@@ -43,8 +41,15 @@ public class Easy_155 {
      * </p>
      *
      * <p>
-     * 解答：每次入栈 2 个元素，一个是要入栈的元素本身，一个是当前栈内元素的最小值。
-     * 如：入栈序列为 2-3-1，则入栈后元素序列为：2-2-3-2-1-1。用空间代价来换取时间代价
+     * 解答：
+     * - 法一：辅助栈，可以用两个栈，一个栈去保存正常的入栈出栈的值，另一个栈去保存最小值，也就是用栈顶保存当前所有元素的最小值。
+     * - 法二：自定义 Stack，可以在 Node 节点中增加一个 min 字段，这样每次加入一个节点时，同时只要确定它的 min 值即可。
+     * </p>
+     *
+     * <p>
+     * 辅助栈：
+     * - 时间复杂度：O(1)
+     * - 空间复杂度：O(N)
      * </p>
      */
 
@@ -56,33 +61,35 @@ public class Easy_155 {
         int min1 = minStack.getMin();
         System.out.println("min1 " + min1);
         minStack.pop();
-        minStack.top();
+        int top = minStack.top();
+        System.out.println("top:" + top);
         int min2 = minStack.getMin();
         System.out.println("min2 " + min2);
     }
 
+    private final Stack<Integer> stack = new Stack<>();
+    private final Stack<Integer> stackHelper = new Stack<>();
+
     public void push(int x) {
-        if (stack.isEmpty()) {
-            stack.push(x);
-            stack.push(x);
-        } else {
-            Integer currMin = stack.peek();
-            stack.push(x);
-            stack.push(x < currMin ? x : currMin);
+        stack.push(x);
+        if (stackHelper.isEmpty() || x <= stackHelper.peek()) {
+            stackHelper.push(x);
         }
     }
 
     public void pop() {
-        stack.pop();
-        stack.pop();
+        int pop = stack.pop();
+        if (pop == stackHelper.peek()) {
+            stackHelper.pop();
+        }
     }
 
     public int top() {
-        return stack.get(stack.size() - 2);
+        return stack.pop();
     }
 
     public int getMin() {
-        return stack.peek();
+        return stackHelper.peek();
     }
 
 }

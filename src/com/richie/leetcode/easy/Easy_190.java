@@ -43,8 +43,9 @@ public class Easy_190 {
     // you need treat n as an unsigned value
     private static int reverseBits(int n) {
         int ret = 0;
-        for (int bitsSize = 31; n != 0; n = n >>> 1, bitsSize--) {
+        for (int bitsSize = 31; n != 0; bitsSize--) {
             ret += (n & 1) << bitsSize;
+            n = n >>> 1;
         }
         return ret;
     }
