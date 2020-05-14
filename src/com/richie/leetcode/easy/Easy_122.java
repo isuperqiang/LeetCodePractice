@@ -28,12 +28,17 @@ public class Easy_122 {
      *
      * <p>
      * 解答：
-     * 贪心算法：遍历整个股票交易日价格列表，所有上涨交易日都买卖（赚到所有利润），所有下降交易日都不买卖（永不亏钱）。
+     * - 贪心算法：遍历整个股票交易日价格列表，所有上涨交易日都买卖（赚到所有利润），所有下降交易日都不买卖（永不亏钱）。
+     * - 动态规划：状态 dp 定义如下，dp[i][0] 表示第 i 天持有股票的收益，dp[i][1] 表示第 i 天不持有股票的收益，最后一天不持有股票时的收益就是最大利润。
      * </p>
      *
      * <p>
-     * 时间复杂度：O(N)
-     * 空间复杂度：O(1)
+     * 贪心算法：
+     * - 时间复杂度：O(N)
+     * - 空间复杂度：O(1)
+     * 动态规划：
+     * - 时间复杂度：O(N)
+     * - 空间复杂度：O(N)
      * </p>
      */
 
@@ -55,5 +60,19 @@ public class Easy_122 {
             }
         }
         return maxProfit;
+    }
+
+    private static int maxProfit2(int[] prices) {
+        if (prices == null || prices.length <= 1) {
+            return 0;
+        }
+        int[][] dp = new int[prices.length][2];
+        dp[0][0] = 0;
+        dp[0][1] = -prices[0];
+        for (int i = 1; i < prices.length; i++) {
+            dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][1] + prices[i]);
+            dp[i][1] = Math.max(dp[i - 1][1], dp[i - 1][0] - prices[i]);
+        }
+        return dp[prices.length - 1][0];
     }
 }
