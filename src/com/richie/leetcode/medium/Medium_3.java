@@ -32,8 +32,7 @@ public class Medium_3 {
     public static void main(String[] args) {
         String s = "abcabca";
         int i = lengthOfLongestSubstring(s);
-        System.out.println(i);
-        // 3
+        System.out.println(i); // 3
     }
 
     private static int lengthOfLongestSubstring(String s) {
