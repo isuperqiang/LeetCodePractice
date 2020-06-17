@@ -36,7 +36,7 @@ public class Easy_112 {
      *
      * <p>
      * 时间复杂度：O(N)
-     * 空间复杂度：O(Log(N)) or O(N)
+     * 空间复杂度：O(log(N)) or O(N)
      * </p>
      */
 
