@@ -10,7 +10,7 @@ public class Easy_206 {
      * 反转链表
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/reverse-linked-list/description/
+     * 地址：https://leetcode-cn.com/problems/reverse-linked-list/
      * </p>
      *
      * <p>
@@ -26,7 +26,7 @@ public class Easy_206 {
      *
      * <p>
      * 解答：
-     * 迭代法：从头节点开始，记录当前节点和其指向的下一个节点，并且保存指向后续节点的指针，然后把节点间的指向关系进行反转。
+     * 迭代法：从头节点开始迭代，保存前向节点和后继节点，反转节点的指向。
      * 递归法：把反转 1...n 看作反转 1 -> {n}，{n} 是已经反转的链表，然后反转 {n} 中的链表。
      * </p>
      *
@@ -71,10 +71,10 @@ public class Easy_206 {
         if (head == null || head.next == null) {
             return head;
         }
-        ListNode p = reverseListByRecursive(head.next);
+        ListNode last = reverseListByRecursive(head.next);
         head.next.next = head;
         head.next = null;
-        return p;
+        return last;
     }
 
 }
