@@ -24,7 +24,8 @@ public class Easy_14 {
      * </p>
      *
      * <p>
-     * 解答：首先确定字符数组中最短的字符串长度，然后遍历字符串，逐个比较相同索引位置的字符是否相同，从而找到公共前缀
+     * 解答：首先确定字符串数组中最短的字符串长度，作为最长公共前缀的限制长度。然后取第一个字符串作为基准，遍历其余的字符串，
+     * 逐个比较相同索引位置的字符是否相同，从而找到公共前缀。
      * </p>
      *
      * <p>
@@ -43,21 +44,21 @@ public class Easy_14 {
         if (strs == null || strs.length == 0) {
             return "";
         }
-
         int minLen = strs[0].length();
         for (String str : strs) {
             minLen = Math.min(str.length(), minLen);
         }
         int index = 0;
         String first = strs[0];
+        out:
         for (int i = 0; i < minLen; i++) {
             for (int j = 1; j < strs.length; j++) {
                 if (strs[j].charAt(i) != first.charAt(i)) {
-                    return first.substring(0, index);
+                    break out;
                 }
             }
             index++;
         }
-        return first;
+        return first.substring(0, index);
     }
 }
