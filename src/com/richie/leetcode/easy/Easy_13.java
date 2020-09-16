@@ -8,6 +8,8 @@ import java.util.Map;
  */
 public class Easy_13 {
     /**
+     * 罗马数字转整数
+     *
      * <p>
      * 地址：https://leetcode-cn.com/problems/roman-to-integer/
      * </p>
@@ -17,8 +19,13 @@ public class Easy_13 {
      * </p>
      *
      * <p>
-     * 解答：把罗马数字和整数建立映射，然后从左到右遍历字符串，对比前后的两个值。因为正常的罗马数字是位上的值递减的，
+     * 解答：把罗马数字和整数建立映射，然后从左到右遍历字符串，对比前后两个值。因为正常的罗马数字是位上的值递减的，
      * 当出现左值大于右值，就使用两者的差作为结果。
+     * </p>
+     *
+     * <p>
+     * 时间复杂度：O(N)
+     * 空间复杂度：O(1)
      * </p>
      */
 
@@ -33,7 +40,7 @@ public class Easy_13 {
             return 0;
         }
 
-        Map<Character, Integer> romanIntMap = new HashMap<>(8);
+        Map<Character, Integer> romanIntMap = new HashMap<>(16);
         romanIntMap.put('I', 1);
         romanIntMap.put('V', 5);
         romanIntMap.put('X', 10);
@@ -44,8 +51,8 @@ public class Easy_13 {
         int result = 0;
         char[] chars = s.toCharArray();
         int preValue = 0;
-        for (int i = 0; i < chars.length; i++) {
-            int value = romanIntMap.get(chars[i]);
+        for (char aChar : chars) {
+            int value = romanIntMap.get(aChar);
             if (value > preValue) {
                 result -= preValue;
                 result += value - preValue;

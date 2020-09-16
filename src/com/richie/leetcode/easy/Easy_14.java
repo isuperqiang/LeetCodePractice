@@ -24,12 +24,16 @@ public class Easy_14 {
      * </p>
      *
      * <p>
-     * 解答：首先确定字符串数组中最短的字符串长度，作为最长公共前缀的限制长度。然后取第一个字符串作为基准，遍历其余的字符串，
-     * 逐个比较相同索引位置的字符是否相同，从而找到公共前缀。
+     * 解答：
+     * - 横向扫描：
+     * 依次遍历字符串数组中的每个字符串，对于每次遍历到的字符串，更新最长公共前缀。当遍历完所有的字符串后，即可得到字符串数组的最长公共前缀。
+     * 如果在尚未遍历完所有的字符串时，最长公共前缀已经是空串，则最长公共前缀一定是空串，不需要继续遍历剩下的字符串，直接返回空串即可。
+     * - 纵向扫描：
+     * 从前往后遍历所有字符串的每一列，比较相同列上的字符是否相同。如果相同则继续比较下一列，如果不同则当前列之前的部分为最长公共前缀。
      * </p>
      *
      * <p>
-     * 时间复杂度：O(mn)
+     * 时间复杂度：O(mn)，其中 m 是字符串数组中的字符串的平均长度，n 是字符串的数量
      * 空间复杂度：O(1)
      * </p>
      */
@@ -44,21 +48,42 @@ public class Easy_14 {
         if (strs == null || strs.length == 0) {
             return "";
         }
-        int minLen = strs[0].length();
-        for (String str : strs) {
-            minLen = Math.min(str.length(), minLen);
-        }
-        int index = 0;
-        String first = strs[0];
-        out:
-        for (int i = 0; i < minLen; i++) {
-            for (int j = 1; j < strs.length; j++) {
-                if (strs[j].charAt(i) != first.charAt(i)) {
-                    break out;
-                }
+        String prefix = strs[0];
+        int len = strs.length;
+        for (int i = 1; i < len; i++) {
+            prefix = longestCommonPrefix(prefix, strs[i]);
+            if (prefix.length() == 0) {
+                break;
             }
+        }
+        return prefix;
+    }
+
+    private static String longestCommonPrefix(String s1, String s2) {
+        int index = 0;
+        int minLen = Math.min(s1.length(), s2.length());
+        while (index < minLen && s1.charAt(index) == s2.charAt(index)) {
             index++;
         }
-        return first.substring(0, index);
+        return s1.substring(0, index);
+    }
+
+    private static String longestCommonPrefix2(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+        String prefix = strs[0];
+        int prefixLen = prefix.length();
+        int len = strs.length;
+        for (int i = 0; i < prefixLen; i++) {
+            char c = prefix.charAt(i);
+            for (int j = 1; j < len; j++) {
+                String str = strs[j];
+                if (i == str.length() || str.charAt(i) != c) {
+                    return prefix.substring(0, i);
+                }
+            }
+        }
+        return prefix;
     }
 }
