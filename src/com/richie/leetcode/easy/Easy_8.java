@@ -8,7 +8,7 @@ public class Easy_8 {
      * 字符串转整数
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/string-to-integer-atoi/description/
+     * 地址：https://leetcode-cn.com/problems/string-to-integer-atoi/
      * </p>
      *
      * <p>
@@ -17,6 +17,7 @@ public class Easy_8 {
      * 字符串可以在形成整数的字符后面包括多余的字符，这些字符可以被忽略，它们对于函数没有影响。
      * 当字符串中的第一个非空字符序列不是个有效的整数；或字符串为空；或字符串仅包含空白字符时，则不进行转换。
      * 若函数不能执行有效的转换，返回 0。
+     *
      * <p>
      * 说明：
      * 假设我们的环境只能存储 32 位有符号整数，其数值范围是 [−231,  231 − 1]。如果数值超过可表示的范围，则返回  INT_MAX (231 − 1) 或 INT_MIN (−231) 。
