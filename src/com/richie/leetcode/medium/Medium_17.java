@@ -49,8 +49,8 @@ public class Medium_17 {
 
     public static void main(String[] args) {
         String s = "23";
-        List<String> strings = letterCombinations2(s);
-        System.out.println(strings);
+        List<String> strings = letterCombinations(s);
+        System.out.println(strings); // [ad, ae, af, bd, be, bf, cd, ce, cf]
     }
 
     private static List<String> letterCombinations2(String digits) {

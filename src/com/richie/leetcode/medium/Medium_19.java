@@ -27,8 +27,7 @@ public class Medium_19 {
      *
      * <p>
      * 解答：快慢指针
-     * 快指针先走 n 步，然后和慢指针一起走，当快指针走到尾的时候，慢指针正好位于倒数 n+1 的位置。
-     * 这时删除慢指针的 next 结点即可。注意 head 结点有可能被删除。
+     * 使用哑节点来简化极端情况，快指针先走 n+1 步，然后和慢指针一起走，当快指针走到尾的时候，慢指针正好位于倒数 n+1 的位置，删除慢指针的 next 结点即可。
      * </p>
      *
      * <p>
@@ -52,20 +51,19 @@ public class Medium_19 {
         if (head == null || n <= 0) {
             return head;
         }
-
-        ListNode fast = head;
-        ListNode slow = head;
-        for (int i = 0; i < n; i++) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode fast = dummy;
+        ListNode slow = dummy;
+        for (int i = 0; i < n + 1; i++) {
             fast = fast.next;
         }
-        if (fast == null) {
-            return head.next;
-        }
-        while (fast.next != null) {
+        while (fast != null) {
+            fast = fast.next;
             slow = slow.next;
-            fast = fast.next;
         }
         slow.next = slow.next.next;
-        return head;
+        return dummy.next;
     }
+
 }

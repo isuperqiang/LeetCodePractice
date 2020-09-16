@@ -32,13 +32,13 @@ public class Medium_15 {
      * </p>
      *
      * <p>
-     * 解答：
+     * 解答：排序+双指针
      * 首先对数组进行排序，排序后固定一个数 nums[i]，再使用左右指针 L 和 R 分别指向 nums[i] 后面的两端，
-     * 计算三个数的和 sum，判断 sum 是否满足为 0。如果满足则添加进结果集，否则左右指针交替向中间移动。
+     * 计算三个数的和 sum，判断 sum 是否为 0。如果是则添加进结果集，否则左右指针交替向中间移动。
      * </p>
      *
      * <p>
-     * 时间复杂度：O(N)
+     * 时间复杂度：O(N^2)
      * 空间复杂度：O(1)
      * </p>
      */
@@ -46,7 +46,7 @@ public class Medium_15 {
     public static void main(String[] args) {
         int[] nums = {-1, 0, 1, 2, -1, -4};
         List<List<Integer>> lists = threeSum(nums);
-        System.out.println(lists);
+        System.out.println(lists); // [[-1, -1, 2], [-1, 0, 1]]
     }
 
     private static List<List<Integer>> threeSum(int[] nums) {
@@ -55,25 +55,25 @@ public class Medium_15 {
         }
         Arrays.sort(nums);
         List<List<Integer>> result = new ArrayList<>();
-        int length = nums.length;
-        for (int i = 0; i < length; i++) {
+        for (int i = 0, length = nums.length; i < length; i++) {
             if (nums[i] > 0) {
                 break;
             }
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
-            int l = i + 1, r = length - 1;
+            int l = i + 1;
+            int r = length - 1;
             while (l < r) {
                 int s = nums[i] + nums[l] + nums[r];
                 if (s == 0) {
+                    result.add(Arrays.asList(nums[i], nums[l], nums[r]));
                     while (l < r && nums[l] == nums[l + 1]) {
                         l++;
                     }
                     while (l < r && nums[r] == nums[r - 1]) {
                         r--;
                     }
-                    result.add(Arrays.asList(nums[i], nums[l], nums[r]));
                     l++;
                     r--;
                 } else if (s > 0) {
