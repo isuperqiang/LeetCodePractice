@@ -31,8 +31,8 @@ public class Medium_39 {
      *
      * <p>
      * 解答：回溯
-     * - 本质上穷举所有结果是一棵树，我们采用 DFS 的方式遍历。组合意味着一组元素无序，即 [a, b] 和 [b, a] 看作相同解。所以在回溯的时候，注意起点的位置。
-     * 回溯过程中，target 减去当前元素值，begin 不断向右移动。对数组排序有利于剪纸，减少算法的时间复杂度。
+     * 本质上穷举所有结果是一棵树，我们采用 DFS 的方式遍历。组合意味着一组元素无序，即 [a, b] 和 [b, a] 看作相同解。所以在回溯的时候，注意起点的位置。
+     * 回溯过程中，target 减去当前元素值，begin 不断向右移动。对数组排序有利于剪枝，减少算法的时间复杂度。
      * </p>
      *
      * <p>
@@ -52,11 +52,11 @@ public class Medium_39 {
         }
         Arrays.sort(candidates);
         List<List<Integer>> result = new ArrayList<>();
-        backtrace(result, new LinkedList<>(), candidates, 0, target);
+        backtrack(result, new LinkedList<>(), candidates, 0, target);
         return result;
     }
 
-    private static void backtrace(List<List<Integer>> result, Deque<Integer> path, int[] candidate, int begin, int target) {
+    private static void backtrack(List<List<Integer>> result, Deque<Integer> path, int[] candidate, int begin, int target) {
         if (target == 0) {
             result.add(new ArrayList<>(path));
             return;
@@ -67,7 +67,7 @@ public class Medium_39 {
                 break;
             }
             path.addLast(candidate[i]);
-            backtrace(result, path, candidate, i, diff);
+            backtrack(result, path, candidate, i, diff);
             path.removeLast();
         }
     }

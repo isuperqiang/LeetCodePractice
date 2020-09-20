@@ -1,7 +1,6 @@
 package com.richie.leetcode.medium;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Richie on 2019.08.11
@@ -20,8 +19,27 @@ public class Medium_46 {
      * </p>
      *
      * <p>
-     * 解答：
-     * 回溯法。深度优先搜索（DFS）和交换元素
+     * 示例：
+     * 输入: [1,2,3]
+     * 输出:
+     * [
+     * [1,2,3],
+     * [1,3,2],
+     * [2,1,3],
+     * [2,3,1],
+     * [3,1,2],
+     * [3,2,1]
+     * ]
+     * </p>
+     *
+     * <p>
+     * 解答：回溯
+     * 使用 visited 变量过滤相同元素，即剪枝。
+     * </p>
+     *
+     * <p>
+     * 时间复杂度：O(N*N!)
+     * 空间复杂度：O(N*N!)
      * </p>
      */
 
@@ -34,33 +52,27 @@ public class Medium_46 {
 
     private static List<List<Integer>> permute(int[] nums) {
         if (nums == null || nums.length == 0) {
-            return null;
+            return Collections.emptyList();
         }
         List<List<Integer>> result = new ArrayList<>();
-        dfs(0, nums, result);
+        backtrack(result, new LinkedList<>(), nums, new boolean[nums.length]);
         return result;
     }
 
-    private static void dfs(int curr, int[] nums, List<List<Integer>> result) {
-        if (curr == nums.length - 1) {
-            List<Integer> res = new ArrayList<>();
-            for (int num : nums) {
-                res.add(num);
-            }
-            result.add(res);
+    private static void backtrack(List<List<Integer>> result, Deque<Integer> path, int[] nums, boolean[] visited) {
+        if (path.size() == nums.length) {
+            result.add(new ArrayList<>(path));
             return;
         }
-        for (int i = curr; i < nums.length; i++) {
-            swap(nums, i, curr);
-            dfs(curr + 1, nums, result);
-            swap(nums, i, curr);
+        for (int i = 0; i < nums.length; i++) {
+            if (!visited[i]) {
+                visited[i] = true;
+                path.addLast(nums[i]);
+                backtrack(result, path, nums, visited);
+                visited[i] = false;
+                path.removeLast();
+            }
         }
-    }
-
-    private static void swap(int[] nums, int i, int j) {
-        int t = nums[i];
-        nums[i] = nums[j];
-        nums[j] = t;
     }
 
 }
