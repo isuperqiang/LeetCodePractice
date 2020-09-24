@@ -1,8 +1,6 @@
 package com.richie.leetcode.medium;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Richie on 2019.06.30
@@ -25,47 +23,49 @@ public class Medium_78 {
      * 输出:
      * [
      * [3],
-     *   [1],
-     *   [2],
-     *   [1,2,3],
-     *   [1,3],
-     *   [2,3],
-     *   [1,2],
-     *   []
+     * [1],
+     * [2],
+     * [1,2,3],
+     * [1,3],
+     * [2,3],
+     * [1,2],
+     * []
      * ]
      * </p>
      *
      * <p>
-     * 解答：二进制和位运算。
-     * 数组中的每个元素，都有两个状态：在子数组中和不在子数组中。所有状态的组合就是所有的子数组。
-     * 遍历 000 到 111，也就是 0 到 7，判断每个比特位是否为 1，如果是 1，那么将对应数字加入子数组。
+     * 解答：回溯
+     * 把子集的求解看成一棵树，每个节点有选和不选两种状态，因为不允许重复元素，每次回溯时更新起始位置，过程中不需要剪枝。
+     * </p>
      *
+     * <p>
+     * - 时间复杂度：O(NlogN)
+     * - 空间复杂度：O(N)
      * </p>
      */
 
     public static void main(String[] args) {
         int[] nums = {1, 2, 3};
-        List<List<Integer>> subsets = subsets(nums);
-        System.out.println(subsets);
+        List<List<Integer>> subsets = new Medium_78().subsets(nums);
+        System.out.println(subsets);  // [[], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3], [3]]
     }
 
-    private static List<List<Integer>> subsets(int[] nums) {
+    public List<List<Integer>> subsets(int[] nums) {
         if (nums == null || nums.length == 0) {
             return Collections.emptyList();
         }
-
-        List<Integer> subList;
-        int resultLength = 1 << nums.length;
-        List<List<Integer>> resultList = new ArrayList<>(resultLength);
-        for (int i = 0, numsLength = nums.length; i < resultLength; i++) {
-            subList = new ArrayList<>(numsLength);
-            for (int j = 0; j < numsLength; j++) {
-                if ((i >> j & 1) == 1) {
-                    subList.add(nums[j]);
-                }
-            }
-            resultList.add(subList);
-        }
-        return resultList;
+        List<List<Integer>> result = new ArrayList<>();
+        backtrack(result, new ArrayDeque<>(), nums, 0);
+        return result;
     }
+
+    private void backtrack(List<List<Integer>> result, Deque<Integer> path, int[] nums, int start) {
+        result.add(new ArrayList<>(path));
+        for (int i = start, len = nums.length; i < len; i++) {
+            path.addLast(nums[i]);
+            backtrack(result, path, nums, i + 1);
+            path.removeLast();
+        }
+    }
+
 }
