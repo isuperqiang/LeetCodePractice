@@ -32,16 +32,21 @@ public class Medium_62 {
      * </p>
      *
      * <p>
-     * 解答：
-     * 动态规划。令 dp[i][j] 是到达 i, j 最多路径。
-     * 动态方程：dp[i][j] = dp[i-1][j] + dp[i][j-1]
-     * 注意，对于第一行 dp[0][j]，或者第一列 dp[i][0]，由于都是在边界，所以只能为 1。
+     * 解答：动态规划
+     * 1. 定义 dp[i][j] 表示从左上角到达 [i,j] 的路径数量。
+     * 2. 初始化，对于第一行 dp[0][j]，或者第一列 dp[i][0]，由于都是在边界，所以只能为 1。
+     * 3. 状态转移方程 dp[i][j] = dp[i-1][j] + dp[i][j-1]
+     * </p>
+     *
+     * <p>
+     * - 时间复杂度：O(m*n)
+     * - 空间复杂度：O(m*n)
      * </p>
      */
 
     public static void main(String[] args) {
         int paths = uniquePaths2(3, 2);
-        System.out.println(paths);
+        System.out.println(paths); // 3
     }
 
     private static int uniquePaths(int m, int n) {
