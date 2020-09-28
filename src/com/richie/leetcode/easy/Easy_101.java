@@ -17,10 +17,12 @@ public class Easy_101 {
      * </p>
      *
      * <p>
-     * 描述：给定一个二叉树，检查它是否是镜像对称的。
+     * 描述：
+     * 给定一个二叉树，检查它是否是镜像对称的。
      * </p>
      *
      * <p>
+     * 示例：
      * 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
      * 1
      * /   \
@@ -31,9 +33,14 @@ public class Easy_101 {
      *
      * <p>
      * 解答：
-     * - 递归法：如果同时满足下面的条件，两个树互为镜像：它们的两个根结点具有相同的值；每个树的右子树都与另一个树的左子树镜像对称。
-     * - 迭代法：类似广度优先遍历，但要把队列存的值 Double 一下。每次提取两个结点并比较它们的值。然后将两个结点的左右子结点按相反的顺序插入队列中。
-     * 当队列为空时，或者我们检测到树不对称（即从队列中取出两个不相等的连续结点）时，算法结束。
+     * - 递归法：如果同时满足下面的条件，那么两个树互为镜像：它们的根节点具有相同的值；每个树的左子树都与另一个树的右子树镜像对称。
+     * - 迭代法：类似广度优先遍历树，但要用队列保存双份的节点。每次提取两个节点并比较它们的值。然后将两个节点的左右子结点按相反的顺序插入队列中。
+     * 当队列为空时，或者我们检测到树不对称时，算法结束。
+     * </p>
+     *
+     * <p>
+     * - 时间复杂度：O(N)
+     * - 空间复杂度：O(N)
      * </p>
      */
 
@@ -45,16 +52,15 @@ public class Easy_101 {
         root.left.right = new TreeNode(4);
         root.right.left = new TreeNode(4);
         root.right.right = new TreeNode(3);
-        boolean symmetric = isSymmetric2(root);
-        System.out.println(symmetric);
+        boolean symmetric = new Easy_101().isSymmetric(root);
+        System.out.println(symmetric); // true
     }
 
-    // 迭代法
-    private static boolean isSymmetric2(TreeNode root) {
+    // 迭代
+    public boolean isSymmetric2(TreeNode root) {
         if (root == null) {
             return true;
         }
-
         Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
         q.add(root);
@@ -64,10 +70,7 @@ public class Easy_101 {
             if (left == null && right == null) {
                 continue;
             }
-            if (left == null || right == null) {
-                return false;
-            }
-            if (left.val != right.val) {
+            if (left == null || right == null || left.val != right.val) {
                 return false;
             }
             q.add(left.left);
@@ -78,26 +81,22 @@ public class Easy_101 {
         return true;
     }
 
-    // 递归法
-    private static boolean isSymmetric(TreeNode root) {
+    // 递归
+    public boolean isSymmetric(TreeNode root) {
         if (root == null) {
             return true;
         }
         return isMirror(root.left, root.right);
     }
 
-    private static boolean isMirror(TreeNode left, TreeNode right) {
+    private boolean isMirror(TreeNode left, TreeNode right) {
         if (left == null && right == null) {
             return true;
         }
-
-        if (left == null || right == null) {
+        if (left == null || right == null || left.val != right.val) {
             return false;
         }
-
-        if (left.val == right.val) {
-            return isMirror(left.left, right.right) && isMirror(left.right, right.left);
-        }
-        return false;
+        return isMirror(left.left, right.right) && isMirror(left.right, right.left);
     }
+
 }
