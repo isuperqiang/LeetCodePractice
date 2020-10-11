@@ -10,16 +10,19 @@ public class Easy_104 {
      * 二叉树的最大深度
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/description/
+     * 地址：https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
      * </p>
      *
      * <p>
-     * 描述：给定一个二叉树，找出其最大深度。
+     * 描述：
+     * 给定一个二叉树，找出其最大深度。
      * 二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。
      * 说明: 叶子节点是指没有子节点的节点。
+     * </p>
+     *
+     * <p>
      * 示例：
      * 给定二叉树 [3,9,20,null,null,15,7]，
-     * <p>
      * 3
      * / \
      * 9  20
@@ -29,33 +32,34 @@ public class Easy_104 {
      * </p>
      *
      * <p>
-     * 解答：如果二叉树为空，则深度为 0。
-     * 如果不为空，分别求出左子树和右子树的深度，取最大值加上根节点深度 1。
+     * 解答：递归
+     * - 终止条件：二叉树为空，深度是 0。
+     * - 递归循环：分别求出左右子树的深度，取最大值加上根节点深度 1。
+     * </p>
+     *
+     * <p>
+     * 时间复杂度：O(N)
+     * 空间复杂度：O(H)
      * </p>
      */
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3);
-        TreeNode l1 = new TreeNode(9);
-        TreeNode r1 = new TreeNode(20);
-        TreeNode r21 = new TreeNode(15);
-        TreeNode r22 = new TreeNode(7);
-        root.left = l1;
-        root.right = r1;
-        r1.left = r21;
-        r1.right = r22;
-
-        int depth = maxDepth(root);
-        System.out.println(depth);
-        // 3
+        root.left = new TreeNode(9);
+        root.right = new TreeNode(20);
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(7);
+        int depth = new Easy_104().maxDepth(root);
+        System.out.println(depth); // 3
     }
 
-    private static int maxDepth(TreeNode root) {
+    public int maxDepth(TreeNode root) {
         if (root == null) {
             return 0;
         }
         int left = maxDepth(root.left);
         int right = maxDepth(root.right);
-        return left > right ? left + 1 : right + 1;
+        return Math.max(left, right) + 1;
     }
+
 }
