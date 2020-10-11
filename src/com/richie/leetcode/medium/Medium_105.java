@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class Medium_105 {
     /**
-     * 105. 从前序与中序遍历序列构造二叉树
+     * 从前序与中序遍历序列构造二叉树
      *
      * <p>
      * 地址：https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
