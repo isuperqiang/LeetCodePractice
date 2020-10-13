@@ -46,11 +46,11 @@ public class Medium_64 {
 
     public static void main(String[] args) {
         int[][] grid = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
-        int minPathSum = minPathSum(grid);
+        int minPathSum = new Medium_64().minPathSum(grid);
         System.out.println(minPathSum); // 7
     }
 
-    private static int minPathSum(int[][] grid) {
+    public int minPathSum(int[][] grid) {
         if (grid == null || grid.length < 1 || grid[0].length < 1) {
             return 0;
         }

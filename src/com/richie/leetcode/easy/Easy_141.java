@@ -42,12 +42,12 @@ public class Easy_141 {
         head.next.next = new ListNode(0);
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = ln2;
-        // 3->2->0->4->2, true
-        boolean hasCycle = hasCycle(head);
+        boolean hasCycle = new Easy_141().hasCycle(head);
         System.out.println(hasCycle);
+        // 3->2->0->4->2, true
     }
 
-    private static boolean hasCycle(ListNode head) {
+    public boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) {
             return false;
         }

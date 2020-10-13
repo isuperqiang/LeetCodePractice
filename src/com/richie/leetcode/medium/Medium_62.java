@@ -33,9 +33,10 @@ public class Medium_62 {
      *
      * <p>
      * 解答：动态规划
-     * 1. 定义 dp[i][j] 表示从左上角到达 [i,j] 的路径数量。
-     * 2. 初始化，对于第一行 dp[0][j]，或者第一列 dp[i][0]，由于都是在边界，所以只能为 1。
-     * 3. 状态转移方程 dp[i][j] = dp[i-1][j] + dp[i][j-1]
+     * 1. 定义 dp[i][j] 表示从左上角到达 [i,j] 的路径数量；
+     * 2. 初始化 dp[][]，对于第一行 dp[0][j]，或者第一列 dp[i][0]，由于都是在边界，所以只能为 1；
+     * 3. 状态转移方程 dp[i][j] = dp[i-1][j] + dp[i][j-1]；
+     * 4. 返回 dp[][] 最后一个元素。
      * </p>
      *
      * <p>
@@ -45,11 +46,11 @@ public class Medium_62 {
      */
 
     public static void main(String[] args) {
-        int paths = uniquePaths2(3, 2);
+        int paths = new Medium_62().uniquePaths2(3, 2);
         System.out.println(paths); // 3
     }
 
-    private static int uniquePaths(int m, int n) {
+    public int uniquePaths(int m, int n) {
         int[] sum = new int[n];
         Arrays.fill(sum, 1);
         for (int i = 1; i < m; i++) {
@@ -60,7 +61,7 @@ public class Medium_62 {
         return sum[n - 1];
     }
 
-    private static int uniquePaths2(int m, int n) {
+    public int uniquePaths2(int m, int n) {
         int[][] dp = new int[m][n];
         for (int i = 0; i < m; i++) {
             dp[i][0] = 1;
@@ -75,5 +76,4 @@ public class Medium_62 {
         }
         return dp[m - 1][n - 1];
     }
-
 }
