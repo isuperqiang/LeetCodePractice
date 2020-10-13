@@ -31,40 +31,42 @@ public class Medium_300 {
      * </p>
      *
      * <p>
-     * 解答：
-     * 动态规划：dp[i] 表示以 nums[i] 结尾的最长上升子序列的长度。dp[i] 等于在下标 i 之前严格小于 nums[i] 的所有状态值中的最大值 + 1。
-     * 每个元素都至少可以单独成为子序列，dp 中的最大值就是要求的结果。
+     * 解答：动态规划
+     * - dp[i] 表示以 nums[i] 结尾的最长上升子序列的长度;
+     * - dp[i] 等于在下标 i 之前严格小于 nums[i] 的所有状态值中的最大值 + 1;
+     * - 每个元素都至少可以单独成为子序列，dp 中的最大值就是要求的结果。
      * </p>
      *
      * <p>
-     * 时间复杂度：O(N^2)
-     * 空间复杂度：O(N)
+     * 时间复杂度：O(n^2)
+     * 空间复杂度：O(n)
      * </p>
      */
 
     public static void main(String[] args) {
         int[] nums = {10, 9, 2, 5, 3, 7, 101, 18};
-        int length = lengthOfLIS(nums);
+        int length = new Medium_300().lengthOfLIS(nums);
         System.out.println(length); // 4
     }
 
-    private static int lengthOfLIS(int[] nums) {
+    public int lengthOfLIS(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
-        int[] dp = new int[nums.length];
+        int len = nums.length;
+        int[] dp = new int[len];
         Arrays.fill(dp, 1);
-        for (int i = 1; i < nums.length; i++) {
+        for (int i = 1; i < len; i++) {
             for (int j = 0; j < i; j++) {
                 if (nums[i] > nums[j]) {
                     dp[i] = Math.max(dp[i], dp[j] + 1);
                 }
             }
         }
-        int maxLength = 1;
+        int maxLen = dp[0];
         for (int i : dp) {
-            maxLength = Math.max(maxLength, i);
+            maxLen = Math.max(maxLen, i);
         }
-        return maxLength;
+        return maxLen;
     }
 }

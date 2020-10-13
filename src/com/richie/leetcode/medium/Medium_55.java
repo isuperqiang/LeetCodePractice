@@ -27,9 +27,11 @@ public class Medium_55 {
      *
      * <p>
      * 解答：
+     * - 方法一：贪心
      * 一个大前提：如果能到达某个位置，那么一定能到达它前面的所有位置。
      * 如果作为 起跳点 的格子可以跳跃的距离是 3，那么表示后面 3 个格子都可以作为 起跳点。
      * 对每个能作为 起跳点 的格子都尝试跳一次，把 能跳到最远的距离 不断更新。如果能跳到最后，那么就成功了。
+     * - 方法二：动态规划
      * </p>
      *
      * <p>
@@ -40,12 +42,12 @@ public class Medium_55 {
 
     public static void main(String[] args) {
         int[] nums = {2, 3, 1, 1, 4};
-        boolean b = canJump(nums);
+        boolean b = new Medium_55().canJump2(nums);
         System.out.println(b); // true
     }
 
-    private static boolean canJump(int[] nums) {
-        if (nums == null) {
+    public boolean canJump(int[] nums) {
+        if (nums == null || nums.length <= 0) {
             return false;
         }
         int max = 0;
@@ -56,5 +58,23 @@ public class Medium_55 {
             max = Math.max(max, i + nums[i]);
         }
         return true;
+    }
+
+    public boolean canJump2(int[] nums) {
+        if (nums == null || nums.length <= 0) {
+            return false;
+        }
+        int len = nums.length;
+        boolean[] dp = new boolean[len];
+        dp[0] = true;
+        for (int i = 1; i < len; i++) {
+            for (int j = 0; j < i; j++) {
+                if (dp[j] && nums[j] + j >= i) {
+                    dp[i] = true;
+                    break;
+                }
+            }
+        }
+        return dp[len - 1];
     }
 }

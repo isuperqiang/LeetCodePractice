@@ -30,7 +30,7 @@ public class Easy_70 {
      *
      * <p>
      * 解答：
-     * 本质是斐波那契数列问题。可以用动态规划解决。
+     * 本质是斐波那契数列问题，可以用动态规划解决，当然也可以用迭代。
      * </p>
      *
      * <p>
@@ -40,15 +40,14 @@ public class Easy_70 {
      */
 
     public static void main(String[] args) {
-        int i = climbStairs(10);
+        int i = new Easy_70().climbStairs2(10);
         System.out.println(i); // 89
     }
 
-    private static int climbStairs(int n) {
+    public int climbStairs(int n) {
         if (n <= 1) {
             return n;
         }
-
         int a = 1;
         int b = 1;
         int r = 0;
@@ -60,7 +59,7 @@ public class Easy_70 {
         return r;
     }
 
-    private static int climbStairs2(int n) {
+    public int climbStairs2(int n) {
         if (n <= 1) {
             return n;
         }
@@ -72,5 +71,4 @@ public class Easy_70 {
         }
         return dp[n];
     }
-
 }
