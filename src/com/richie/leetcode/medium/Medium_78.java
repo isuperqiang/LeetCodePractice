@@ -39,8 +39,8 @@ public class Medium_78 {
      * </p>
      *
      * <p>
-     * - 时间复杂度：O(NlogN)
-     * - 空间复杂度：O(N)
+     * - 时间复杂度：O(n*logn)
+     * - 空间复杂度：O(n)
      * </p>
      */
 
@@ -67,5 +67,4 @@ public class Medium_78 {
             path.removeLast();
         }
     }
-
 }
