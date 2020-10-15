@@ -38,8 +38,8 @@ public class Medium_46 {
      * </p>
      *
      * <p>
-     * 时间复杂度：O(N*N!)
-     * 空间复杂度：O(N*N!)
+     * 时间复杂度：O(n*n!)
+     * 空间复杂度：O(n)
      * </p>
      */
 
@@ -65,14 +65,14 @@ public class Medium_46 {
             return;
         }
         for (int i = 0; i < nums.length; i++) {
-            if (!visited[i]) {
-                visited[i] = true;
-                path.addLast(nums[i]);
-                backtrack(result, path, nums, visited);
-                visited[i] = false;
-                path.removeLast();
+            if (visited[i]) {
+                continue;
             }
+            visited[i] = true;
+            path.addLast(nums[i]);
+            backtrack(result, path, nums, visited);
+            visited[i] = false;
+            path.removeLast();
         }
     }
-
 }
