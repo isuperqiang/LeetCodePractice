@@ -49,11 +49,11 @@ public class Medium_17 {
 
     public static void main(String[] args) {
         String s = "23";
-        List<String> strings = letterCombinations(s);
+        List<String> strings = new Medium_17().letterCombinations(s);
         System.out.println(strings); // [ad, ae, af, bd, be, bf, cd, ce, cf]
     }
 
-    private static List<String> letterCombinations2(String digits) {
+    public List<String> letterCombinations2(String digits) {
         if (digits == null || digits.length() == 0) {
             return Collections.emptyList();
         }
@@ -80,7 +80,7 @@ public class Medium_17 {
         return combinations;
     }
 
-    private static List<String> letterCombinations(String digits) {
+    public List<String> letterCombinations(String digits) {
         if (digits == null || digits.length() == 0) {
             return Collections.emptyList();
         }
@@ -94,22 +94,21 @@ public class Medium_17 {
         phoneMap.put('8', "tuv");
         phoneMap.put('9', "wxyz");
         List<String> combinations = new ArrayList<>();
-        backtrace(combinations, phoneMap, digits, 0, new StringBuilder());
+        backtrack(combinations, phoneMap, digits, 0, new StringBuilder());
         return combinations;
     }
 
-    private static void backtrace(List<String> combinations, Map<Character, String> phoneMap, String digits, int index, StringBuilder temp) {
+    private void backtrack(List<String> combinations, Map<Character, String> phoneMap, String digits, int index, StringBuilder path) {
         if (index == digits.length()) {
-            combinations.add(temp.toString());
-        } else {
-            char number = digits.charAt(index);
-            String letter = phoneMap.get(number);
-            for (int i = 0, len = letter.length(); i < len; i++) {
-                temp.append(letter.charAt(i));
-                backtrace(combinations, phoneMap, digits, index + 1, temp);
-                temp.deleteCharAt(index);
-            }
+            combinations.add(path.toString());
+            return;
+        }
+        char number = digits.charAt(index);
+        String letters = phoneMap.get(number);
+        for (int i = 0, len = letters.length(); i < len; i++) {
+            path.append(letters.charAt(i));
+            backtrack(combinations, phoneMap, digits, index + 1, path);
+            path.deleteCharAt(index);
         }
     }
-
 }

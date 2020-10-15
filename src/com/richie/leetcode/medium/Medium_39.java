@@ -42,21 +42,21 @@ public class Medium_39 {
      */
     public static void main(String[] args) {
         int[] candidates = {2, 3, 6, 7};
-        List<List<Integer>> lists = combinationSum(candidates, 7);
-        System.out.println(lists);
+        List<List<Integer>> lists = new Medium_39().combinationSum(candidates, 7);
+        System.out.println(lists); // [[2, 2, 3], [7]]
     }
 
-    private static List<List<Integer>> combinationSum(int[] candidates, int target) {
-        if (candidates == null) {
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        if (candidates == null || candidates.length == 0 || target <= 0) {
             return Collections.emptyList();
         }
         Arrays.sort(candidates);
         List<List<Integer>> result = new ArrayList<>();
-        backtrack(result, new LinkedList<>(), candidates, 0, target);
+        backtrack(result, new ArrayDeque<>(), candidates, 0, target);
         return result;
     }
 
-    private static void backtrack(List<List<Integer>> result, Deque<Integer> path, int[] candidate, int begin, int target) {
+    private void backtrack(List<List<Integer>> result, Deque<Integer> path, int[] candidate, int begin, int target) {
         if (target == 0) {
             result.add(new ArrayList<>(path));
             return;
@@ -71,5 +71,4 @@ public class Medium_39 {
             path.removeLast();
         }
     }
-
 }
