@@ -2,10 +2,7 @@ package com.richie.leetcode.medium;
 
 import com.richie.leetcode.TreeNode;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Richie on 2020.09.27
@@ -26,11 +23,11 @@ public class Medium_94 {
      * <p>
      * 示例：
      * 输入: [1,null,2,3]
-     * 1
-     * \
-     * 2
-     * /
-     * 3
+     * //   1
+     * //    \
+     * //     2
+     * //    /
+     * //   3
      * <p>
      * 输出: [1,3,2]
      * </p>
@@ -42,8 +39,12 @@ public class Medium_94 {
      * </p>
      *
      * <p>
-     * 时间复杂度：O(N)
-     * 空间复杂度：O(h)，h 是树的高度
+     * - 递归：
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(n)
+     * - 迭代：
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(n)
      * </p>
      */
 
@@ -51,11 +52,14 @@ public class Medium_94 {
         TreeNode root = new TreeNode(1);
         root.right = new TreeNode(2);
         root.right.left = new TreeNode(3);
-        List<Integer> list = new Medium_94().inorderTraversal2(root);
-        System.out.println(list); // [1,3,2]
+        List<Integer> result = new Medium_94().inorderTraversal2(root);
+        System.out.println(result); // [1,3,2]
     }
 
     public List<Integer> inorderTraversal2(TreeNode root) {
+        if (root == null) {
+            return Collections.emptyList();
+        }
         List<Integer> result = new ArrayList<>();
         Deque<TreeNode> stack = new ArrayDeque<>();
         while (root != null || stack.size() > 0) {
@@ -63,27 +67,29 @@ public class Medium_94 {
                 stack.push(root);
                 root = root.left;
             } else {
-                TreeNode pop = stack.pop();
-                result.add(pop.val);
-                root = pop.right;
+                TreeNode top = stack.pop();
+                result.add(top.val);
+                root = top.right;
             }
         }
         return result;
     }
 
     public List<Integer> inorderTraversal(TreeNode root) {
+        if (root == null) {
+            return Collections.emptyList();
+        }
         List<Integer> result = new ArrayList<>();
-        inorderTraversalInner(root, result);
+        inorderTraversalRecursive(root, result);
         return result;
     }
 
-    private void inorderTraversalInner(TreeNode root, List<Integer> result) {
+    private void inorderTraversalRecursive(TreeNode root, List<Integer> result) {
         if (root == null) {
             return;
         }
-        inorderTraversalInner(root.left, result);
+        inorderTraversalRecursive(root.left, result);
         result.add(root.val);
-        inorderTraversalInner(root.right, result);
+        inorderTraversalRecursive(root.right, result);
     }
-
 }
