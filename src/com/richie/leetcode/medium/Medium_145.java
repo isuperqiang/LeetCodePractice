@@ -9,7 +9,7 @@ import java.util.*;
  */
 public class Medium_145 {
     /**
-     * 二叉树后续遍历
+     * 二叉树后序遍历
      *
      * <p>
      * 地址：https://leetcode-cn.com/problems/binary-tree-postorder-traversal/

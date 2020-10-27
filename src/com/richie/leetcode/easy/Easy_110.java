@@ -10,7 +10,7 @@ public class Easy_110 {
      * 平衡二叉树
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/balanced-binary-tree/comments/
+     * 地址：https://leetcode-cn.com/problems/balanced-binary-tree/
      * </p>
      *
      * <p>
@@ -21,14 +21,24 @@ public class Easy_110 {
      * </p>
      *
      * <p>
+     * 示例：
+     * 输入：root = [3,9,20,null,null,15,7]
+     * 输出：true
+     * </p>
+     *
+     * <p>
      * 解答：
      * 平衡二叉树的条件：
      * - 左子树是平衡二叉树
      * - 右子树是平衡二叉树
      * - 左右子树的高度差的绝对值不超过 1
+     * 深度优先遍历，递归求解树的高度。终止条件是不满足上述三个条件之一，二叉树的最大深度可以参考第 104 题。
+     * 返回值 -1 代表不是平衡二叉树，大于 0 时代表二叉树的最大深度。
+     * </p>
      *
-     * 深度优先遍历，递归求解树的高度。终止条件是不满足上述三个条件之一，二叉树的最大深度可以参考第 114 题。
-     *
+     * <p>
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(n)
      * </p>
      */
 
@@ -39,25 +49,23 @@ public class Easy_110 {
         root.right = right;
         right.left = new TreeNode(15);
         right.right = new TreeNode(7);
-
-        System.out.println(isBalanced(root));
+        boolean balanced = new Easy_110().isBalanced(root);
+        System.out.println(balanced); // true
     }
 
-    private static boolean isBalanced(TreeNode root) {
-        return height(root) != -1;
+    public boolean isBalanced(TreeNode root) {
+        return maxDepth(root) != -1;
     }
 
-    private static int height(TreeNode root) {
+    private int maxDepth(TreeNode root) {
         if (root == null) {
             return 0;
         }
-        int leftHeight = height(root.left);
-        int rightHeight = height(root.right);
-        if (leftHeight == -1 || rightHeight == -1
-                || Math.abs(leftHeight - rightHeight) > 1) {
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
+        if (left == -1 || right == -1 || Math.abs(left - right) > 1) {
             return -1;
         }
-        return Math.max(leftHeight, rightHeight) + 1;
+        return Math.max(left, right) + 1;
     }
-
 }

@@ -38,8 +38,8 @@ public class Easy_104 {
      * </p>
      *
      * <p>
-     * 时间复杂度：O(N)
-     * 空间复杂度：O(H)
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(n)
      * </p>
      */
 
@@ -61,5 +61,4 @@ public class Easy_104 {
         int right = maxDepth(root.right);
         return Math.max(left, right) + 1;
     }
-
 }
