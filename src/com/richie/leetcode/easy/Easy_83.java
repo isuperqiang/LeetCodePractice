@@ -26,6 +26,11 @@ public class Easy_83 {
      * <p>
      * 解答：从头开始遍历链表，比较前后两个节点元素的值。如果相等就修改前置指针，不相等就继续向后移动。
      * </p>
+     *
+     * <p>
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(1)
+     * </p>
      */
 
     public static void main(String[] args) {
@@ -34,24 +39,22 @@ public class Easy_83 {
         head.next.next = new ListNode(2);
         head.next.next.next = new ListNode(3);
         head.next.next.next.next = new ListNode(3);
-        ListNode listNode = deleteDuplicates(head);
-        ListNode.printList(listNode); // 1, 2, 3
+        ListNode listNode = new Easy_83().deleteDuplicates(head);
+        ListNode.printList(listNode); // 1 -> 2 -> 3
     }
 
-    private static ListNode deleteDuplicates(ListNode head) {
+    public ListNode deleteDuplicates(ListNode head) {
         if (head == null) {
             return null;
         }
-        ListNode prevNose = head;
-        ListNode currNode = head;
-        while ((currNode = currNode.next) != null) {
-            if (prevNose.val == currNode.val) {
-                prevNose.next = currNode.next;
+        ListNode curr = head;
+        while (curr.next != null) {
+            if (curr.val == curr.next.val) {
+                curr.next = curr.next.next;
             } else {
-                prevNose = currNode;
+                curr = curr.next;
             }
         }
         return head;
     }
-
 }
