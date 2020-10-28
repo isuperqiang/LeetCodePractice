@@ -28,21 +28,21 @@ public class Medium_98 {
      * <p>
      * 示例：
      * 输入:
-     * 2
-     * / \
-     * 1   3
+     * //    2
+     * //   / \
+     * //  1   3
      * 输出: true
      * </p>
      *
      * <p>
      * 解答：
      * - 递归：根据二叉搜索树的定义，确定递归函数，参数包含上下边界，访问左子树时，上边界为根节点值，方位右子树时，下边界为根节点值；
-     * - 中序遍历：左中右遍历二叉搜索树，得到的一定时递增序列；如果不是，就不是二叉搜索树；
+     * - 中序遍历：左中右遍历二叉搜索树，得到的一定是递增序列；否则就不是二叉搜索树；
      * </p>
      *
      * <p>
-     * 时间复杂度：O(N)
-     * 空间复杂度：O(N)
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(n)
      * </p>
      */
 
@@ -52,27 +52,6 @@ public class Medium_98 {
         root.right = new TreeNode(3);
         boolean validBST = new Medium_98().isValidBST(root);
         System.out.println(validBST); // true
-    }
-
-    public boolean isValidBST2(TreeNode root) {
-        if (root == null) {
-            return true;
-        }
-        long prev = Long.MIN_VALUE;
-        Deque<TreeNode> q = new ArrayDeque<>();
-        while (q.size() > 0 || root != null) {
-            while (root != null) {
-                q.push(root);
-                root = root.left;
-            }
-            root = q.pop();
-            if (root.val <= prev) {
-                return false;
-            }
-            prev = root.val;
-            root = root.right;
-        }
-        return true;
     }
 
     public boolean isValidBST(TreeNode root) {
@@ -92,4 +71,24 @@ public class Medium_98 {
         return isValidBSTInner(root.left, min, root.val) && isValidBSTInner(root.right, root.val, max);
     }
 
+    public boolean isValidBST2(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        long prev = Long.MIN_VALUE;
+        Deque<TreeNode> queue = new ArrayDeque<>();
+        while (!queue.isEmpty() || root != null) {
+            while (root != null) {
+                queue.push(root);
+                root = root.left;
+            }
+            root = queue.pop();
+            if (root.val <= prev) {
+                return false;
+            }
+            prev = root.val;
+            root = root.right;
+        }
+        return true;
+    }
 }
