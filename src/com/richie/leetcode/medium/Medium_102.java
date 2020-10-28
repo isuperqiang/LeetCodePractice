@@ -23,11 +23,11 @@ public class Medium_102 {
      * <p>
      * 示例：
      * 二叉树：[3,9,20,null,null,15,7],
-     * 3
-     * / \
-     * 9  20
-     * /  \
-     * 15   7
+     * //    3
+     * //   / \
+     * //  9  20
+     * //    /  \
+     * //   15   7
      * 返回其层次遍历结果：
      * [
      * [3],
@@ -37,14 +37,14 @@ public class Medium_102 {
      * </p>
      *
      * <p>
-     * 解答：
+     * 解答：借助队列
      * 在每层遍历开始前，先记录队列中的节点数量 n，也就是这层的节点数量，然后一口气处理完这层的 n 个节点。
      * 在每轮 while 循环中，都是将当前层的所有节点出队列，再将下层的所有节点入队列，这样就实现了层序遍历。
      * </p>
      *
      * <p>
-     * 时间复杂度：O(N)
-     * 空间复杂度：O(N)
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(n)
      * </p>
      */
 
@@ -65,17 +65,17 @@ public class Medium_102 {
         List<List<Integer>> result = new ArrayList<>();
         Queue<TreeNode> queue = new ArrayDeque<>();
         List<Integer> level;
-        queue.add(root);
+        queue.offer(root);
         while (!queue.isEmpty()) {
             level = new ArrayList<>();
             for (int i = 0, size = queue.size(); i < size; i++) {
-                TreeNode poll = queue.poll();
-                level.add(poll.val);
-                if (poll.left != null) {
-                    queue.offer(poll.left);
+                TreeNode head = queue.poll();
+                level.add(head.val);
+                if (head.left != null) {
+                    queue.offer(head.left);
                 }
-                if (poll.right != null) {
-                    queue.offer(poll.right);
+                if (head.right != null) {
+                    queue.offer(head.right);
                 }
             }
             result.add(level);
