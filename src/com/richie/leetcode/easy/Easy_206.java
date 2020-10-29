@@ -26,16 +26,16 @@ public class Easy_206 {
      *
      * <p>
      * 解答：
-     * 迭代法：从头节点开始迭代，保存前向节点和后继节点，反转节点的指向。
-     * 递归法：把反转 1...n 看作反转 1 -> {n}，{n} 是已经反转的链表，然后反转 {n} 中的链表。
+     * - 迭代法：从头节点开始迭代，保存前向节点和后继节点，反转节点的指向。
+     * - 递归法：把反转 1...n 看作反转 1 -> {n}，{n} 是已经反转的链表，然后反转 {n} 中的链表。
      * </p>
      *
      * <p>
      * 递归：
-     * - 时间复杂度：O(N)
-     * - 空间复杂度：O(N)
+     * - 时间复杂度：O(n)
+     * - 空间复杂度：O(n)
      * 迭代：
-     * - 时间复杂度：O(N)
+     * - 时间复杂度：O(n)
      * - 空间复杂度：O(1)
      * </p>
      */
@@ -46,28 +46,26 @@ public class Easy_206 {
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
-        ListNode reverseList = reverseListByIterative(head);
-        ListNode.printList(reverseList);
+        ListNode reverseList = new Easy_206().reverseList(head);
+        ListNode.printList(reverseList); // 5 -> 4 -> 3 -> 2 -> 1
     }
 
-    // 迭代解法
-    private static ListNode reverseListByIterative(ListNode head) {
+    public ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
-        ListNode current = head;
-        ListNode previous = null;
-        while (current != null) {
-            ListNode temp = current.next;
-            current.next = previous;
-            previous = current;
-            current = temp;
+        ListNode curr = head;
+        ListNode prev = null;
+        while (curr != null) {
+            ListNode temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
         }
-        return previous;
+        return prev;
     }
 
-    // 递归解法
-    private static ListNode reverseListByRecursive(ListNode head) {
+    public ListNode reverseListByRecursive(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
@@ -76,5 +74,4 @@ public class Easy_206 {
         head.next = null;
         return last;
     }
-
 }

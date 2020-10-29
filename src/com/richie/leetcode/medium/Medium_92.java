@@ -16,7 +16,7 @@ public class Medium_92 {
      * <p>
      * 描述：
      * 反转从位置 m 到 n 的链表。请使用一趟扫描完成反转。
-     * 1 ≤ m ≤ n ≤ 链表长度。
+     * 说明：1 ≤ m ≤ n ≤ 链表长度。
      * </p>
      *
      * <p>
@@ -27,11 +27,12 @@ public class Medium_92 {
      *
      * <p>
      * 解答：
-     * 首先记录要反转节点起始位置的前一个节点，然后反转 m-n 区间的链表，最后修改起始前一个节点和起始节点的指针。
+     * 存在头节点被反转的可能，使用哑节点指向头节点，结果返回哑节点的 next。
+     * 保存要反转的起始节点和前一个节点，然后反转 m-n 区间的链表，修改起始节点和前一个节点的指针。
      * </p>
      *
      * <p>
-     * 时间复杂度：O(N)
+     * 时间复杂度：O(n)
      * 空间复杂度：O(1)
      * </p>
      */
@@ -41,32 +42,32 @@ public class Medium_92 {
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
-        ListNode listNode = reverseBetween(head, 2, 4);
-        ListNode.printList(listNode);
+        ListNode listNode = new Medium_92().reverseBetween(head, 2, 4);
+        ListNode.printList(listNode); // 1 -> 4 -> 3 -> 2 -> 5
     }
 
-    private static ListNode reverseBetween(ListNode head, int m, int n) {
-        if (head == null || head.next == null) {
+    public ListNode reverseBetween(ListNode head, int m, int n) {
+        if (head == null || head.next == null || m < 1 || n < m) {
             return head;
         }
         ListNode dummy = new ListNode(0);
         dummy.next = head;
-        ListNode current = dummy;
-        for (int i = 1; i < m; i++) {
-            current = current.next;
+        ListNode curr = dummy;
+        ListNode mPrev = null;
+        for (int i = 0; i < m; i++) {
+            mPrev = curr;
+            curr = curr.next;
         }
-        ListNode startPrev = current;
-        current = current.next;
-        ListNode previous = null;
-        ListNode next = null;
+        ListNode prev = null;
+        ListNode mCurr = curr;
         for (int i = m; i <= n; i++) {
-            next = current.next;
-            current.next = previous;
-            previous = current;
-            current = next;
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
         }
-        startPrev.next.next = next;
-        startPrev.next = previous;
+        mCurr.next = curr;
+        mPrev.next = prev;
         return dummy.next;
     }
 }
