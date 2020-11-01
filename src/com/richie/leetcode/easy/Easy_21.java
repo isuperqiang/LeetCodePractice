@@ -31,9 +31,9 @@ public class Easy_21 {
      * 2. 如果 l1 节点的值小于 l2 节点的值，就让 prev 指向 l1，同时把 l1 指针后移；否则就移动 l2，prev 始终向后移动
      * 3. 重复步骤 2，直到 l1 或 l2 指向 null，此时 l1 或 l2 有一个非空，只需要把它添加到合并链表的后面
      * - 递归
-     * 1. 终止条件：两条链表分别名为 l1 和 l2，当 l1 为空或 l2 为空时结束
+     * 1. 终止条件：两条链表 l1 和 l2，当 l1 为空或 l2 为空时结束
      * 2. 返回值：每层调用都返回排序好的链表头
-     * 3. 递归内容：如果 l1 的 val 值更小，则将 l1.next 与排序好的链表头相接，l2 同理
+     * 3. 递归内容：如果 l1 的 val 值更小，则将 l1 的 next 与排序好的链表头相接，l2 同理
      * </p>
      *
      * <p>
@@ -57,12 +57,11 @@ public class Easy_21 {
         ListNode s3 = new ListNode(4);
         s1.next = s2;
         s2.next = s3;
-
-        ListNode listNode = mergeTwoLists(f1, s1);
+        ListNode listNode = new Easy_21().mergeTwoLists(f1, s1);
         ListNode.printList(listNode);
     }
 
-    private static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(-1);
         ListNode prev = dummy;
         while (l1 != null && l2 != null) {
@@ -79,7 +78,7 @@ public class Easy_21 {
         return dummy.next;
     }
 
-    private static ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
+    public ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;
         }
@@ -94,5 +93,4 @@ public class Easy_21 {
             return l2;
         }
     }
-
 }

@@ -58,8 +58,8 @@ public class Medium_92 {
             mPrev = curr;
             curr = curr.next;
         }
-        ListNode prev = null;
         ListNode mCurr = curr;
+        ListNode prev = null;
         for (int i = m; i <= n; i++) {
             ListNode next = curr.next;
             curr.next = prev;
