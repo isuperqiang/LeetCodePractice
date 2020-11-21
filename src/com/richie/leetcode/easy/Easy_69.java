@@ -19,25 +19,36 @@ public class Easy_69 {
      * </p>
      *
      * <p>
-     * 解答：牛顿法 https://en.wikipedia.org/wiki/Integer_square_root
-     * 注意整形边界，防止出现越界。
+     * 解答：二分法
+     * 设定上界为 x，下界为 0，每次比较中间值的平方和 x 的关系，取较小的中间值。注意整型溢出，变量类型声明为 long。
+     * </p>
+     *
+     * <p>
+     * - 时间复杂度：O(logN)
+     * - 空间复杂度：O(1)
      * </p>
      */
 
     public static void main(String[] args) {
-        int x = 99;
-        int i = mySqrt(x);
+        int i = new Easy_69().mySqrt(99);
         System.out.println(i); // 9
     }
 
-    private static int mySqrt(int x) {
+    public int mySqrt(int x) {
         if (x <= 1) {
             return x;
         }
-        int r = x / 2;
-        while (r > x / r) {
-            r = (r + x / r) / 2;
+        long l = 0, r = x, ans = -1;
+        while (l <= r) {
+            long mid = l + (r - l) / 2;
+            long pow = mid * mid;
+            if (pow <= x) {
+                ans = mid;
+                l = mid + 1;
+            } else {
+                r = mid - 1;
+            }
         }
-        return r;
+        return (int) ans;
     }
 }

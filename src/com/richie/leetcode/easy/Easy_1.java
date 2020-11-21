@@ -17,7 +17,7 @@ public class Easy_1 {
      *
      * <p>
      * 描述：
-     * 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。
+     * 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。
      * 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
      * </p>
      *
@@ -30,54 +30,34 @@ public class Easy_1 {
      *
      * <p>
      * 解答：
-     * - 暴力法，遍历每个元素，寻找和为目标元素的两元素
-     * - 哈希表法，空间换时间，value 记录下标，key 记录数值，遍历时比较
+     * 哈希映射，空间换时间。value 记录下标，key 记录数值，遍历时检查是否存在能够凑够目标值的数。
      * </p>
      *
      * <p>
-     * 暴力法：
-     * - 时间复杂度：O(N^2)
-     * - 空间复杂度：O(1)
-     * 哈希表法：
      * - 时间复杂度：O(N)
      * - 空间复杂度：O(N)
      * </p>
      */
 
     public static void main(String[] args) {
-        int[] nums = {2, 7, 5, 1};
-        int[] ret = twoSum2(nums, 7);
-        System.out.println(Arrays.toString(ret)); // [0， 2]
+        int[] nums = {2, 7, 11, 5};
+        int[] ret = new Easy_1().twoSum(nums, 9);
+        System.out.println(Arrays.toString(ret)); // [0， 1]
     }
 
-    private static int[] twoSum(int[] nums, int target) {
-        if (nums == null || nums.length == 0) {
-            return null;
-        }
-
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                if (nums[i] + nums[j] == target) {
-                    return new int[]{i, j};
-                }
-            }
-        }
-        return null;
-    }
-
-    private static int[] twoSum2(int[] nums, int target) {
-        if (nums == null || nums.length == 0) {
+    public int[] twoSum(int[] nums, int target) {
+        if (nums == null) {
             return null;
         }
         Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0, len = nums.length; i < len; i++) {
             int key = target - nums[i];
-            if (map.containsKey(key)) {
-                return new int[]{map.get(key), i};
+            Integer value = map.get(key);
+            if (value != null) {
+                return new int[]{value, i};
             }
             map.put(nums[i], i);
         }
         return null;
     }
-
 }

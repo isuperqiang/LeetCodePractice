@@ -107,16 +107,313 @@ public class TestCase {
         //        System.out.println(subsets);
 
 
-        TreeNode root = new TreeNode(3);
-        root.left = new TreeNode(9);
-        root.right = new TreeNode(20);
-        root.right.left = new TreeNode(15);
-        root.right.right = new TreeNode(7);
-        List<Integer> result = new ArrayList<>();
-        new TestCase().preorderTraversal2(root, result);
-        System.out.println(result);
+        //        TreeNode root = new TreeNode(3);
+        //        root.left = new TreeNode(9);
+        //        root.right = new TreeNode(20);
+        //        root.right.left = new TreeNode(15);
+        //        root.right.right = new TreeNode(7);
+        //        List<Integer> result = new ArrayList<>();
+        //        new TestCase().preorderTraversal2(root, result);
+        //        System.out.println(result);
+
+        //        ListNode head = new ListNode(1);
+        //        head.next = new ListNode(2);
+        //        head.next.next = new ListNode(3);
+        //        head.next.next.next = new ListNode(4);
+        //        ListNode reversed = new TestCase().reverseList(head);
+        //        ListNode.printList(reversed);
+        //        3
+        //                / \
+        //        9  20
+        //                /  \
+        //        15   7
+
+        //                TreeNode root = new TreeNode(3);
+        //                root.left = new TreeNode(9);
+        //                root.right = new TreeNode(20);
+        //                root.right.left = new TreeNode(15);
+        //                root.right.right = new TreeNode(7);
+        //        List<List<Integer>> lists = new TestCase().levelOrder(root);
+        //        System.out.println(lists);
+        //        new TestCase().printTreeNodeKthLevel(root, 2);
+
+        //        ListNode l1 = new ListNode(1);
+        //        l1.next = new ListNode(2);
+        //        l1.next.next = new ListNode(4);
+        //        ListNode l2 = new ListNode(1);
+        //        l2.next = new ListNode(3);
+        //        l2.next.next = new ListNode(4);
+        //        ListNode listNode = new TestCase().mergeTwoLists(l1, l2);
+        //        ListNode.printList(listNode);
+
+        //        int i = new TestCase().hammingWeight(0b00000000000000000000000010000000);
+        //        System.out.println(i);
+
+        //        ListNode head = new ListNode(4);
+        //        head.next = new ListNode(5);
+        //        head.next.next = new ListNode(1);
+        //        head.next.next.next = new ListNode(9);
+        //        ListNode listNode = new TestCase().deleteNode(head, 1);
+        //        ListNode.printList(listNode);
+
+        //        int[] ints = new TestCase().levelOrder2(root);
+        //        System.out.println(Arrays.toString(ints));
+
+        //        ProducerConsumer producerConsumer = new ProducerConsumer();
+        //        new Thread(new Runnable() {
+        //            @Override
+        //            public void run() {
+        //                String s = producerConsumer.get();
+        //                System.out.println("thread " + Thread.currentThread().getName() + " get " + s);
+        //            }
+        //        }).start();
+        //        try {
+        //            Thread.sleep(1000);
+        //        } catch (InterruptedException e) {
+        //            e.printStackTrace();
+        //        }
+        //        new Thread(new Runnable() {
+        //            @Override
+        //            public void run() {
+        //                producerConsumer.put("abc");
+        //                System.out.println("thread " + Thread.currentThread().getName() + " put");
+        //            }
+        //        }).start();
+
+        //        TreeNode root = new TreeNode(4);
+        //        TreeNode treeNode2 = new TreeNode(2);
+        //        root.left = treeNode2;
+        //        TreeNode treeNode7 = new TreeNode(7);
+        //        root.right = treeNode7;
+        //        treeNode2.left = new TreeNode(1);
+        //        treeNode2.right = new TreeNode(3);
+        //        treeNode7.left = new TreeNode(6);
+        //        treeNode7.right = new TreeNode(9);
+        //        new TestCase().invertTree(root);
+        //        System.out.println(root);
+
 
     }
+
+
+    public TreeNode invertTree(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        invertTreeI(root);
+        return root;
+    }
+
+    private void invertTreeI(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        invertTreeI(root.left);
+        invertTreeI(root.right);
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+    }
+
+    private static class Singleton {
+        private static volatile Singleton sInstance;
+
+        private Singleton() {
+        }
+
+        public static Singleton getInstance() {
+            if (sInstance == null) {
+                synchronized (Singleton.class) {
+                    if (sInstance == null) {
+                        sInstance = new Singleton();
+                    }
+                }
+            }
+            return sInstance;
+        }
+    }
+
+    // 生产者消费者
+    private static class ProducerConsumer {
+        private static final int LENGTH = 10;
+        private final Queue<String> queue = new ArrayDeque<>(LENGTH);
+        private final Object lock = new Object();
+
+        public void put(String s) {
+            System.out.println("put before sync");
+            synchronized (lock) {
+                while (queue.size() > LENGTH) {
+                    try {
+                        System.out.println("put to queue full, wait");
+                        lock.wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                System.out.println("put to queue " + s);
+                queue.offer(s);
+                lock.notifyAll();
+            }
+        }
+
+        public String get() {
+            System.out.println("get before sync");
+            synchronized (lock) {
+                while (queue.isEmpty()) {
+                    try {
+                        System.out.println("get from queue empty, wait");
+                        lock.wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                String s = queue.poll();
+                System.out.println("get from queue " + s);
+                lock.notifyAll();
+                return s;
+            }
+        }
+
+    }
+
+
+    // 从上到下打印二叉树
+    public int[] levelOrder2(TreeNode root) {
+        if (root == null) {
+            return new int[0];
+        }
+        List<Integer> result = new ArrayList<>();
+        Queue<TreeNode> queue = new ArrayDeque<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            TreeNode head = queue.poll();
+            result.add(head.val);
+            if (head.left != null) {
+                queue.offer(head.left);
+            }
+            if (head.right != null) {
+                queue.offer(head.right);
+            }
+        }
+        int[] ret = new int[result.size()];
+        for (int i = 0; i < result.size(); i++) {
+            ret[i] = result.get(i);
+        }
+        return ret;
+    }
+
+
+    // 删除链表的节点
+    // 输入: head = [4,5,1,9], val = 5
+    // 输出: [4,1,9]
+    public ListNode deleteNode(ListNode head, int val) {
+        if (head == null) {
+            return null;
+        }
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode prev = dummy;
+        while (head != null) {
+            if (head.val == val) {
+                ListNode next = head.next;
+                prev.next = next;
+                head.next = null;
+                break;
+            }
+            prev = head;
+            head = head.next;
+        }
+        return dummy.next;
+    }
+
+    // 二进制中 1 的个数
+    public int hammingWeight(int n) {
+        int sum = 0;
+        while (n != 0) {
+            sum += (n & 1);
+            n = n >>> 1;//无符号右移
+        }
+        return sum;
+    }
+
+    // 合并两个有序的链表
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode(0);
+        ListNode curr = dummy;
+        while (l1 != null && l2 != null) {
+            if (l1.val < l2.val) {
+                curr.next = l1;
+                l1 = l1.next;
+            } else {
+                curr.next = l2;
+                l2 = l2.next;
+            }
+            curr = curr.next;
+        }
+        curr.next = l1 == null ? l2 : l1;
+        return dummy.next;
+    }
+
+    // 打印二叉树第K层的所有结点
+    public void printTreeNodeKthLevel(TreeNode root, int level) {
+        if (root == null || level < 0) {
+            return;
+        }
+        if (level == 1) {
+            System.out.println("this is " + root.val);
+        }
+        printTreeNodeKthLevel(root.left, level - 1);
+        printTreeNodeKthLevel(root.right, level - 1);
+    }
+
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        if (root == null) {
+            return Collections.emptyList();
+        }
+        List<List<Integer>> result = new ArrayList<>();
+        LinkedList<Integer> level;
+        Queue<TreeNode> queue = new ArrayDeque<>();
+        queue.offer(root);
+        boolean even = false;
+        while (!queue.isEmpty()) {
+            level = new LinkedList<>();
+            for (int i = 0, s = queue.size(); i < s; i++) {
+                TreeNode head = queue.poll();
+                if (even) {
+                    level.addFirst(head.val);
+                } else {
+                    level.addLast(head.val);
+                }
+                if (head.left != null) {
+                    queue.offer(head.left);
+                }
+                if (head.right != null) {
+                    queue.offer(head.right);
+                }
+            }
+            even = !even;
+            result.add(level);
+        }
+        return result;
+    }
+
+    public ListNode reverseList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        // 1->2->3
+        // 3->2->1
+        ListNode curr = head;
+        ListNode prev = null;
+        while (curr != null) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
+
 
     //                 3
     //                / \
