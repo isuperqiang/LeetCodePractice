@@ -48,11 +48,11 @@ public class Easy_53 {
 
     public static void main(String[] args) {
         int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-        int max = maxSubArray(nums);
+        int max = new Easy_53().maxSubArray(nums);
         System.out.println(max); // 6
     }
 
-    private static int maxSubArray(int[] nums) {
+    public int maxSubArray(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
@@ -68,7 +68,7 @@ public class Easy_53 {
         return max;
     }
 
-    private static int maxSubArray2(int[] nums) {
+    public int maxSubArray2(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }

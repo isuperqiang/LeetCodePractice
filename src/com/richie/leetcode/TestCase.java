@@ -403,8 +403,7 @@ public class TestCase {
         }
         // 1->2->3
         // 3->2->1
-        ListNode curr = head;
-        ListNode prev = null;
+        ListNode curr = head, prev = null;
         while (curr != null) {
             ListNode next = curr.next;
             curr.next = prev;
@@ -412,6 +411,18 @@ public class TestCase {
             curr = next;
         }
         return prev;
+    }
+
+    public ListNode reverseList2(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        // 1->2->3
+        // 3->2->1
+        ListNode last = reverseList2(head.next);
+        head.next.next = last;
+        head.next = null;
+        return last;
     }
 
 
