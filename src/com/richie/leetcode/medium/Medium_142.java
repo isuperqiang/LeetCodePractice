@@ -22,18 +22,18 @@ public class Medium_142 {
      *
      * <p>
      * 示例：
-     * 输入：head = [3,2,0,-4,2], pos = 1
-     * 输出：tail connects to node index 1
+     * 输入：head = [3,2,0,-4], pos = 1
+     * 输出：返回索引为 1 的链表节点
      * 解释：链表中有一个环，其尾部连接到第二个节点。
      * </p>
      *
      * <p>
      * 解答：快慢指针
-     * 使用快慢指针从头遍历链表，如果两个指针相遇则表示链表有环。然后让慢指针从头开始，快指针继续向前，两者再次相遇点就是环的入口。
+     * 使用快慢指针从头遍历链表，如果两个指针相遇则表示链表有环。然后让快指针从头开始，慢指针继续向前，两个指针再次相遇点就是环的入口。
      * </p>
      *
      * <p>
-     * 时间复杂度：O(N)
+     * 时间复杂度：O(n)
      * 空间复杂度：O(1)
      * </p>
      */
@@ -47,7 +47,6 @@ public class Medium_142 {
         head.next.next.next.next = ln2;
         ListNode listNode = new Medium_142().detectCycle(head);
         System.out.println(listNode);
-        // 3->2->0->4->2, 1
     }
 
     public ListNode detectCycle(ListNode head) {
@@ -56,23 +55,18 @@ public class Medium_142 {
         }
         ListNode fast = head;
         ListNode slow = head;
-        boolean hasCycle = false;
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
             if (fast == slow) {
-                hasCycle = true;
-                break;
+                fast = head;
+                while (fast != slow) {
+                    fast = fast.next;
+                    slow = slow.next;
+                }
+                return fast;
             }
         }
-        if (!hasCycle) {
-            return null;
-        }
-        slow = head;
-        while (fast != slow) {
-            fast = fast.next;
-            slow = slow.next;
-        }
-        return slow;
+        return null;
     }
 }

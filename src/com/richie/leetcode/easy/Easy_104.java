@@ -23,11 +23,11 @@ public class Easy_104 {
      * <p>
      * 示例：
      * 给定二叉树 [3,9,20,null,null,15,7]，
-     * 3
-     * / \
-     * 9  20
-     * /  \
-     * 15   7
+     * //      3
+     * //     / \
+     * //    9  20
+     * //   /    \
+     * //  15    7
      * 返回它的最大深度 3 。
      * </p>
      *
@@ -50,7 +50,7 @@ public class Easy_104 {
         root.right.left = new TreeNode(15);
         root.right.right = new TreeNode(7);
         int depth = new Easy_104().maxDepth(root);
-        System.out.println(depth); // 3
+        System.out.println(depth);
     }
 
     public int maxDepth(TreeNode root) {

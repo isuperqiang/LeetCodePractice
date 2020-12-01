@@ -27,8 +27,8 @@ public class Medium_3 {
      * </p>
      *
      * <p>
-     * 解答：
-     * 滑动窗口。使用哈希表记录字符的位置，left 表示子串的起始位置，right 表示子串的结束位置。当子串包含重复元素时，起始位置向后移动一位，
+     * 解答：滑动窗口
+     * 使用哈希表记录字符的位置，left 表示子串的起始位置，right 表示子串的结束位置。当子串包含重复元素时，起始位置向后移动一位，
      * 每次遍历都要更新子串最大长度。
      * </p>
      *
@@ -41,7 +41,7 @@ public class Medium_3 {
     public static void main(String[] args) {
         String s = "abcabca";
         int length = new Medium_3().lengthOfLongestSubstring(s);
-        System.out.println(length); // 3
+        System.out.println(length);
     }
 
     public int lengthOfLongestSubstring(String s) {
@@ -50,7 +50,7 @@ public class Medium_3 {
         }
         int maxLen = 0;
         Map<Character, Integer> map = new HashMap<>();
-        for (int right = 0, left = 0, length = s.length(); right < length; right++) {
+        for (int left = 0, right = 0, length = s.length(); right < length; right++) {
             char ch = s.charAt(right);
             Integer value = map.get(ch);
             if (value != null) {

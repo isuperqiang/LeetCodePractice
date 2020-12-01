@@ -63,7 +63,7 @@ public class Medium_102 {
             return Collections.emptyList();
         }
         List<List<Integer>> result = new ArrayList<>();
-        Queue<TreeNode> queue = new ArrayDeque<>();
+        Deque<TreeNode> queue = new ArrayDeque<>();
         List<Integer> level;
         queue.offer(root);
         while (!queue.isEmpty()) {

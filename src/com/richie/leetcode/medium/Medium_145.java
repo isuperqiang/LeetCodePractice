@@ -34,7 +34,7 @@ public class Medium_145 {
      * <p>
      * 解答：
      * - 递归：递归终止条件 root 为空，递归左子树，递归右子树，打印当前节点。
-     * - 迭代：和前序类似，前序中左右，后续左右中，在前序遍历的基础上修改就可以了。
+     * - 迭代：和前序类似，前序中左右，后序左右中，在前序遍历的基础上修改即可。
      * </p>
      *
      * <p>
@@ -51,11 +51,11 @@ public class Medium_145 {
         TreeNode root = new TreeNode(1);
         root.right = new TreeNode(2);
         root.right.left = new TreeNode(3);
-        List<Integer> result = new Medium_145().postorderTraversal2(root);
-        System.out.println(result); // [3, 2, 1]
+        List<Integer> result = new Medium_145().postorderTraversal(root);
+        System.out.println(result);
     }
 
-    public List<Integer> postorderTraversal2(TreeNode root) {
+    public List<Integer> postorderTraversal(TreeNode root) {
         if (root == null) {
             return Collections.emptyList();
         }
@@ -75,7 +75,7 @@ public class Medium_145 {
         return result;
     }
 
-    public List<Integer> postorderTraversal(TreeNode root) {
+    public List<Integer> postorderTraversal2(TreeNode root) {
         if (root == null) {
             return Collections.emptyList();
         }
