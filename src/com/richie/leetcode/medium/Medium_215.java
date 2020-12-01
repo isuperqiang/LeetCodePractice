@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
  */
 public class Medium_215 {
     /**
-     * 数组中的第K个最大元素
+     * 数组中的第 K 个最大元素
      *
      * <p>
      * 地址：https://leetcode-cn.com/problems/kth-largest-element-in-an-array/
@@ -26,7 +26,7 @@ public class Medium_215 {
      *
      * <p>
      * 解答：
-     * - 小顶堆：创建一个小顶堆，将所有数组中的元素加入堆中，并保持堆的大小小于等于 k。这样，堆中就保留了前 k 个最大的元素，堆顶的元素就是正确答案。
+     * - 小顶堆：创建一个小顶堆，将所有数组中的元素加入堆中，并保持堆的大小 <= k。这样，堆中就保留了前 k 个最大的元素，堆顶的元素就是正确答案。
      * - 快速选择：todo
      * </p>
      *
@@ -38,12 +38,12 @@ public class Medium_215 {
 
     public static void main(String[] args) {
         int[] nums = {3, 2, 1, 5, 6, 4};
-        int kthLargest = findKthLargest(nums, 2);
-        System.out.println(kthLargest);
+        int kthLargest = new Medium_215().findKthLargest(nums, 2);
+        System.out.println(kthLargest); // 5
     }
 
-    private static int findKthLargest(int[] nums, int k) {
-        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+    public int findKthLargest(int[] nums, int k) {
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>(k);
         for (int num : nums) {
             minHeap.offer(num);
             if (minHeap.size() > k) {
