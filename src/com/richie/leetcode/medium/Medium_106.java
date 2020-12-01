@@ -13,7 +13,7 @@ public class Medium_106 {
      * 从中序与后序遍历序列构造二叉树
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
+     * 链接：https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
      * </p>
      *
      * <p>

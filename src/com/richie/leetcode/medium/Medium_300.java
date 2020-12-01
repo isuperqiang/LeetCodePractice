@@ -10,7 +10,7 @@ public class Medium_300 {
      * 最长上升子序列
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/longest-increasing-subsequence/
+     * 链接：https://leetcode-cn.com/problems/longest-increasing-subsequence/
      * </p>
      *
      * <p>

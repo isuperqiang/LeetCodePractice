@@ -10,7 +10,7 @@ public class Medium_31 {
      * 下一个排列
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/next-permutation/
+     * 链接：https://leetcode-cn.com/problems/next-permutation/
      * </p>
      *
      * <p>

@@ -11,7 +11,7 @@ public class Easy_118 {
      * 杨辉三角
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/pascals-triangle/
+     * 链接：https://leetcode-cn.com/problems/pascals-triangle/
      * </p>
      *
      * <p>

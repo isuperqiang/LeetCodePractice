@@ -10,7 +10,7 @@ public class Medium_2 {
      * 两数相加
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/add-two-numbers/
+     * 链接：https://leetcode-cn.com/problems/add-two-numbers/
      * </p>
      *
      * <p>

@@ -8,7 +8,7 @@ public class Easy_14 {
      * 最长公共前缀
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/longest-common-prefix/
+     * 链接：https://leetcode-cn.com/problems/longest-common-prefix/
      * </p>
      *
      * <p>

@@ -8,7 +8,7 @@ public class Easy_172 {
      * 阶乘后的零
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/factorial-trailing-zeroes/
+     * 链接：https://leetcode-cn.com/problems/factorial-trailing-zeroes/
      * </p>
      *
      * <p>

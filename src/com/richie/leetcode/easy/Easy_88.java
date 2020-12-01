@@ -10,7 +10,7 @@ public class Easy_88 {
      * 合并两个有序数组
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/merge-sorted-array/
+     * 链接：https://leetcode-cn.com/problems/merge-sorted-array/
      * </p>
      *
      * <p>

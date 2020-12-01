@@ -13,7 +13,7 @@ public class Medium_56 {
      * 合并区间
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/merge-intervals/
+     * 链接：https://leetcode-cn.com/problems/merge-intervals/
      * </p>
      *
      * <p>

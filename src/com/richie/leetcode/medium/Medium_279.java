@@ -10,7 +10,7 @@ public class Medium_279 {
      * 完全平方数
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/perfect-squares/
+     * 链接：https://leetcode-cn.com/problems/perfect-squares/
      * </p>
      *
      * <p>

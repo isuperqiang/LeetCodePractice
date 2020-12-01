@@ -10,7 +10,7 @@ public class Easy_876 {
      * 链表的中间结点
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/middle-of-the-linked-list/
+     * 链接：https://leetcode-cn.com/problems/middle-of-the-linked-list/
      * </p>
      *
      * <p>

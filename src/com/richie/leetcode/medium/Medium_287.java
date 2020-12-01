@@ -8,7 +8,7 @@ public class Medium_287 {
      * 寻找重复数
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/find-the-duplicate-number/
+     * 链接：https://leetcode-cn.com/problems/find-the-duplicate-number/
      * </p>
      *
      * <p>

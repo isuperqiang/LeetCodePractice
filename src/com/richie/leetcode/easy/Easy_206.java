@@ -10,7 +10,7 @@ public class Easy_206 {
      * 反转链表
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/reverse-linked-list/
+     * 链接：https://leetcode-cn.com/problems/reverse-linked-list/
      * </p>
      *
      * <p>

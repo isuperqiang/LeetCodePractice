@@ -8,7 +8,7 @@ public class Easy_58 {
      * 最后一个单词的长度
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/length-of-last-word/
+     * 链接：https://leetcode-cn.com/problems/length-of-last-word/
      * </p>
      *
      * <p>

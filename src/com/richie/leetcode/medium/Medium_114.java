@@ -10,7 +10,7 @@ public class Medium_114 {
      * 二叉树展开为链表
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/
+     * 链接：https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/
      * </p>
      *
      * <p>

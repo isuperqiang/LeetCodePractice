@@ -10,7 +10,7 @@ public class Easy_100 {
      * 相同的树
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/same-tree/
+     * 链接：https://leetcode-cn.com/problems/same-tree/
      * </p>
      *
      * <p>

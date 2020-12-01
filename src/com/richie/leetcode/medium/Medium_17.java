@@ -10,7 +10,7 @@ public class Medium_17 {
      * 电话号码的字母组合
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/
+     * 链接：https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/
      * </p>
      *
      * <p>

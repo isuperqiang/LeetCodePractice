@@ -10,7 +10,7 @@ public class Medium_34 {
      * 在排序数组中查找元素的第一个和最后一个位置
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+     * 链接：https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/
      * </p>
      *
      * <p>

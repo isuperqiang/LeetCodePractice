@@ -10,7 +10,7 @@ public class Easy_235 {
      * 二叉搜索树的最近公共祖先
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+     * 链接：https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
      * </p>
      *
      * <p>

@@ -10,7 +10,7 @@ public class Easy_437 {
      * 路径总和 III
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/path-sum-iii/
+     * 链接：https://leetcode-cn.com/problems/path-sum-iii/
      * </p>
      *
      * <p>

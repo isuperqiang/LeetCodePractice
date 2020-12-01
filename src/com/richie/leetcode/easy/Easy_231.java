@@ -8,7 +8,7 @@ public class Easy_231 {
      * 2 的幂
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/power-of-two/
+     * 链接：https://leetcode-cn.com/problems/power-of-two/
      * </p>
      *
      * <p>

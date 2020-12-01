@@ -10,7 +10,7 @@ public class Medium_49 {
      * 字母异位词分组
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/group-anagrams/
+     * 链接：https://leetcode-cn.com/problems/group-anagrams/
      * </p>
      *
      * <p>

@@ -9,7 +9,7 @@ public class Easy_112 {
     /**
      * 路径总和
      * <p>
-     * 地址：https://leetcode-cn.com/problems/path-sum/
+     * 链接：https://leetcode-cn.com/problems/path-sum/
      * </p>
      *
      * <p>

@@ -10,7 +10,7 @@ public class Hard_124 {
      * 二叉树中的最大路径和
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/
+     * 链接：https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/
      * </p>
      *
      * <p>

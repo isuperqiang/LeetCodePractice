@@ -10,7 +10,7 @@ public class Offer_22 {
      * 链表中倒数第 k 个节点
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/
+     * 链接：https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/
      * </p>
      *
      * <p>

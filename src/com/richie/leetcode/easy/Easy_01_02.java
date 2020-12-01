@@ -7,7 +7,7 @@ public class Easy_01_02 {
     /**
      * 判定是否互为字符重排
      * <p>
-     * 地址：https://leetcode-cn.com/problems/check-permutation-lcci/
+     * 链接：https://leetcode-cn.com/problems/check-permutation-lcci/
      * </p>
      *
      * <p>

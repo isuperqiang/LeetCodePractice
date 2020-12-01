@@ -10,7 +10,7 @@ public class Easy_189 {
      * 旋转数组
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/rotate-array/
+     * 链接：https://leetcode-cn.com/problems/rotate-array/
      * </p>
      *
      * <p>

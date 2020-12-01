@@ -11,7 +11,7 @@ public class Offer_09 {
      * 用两个栈实现队列
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/
+     * 链接：https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/
      * </p>
      *
      * <p>

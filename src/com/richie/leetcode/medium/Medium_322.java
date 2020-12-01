@@ -10,7 +10,7 @@ public class Medium_322 {
      * 零钱兑换
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/coin-change/
+     * 链接：https://leetcode-cn.com/problems/coin-change/
      * </p>
      *
      * <p>

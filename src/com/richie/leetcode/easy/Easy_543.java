@@ -10,7 +10,7 @@ public class Easy_543 {
      * 二叉树的直径
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/diameter-of-binary-tree/
+     * 链接：https://leetcode-cn.com/problems/diameter-of-binary-tree/
      * </p>
      *
      * <p>

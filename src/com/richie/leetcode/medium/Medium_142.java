@@ -10,7 +10,7 @@ public class Medium_142 {
      * 环形链表 II
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/linked-list-cycle-ii/
+     * 链接：https://leetcode-cn.com/problems/linked-list-cycle-ii/
      * </p>
      *
      * <p>

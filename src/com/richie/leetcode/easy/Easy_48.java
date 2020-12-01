@@ -11,7 +11,7 @@ public class Easy_48 {
      * 旋转图像
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/rotate-image/description/
+     * 链接：https://leetcode-cn.com/problems/rotate-image/description/
      * </p>
      *
      * <p>

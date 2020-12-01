@@ -10,7 +10,7 @@ public class Easy_867 {
      * 转置矩阵
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/transpose-matrix/
+     * 链接：https://leetcode-cn.com/problems/transpose-matrix/
      * </p>
      *
      * <p>

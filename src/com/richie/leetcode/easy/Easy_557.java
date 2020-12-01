@@ -8,7 +8,7 @@ public class Easy_557 {
      * 反转字符串中的单词 III
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/reverse-words-in-a-string-iii/
+     * 链接：https://leetcode-cn.com/problems/reverse-words-in-a-string-iii/
      * </p>
      *
      * <p>

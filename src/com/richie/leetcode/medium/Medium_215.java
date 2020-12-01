@@ -10,7 +10,7 @@ public class Medium_215 {
      * 数组中的第 K 个最大元素
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/kth-largest-element-in-an-array/
+     * 链接：https://leetcode-cn.com/problems/kth-largest-element-in-an-array/
      * </p>
      *
      * <p>

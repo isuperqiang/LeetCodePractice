@@ -7,7 +7,7 @@ public class easy_1160 {
     /**
      * 拼写单词
      * <p>
-     * 地址：https://leetcode-cn.com/problems/find-words-that-can-be-formed-by-characters/
+     * 链接：https://leetcode-cn.com/problems/find-words-that-can-be-formed-by-characters/
      * </p>
      *
      * <p>

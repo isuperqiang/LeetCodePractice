@@ -10,7 +10,7 @@ public class Medium_46 {
      * 全排列
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/permutations/
+     * 链接：https://leetcode-cn.com/problems/permutations/
      * </p>
      *
      * <p>

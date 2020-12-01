@@ -10,7 +10,7 @@ public class Medium_92 {
      * 反转链表 II
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/reverse-linked-list-ii/
+     * 链接：https://leetcode-cn.com/problems/reverse-linked-list-ii/
      * </p>
      *
      * <p>

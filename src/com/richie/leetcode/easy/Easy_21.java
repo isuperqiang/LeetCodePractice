@@ -10,7 +10,7 @@ public class Easy_21 {
      * 合并两个有序链表
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/merge-two-sorted-lists/
+     * 链接：https://leetcode-cn.com/problems/merge-two-sorted-lists/
      * </p>
      *
      * <p>

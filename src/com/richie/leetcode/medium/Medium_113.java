@@ -15,7 +15,7 @@ public class Medium_113 {
      * 路径总和 II
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/path-sum-ii/
+     * 链接：https://leetcode-cn.com/problems/path-sum-ii/
      * </p>
      *
      * <p>

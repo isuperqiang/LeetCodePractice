@@ -12,7 +12,7 @@ public class Medium_22 {
      * 括号生成
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/generate-parentheses/
+     * 链接：https://leetcode-cn.com/problems/generate-parentheses/
      * </p>
      *
      * <p>

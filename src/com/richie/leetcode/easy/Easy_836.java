@@ -8,7 +8,7 @@ public class Easy_836 {
      * 矩形重叠
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/rectangle-overlap/
+     * 链接：https://leetcode-cn.com/problems/rectangle-overlap/
      * </p>
      *
      * <p>

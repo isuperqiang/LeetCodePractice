@@ -8,7 +8,7 @@ public class Medium_152 {
      * 乘积最大子序列
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/maximum-product-subarray/
+     * 链接：https://leetcode-cn.com/problems/maximum-product-subarray/
      * </p>
      *
      * <p>

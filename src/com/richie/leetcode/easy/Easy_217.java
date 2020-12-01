@@ -10,7 +10,7 @@ public class Easy_217 {
      * 存在重复元素
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/contains-duplicate/description/
+     * 链接：https://leetcode-cn.com/problems/contains-duplicate/description/
      * </p>
      *
      * <p>

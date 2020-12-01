@@ -8,7 +8,7 @@ public class Easy_136 {
      * 只出现一次的数字
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/single-number/
+     * 链接：https://leetcode-cn.com/problems/single-number/
      * </p>
      *
      * <p>

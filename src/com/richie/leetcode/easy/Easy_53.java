@@ -8,7 +8,7 @@ public class Easy_53 {
      * 最大子序和
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/maximum-subarray/
+     * 链接：https://leetcode-cn.com/problems/maximum-subarray/
      * </p>
      *
      * <p>

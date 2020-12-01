@@ -11,7 +11,7 @@ public class Medium_3 {
      * 无重复字符的最长子串
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+     * 链接：https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
      * </p>
      *
      * <p>

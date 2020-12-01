@@ -8,7 +8,7 @@ public class Medium_96 {
      * 不同的二叉搜索树
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/unique-binary-search-trees/
+     * 链接：https://leetcode-cn.com/problems/unique-binary-search-trees/
      * </p>
      *
      * <p>

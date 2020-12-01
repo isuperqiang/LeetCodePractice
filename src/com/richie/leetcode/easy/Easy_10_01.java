@@ -10,7 +10,7 @@ public class Easy_10_01 {
      * 合并排序的数组
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/sorted-merge-lcci/
+     * 链接：https://leetcode-cn.com/problems/sorted-merge-lcci/
      * </p>
      *
      * <p>

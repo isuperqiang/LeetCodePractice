@@ -11,7 +11,7 @@ public class Easy_237 {
      * 删除链表的结点
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/delete-node-in-a-linked-list/description/
+     * 链接：https://leetcode-cn.com/problems/delete-node-in-a-linked-list/description/
      * </p>
      *
      * <p>

@@ -8,7 +8,7 @@ public class Easy_387 {
      * 字符串中的第一个唯一字符
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/first-unique-character-in-a-string/description/
+     * 链接：https://leetcode-cn.com/problems/first-unique-character-in-a-string/description/
      * </p>
      *
      * <p>

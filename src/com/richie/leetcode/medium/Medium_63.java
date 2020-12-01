@@ -8,7 +8,7 @@ public class Medium_63 {
      * 不同路径 II
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/unique-paths-ii/
+     * 链接：https://leetcode-cn.com/problems/unique-paths-ii/
      * </p>
      *
      * <p>

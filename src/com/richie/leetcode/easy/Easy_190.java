@@ -8,7 +8,7 @@ public class Easy_190 {
      * 颠倒二进制位
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/reverse-bits/
+     * 链接：https://leetcode-cn.com/problems/reverse-bits/
      * </p>
      *
      * <p>

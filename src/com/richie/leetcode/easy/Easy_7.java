@@ -8,7 +8,7 @@ public class Easy_7 {
      * 反转整数
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/reverse-integer/description/
+     * 链接：https://leetcode-cn.com/problems/reverse-integer/description/
      * </p>
      *
      * <p>

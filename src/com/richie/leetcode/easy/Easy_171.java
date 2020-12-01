@@ -8,7 +8,7 @@ public class Easy_171 {
      * Excel表列序号
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/excel-sheet-column-number/
+     * 链接：https://leetcode-cn.com/problems/excel-sheet-column-number/
      * </p>
      *
      * <p>

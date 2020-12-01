@@ -13,7 +13,7 @@ public class Easy_226 {
      * 翻转二叉树
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/invert-binary-tree/
+     * 链接：https://leetcode-cn.com/problems/invert-binary-tree/
      * </p>
      *
      * <p>

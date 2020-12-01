@@ -15,7 +15,7 @@ public class Easy_102 {
      * 二叉树的层次遍历
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/binary-tree-level-order-traversal/description/
+     * 链接：https://leetcode-cn.com/problems/binary-tree-level-order-traversal/description/
      * </p>
      *
      * <p>

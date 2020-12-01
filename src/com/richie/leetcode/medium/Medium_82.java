@@ -10,7 +10,7 @@ public class Medium_82 {
      * 删除排序链表中的重复元素 II
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/
+     * 链接：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/
      * </p>
      *
      * <p>

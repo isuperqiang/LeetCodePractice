@@ -8,7 +8,7 @@ public class Easy_8 {
      * 字符串转整数
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/string-to-integer-atoi/
+     * 链接：https://leetcode-cn.com/problems/string-to-integer-atoi/
      * </p>
      *
      * <p>

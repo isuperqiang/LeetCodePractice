@@ -8,7 +8,7 @@ public class Easy_191 {
      * 位 1 的个数
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/number-of-1-bits/
+     * 链接：https://leetcode-cn.com/problems/number-of-1-bits/
      * </p>
      *
      * <p>

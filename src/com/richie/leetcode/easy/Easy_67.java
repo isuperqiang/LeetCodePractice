@@ -8,7 +8,7 @@ public class Easy_67 {
      * 二进制求和
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/add-binary/
+     * 链接：https://leetcode-cn.com/problems/add-binary/
      * </p>
      *
      * <p>

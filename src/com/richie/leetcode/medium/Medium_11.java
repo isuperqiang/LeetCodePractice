@@ -8,7 +8,7 @@ public class Medium_11 {
      * 盛最多水的容器
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/container-with-most-water/
+     * 链接：https://leetcode-cn.com/problems/container-with-most-water/
      * </p>
      *
      * <p>

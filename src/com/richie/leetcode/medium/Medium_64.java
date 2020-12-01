@@ -8,7 +8,7 @@ public class Medium_64 {
      * 最小路径和
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/minimum-path-sum/
+     * 链接：https://leetcode-cn.com/problems/minimum-path-sum/
      * </p>
      *
      * <p>

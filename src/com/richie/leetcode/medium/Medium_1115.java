@@ -13,7 +13,7 @@ public class Medium_1115 {
      * 交替打印 FooBar
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/print-foobar-alternately/
+     * 链接：https://leetcode-cn.com/problems/print-foobar-alternately/
      * </p>
      *
      * <p>

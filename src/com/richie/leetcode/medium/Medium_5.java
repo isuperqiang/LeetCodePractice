@@ -8,7 +8,7 @@ public class Medium_5 {
      * 最长回文子串
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/longest-palindromic-substring/
+     * 链接：https://leetcode-cn.com/problems/longest-palindromic-substring/
      * </p>
      *
      * <p>

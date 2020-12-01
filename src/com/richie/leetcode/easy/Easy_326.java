@@ -8,7 +8,7 @@ public class Easy_326 {
      * 3 的幂
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/power-of-three/
+     * 链接：https://leetcode-cn.com/problems/power-of-three/
      * </p>
      *
      * <p>

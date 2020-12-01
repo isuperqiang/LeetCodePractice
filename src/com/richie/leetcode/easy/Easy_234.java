@@ -11,7 +11,7 @@ public class Easy_234 {
      * 回文链表
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/palindrome-linked-list/description/
+     * 链接：https://leetcode-cn.com/problems/palindrome-linked-list/description/
      * </p>
      *
      * <p>

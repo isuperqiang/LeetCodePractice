@@ -11,7 +11,7 @@ public class Medium_560 {
      * 和为 K 的子数组
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/subarray-sum-equals-k/
+     * 链接：https://leetcode-cn.com/problems/subarray-sum-equals-k/
      * </p>
      *
      * <p>

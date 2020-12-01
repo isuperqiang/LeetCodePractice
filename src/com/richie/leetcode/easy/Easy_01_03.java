@@ -8,7 +8,7 @@ public class Easy_01_03 {
      * URL 化
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/string-to-url-lcci/
+     * 链接：https://leetcode-cn.com/problems/string-to-url-lcci/
      * </p>
      *
      * <p>

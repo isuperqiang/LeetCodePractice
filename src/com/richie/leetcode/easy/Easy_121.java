@@ -8,7 +8,7 @@ public class Easy_121 {
      * 买卖股票的最佳时机
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/
+     * 链接：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/
      * </p>
      *
      * <p>

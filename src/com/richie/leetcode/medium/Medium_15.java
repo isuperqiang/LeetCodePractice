@@ -13,7 +13,7 @@ public class Medium_15 {
      * 三数之和
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/3sum/
+     * 链接：https://leetcode-cn.com/problems/3sum/
      * </p>
      *
      * <p>

@@ -10,7 +10,7 @@ public class Easy_20 {
      * 有效的括号
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/valid-parentheses/
+     * 链接：https://leetcode-cn.com/problems/valid-parentheses/
      * </p>
      *
      * <p>

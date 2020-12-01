@@ -8,7 +8,7 @@ public class Easy_258 {
      * 各位相加
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/add-digits/
+     * 链接：https://leetcode-cn.com/problems/add-digits/
      * </p>
      *
      * <p>

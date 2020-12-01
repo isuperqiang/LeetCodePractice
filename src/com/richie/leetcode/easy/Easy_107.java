@@ -12,7 +12,7 @@ public class Easy_107 {
      * 二叉树的层次遍历 II
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/
+     * 链接：https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/
      * </p>
      *
      * <p>

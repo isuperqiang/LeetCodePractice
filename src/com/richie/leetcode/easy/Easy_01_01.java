@@ -7,7 +7,7 @@ public class Easy_01_01 {
     /**
      * 判定字符是否唯一
      * <p>
-     * 地址：https://leetcode-cn.com/problems/is-unique-lcci/
+     * 链接：https://leetcode-cn.com/problems/is-unique-lcci/
      * </p>
      *
      * <p>

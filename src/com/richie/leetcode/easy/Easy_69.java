@@ -8,7 +8,7 @@ public class Easy_69 {
      * X 的平方根
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/sqrtx/
+     * 链接：https://leetcode-cn.com/problems/sqrtx/
      * </p>
      *
      * <p>

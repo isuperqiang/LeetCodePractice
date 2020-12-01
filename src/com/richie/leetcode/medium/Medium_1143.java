@@ -8,7 +8,7 @@ public class Medium_1143 {
      * 最长公共子序列
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/longest-common-subsequence/
+     * 链接：https://leetcode-cn.com/problems/longest-common-subsequence/
      * </p>
      *
      * <p>

@@ -10,7 +10,7 @@ public class Easy_27 {
      * 移除元素
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/remove-element/
+     * 链接：https://leetcode-cn.com/problems/remove-element/
      * </p>
      *
      * <p>

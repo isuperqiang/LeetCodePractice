@@ -13,7 +13,7 @@ public class Easy_349 {
      * 两个数组的交集
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/intersection-of-two-arrays/
+     * 链接：https://leetcode-cn.com/problems/intersection-of-two-arrays/
      * </p>
      *
      * <p>

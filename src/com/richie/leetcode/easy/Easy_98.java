@@ -10,7 +10,7 @@ public class Easy_98 {
      * 验证二叉搜索树
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/validate-binary-search-tree/description/
+     * 链接：https://leetcode-cn.com/problems/validate-binary-search-tree/description/
      * </p>
      *
      * <p>

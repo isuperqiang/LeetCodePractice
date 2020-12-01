@@ -11,7 +11,7 @@ public class Easy_283 {
      * 移动零
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/move-zeroes/description/
+     * 链接：https://leetcode-cn.com/problems/move-zeroes/description/
      * </p>
      *
      * <p>

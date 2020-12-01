@@ -10,7 +10,7 @@ public class Easy_40 {
      * 最小的k个数
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/
+     * 链接：https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/
      * </p>
      *
      * <p>

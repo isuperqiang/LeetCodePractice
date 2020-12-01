@@ -10,7 +10,7 @@ public class Medium_78 {
      * 子集
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/subsets/
+     * 链接：https://leetcode-cn.com/problems/subsets/
      * </p>
      *
      * <p>

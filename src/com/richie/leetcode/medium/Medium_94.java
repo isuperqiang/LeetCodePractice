@@ -12,7 +12,7 @@ public class Medium_94 {
      * 二叉树的中序遍历
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
+     * 链接：https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
      * </p>
      *
      * <p>

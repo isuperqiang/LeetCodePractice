@@ -10,7 +10,7 @@ public class Easy_104 {
      * 二叉树的最大深度
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
+     * 链接：https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
      * </p>
      *
      * <p>

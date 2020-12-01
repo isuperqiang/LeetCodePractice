@@ -10,7 +10,7 @@ public class Medium_701 {
      * 二叉搜索树中的插入操作
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/insert-into-a-binary-search-tree/
+     * 链接：https://leetcode-cn.com/problems/insert-into-a-binary-search-tree/
      * </p>
      *
      * <p>

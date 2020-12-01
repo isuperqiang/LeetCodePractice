@@ -12,7 +12,7 @@ public class Medium_145 {
      * 二叉树后序遍历
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/binary-tree-postorder-traversal/
+     * 链接：https://leetcode-cn.com/problems/binary-tree-postorder-traversal/
      * </p>
      *
      * <p>

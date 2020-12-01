@@ -8,7 +8,7 @@ public class Medium_518 {
      * 零钱兑换 II
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/coin-change-2/
+     * 链接：https://leetcode-cn.com/problems/coin-change-2/
      * </p>
      *
      * <p>

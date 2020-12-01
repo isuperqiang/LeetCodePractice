@@ -11,7 +11,7 @@ public class Easy_344 {
      * 反转字符串
      *
      * <P>
-     * 地址：https://leetcode-cn.com/problems/reverse-string/
+     * 链接：https://leetcode-cn.com/problems/reverse-string/
      * </P>
      *
      * <p>

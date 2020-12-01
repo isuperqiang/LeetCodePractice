@@ -8,7 +8,7 @@ public class Medium_240 {
      * 搜索二维矩阵 II
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/search-a-2d-matrix-ii/
+     * 链接：https://leetcode-cn.com/problems/search-a-2d-matrix-ii/
      * </p>
      *
      * <p>

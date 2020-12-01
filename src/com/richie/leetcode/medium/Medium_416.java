@@ -8,7 +8,7 @@ public class Medium_416 {
      * 分割等和子集
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/partition-equal-subset-sum/
+     * 链接：https://leetcode-cn.com/problems/partition-equal-subset-sum/
      * </p>
      *
      * <p>

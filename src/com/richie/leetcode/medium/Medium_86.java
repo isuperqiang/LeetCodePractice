@@ -10,7 +10,7 @@ public class Medium_86 {
      * 分隔链表
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/partition-list/
+     * 链接：https://leetcode-cn.com/problems/partition-list/
      * </p>
      *
      * <p>

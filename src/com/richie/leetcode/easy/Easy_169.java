@@ -8,7 +8,7 @@ public class Easy_169 {
      * 多数元素
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/majority-element/
+     * 链接：https://leetcode-cn.com/problems/majority-element/
      * </p>
      *
      * <p>

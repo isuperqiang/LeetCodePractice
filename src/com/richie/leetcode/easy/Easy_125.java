@@ -8,7 +8,7 @@ public class Easy_125 {
      * 验证回文串
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/valid-palindrome/
+     * 链接：https://leetcode-cn.com/problems/valid-palindrome/
      * </p>
      *
      * <p>

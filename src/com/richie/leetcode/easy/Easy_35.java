@@ -8,7 +8,7 @@ public class Easy_35 {
      * 搜索插入位置
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/search-insert-position/
+     * 链接：https://leetcode-cn.com/problems/search-insert-position/
      * </p>
      *
      * <p>

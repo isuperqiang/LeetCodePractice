@@ -8,7 +8,7 @@ public class Easy_409 {
      * 最长回文串
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/longest-palindrome/
+     * 链接：https://leetcode-cn.com/problems/longest-palindrome/
      * </p>
      *
      * <p>

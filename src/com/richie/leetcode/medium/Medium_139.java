@@ -13,7 +13,7 @@ public class Medium_139 {
      * 单词拆分
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/word-break/
+     * 链接：https://leetcode-cn.com/problems/word-break/
      * </p>
      *
      * <p>

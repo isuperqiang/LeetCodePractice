@@ -10,7 +10,7 @@ public class Medium_39 {
      * 组合总和
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/combination-sum/
+     * 链接：https://leetcode-cn.com/problems/combination-sum/
      * </p>
      *
      * <p>

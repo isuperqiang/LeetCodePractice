@@ -8,7 +8,7 @@ public class Easy_242 {
      * 有效的字母异位词
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/valid-anagram/
+     * 链接：https://leetcode-cn.com/problems/valid-anagram/
      * </p>
      *
      * <p>

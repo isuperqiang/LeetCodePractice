@@ -8,7 +8,7 @@ public class Easy_263 {
      * 丑数
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/ugly-number/
+     * 链接：https://leetcode-cn.com/problems/ugly-number/
      * </p>
      *
      * <p>

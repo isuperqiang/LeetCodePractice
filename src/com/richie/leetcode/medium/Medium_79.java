@@ -8,7 +8,7 @@ public class Medium_79 {
      * 单词搜索
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/word-search/
+     * 链接：https://leetcode-cn.com/problems/word-search/
      * </p>
      *
      * <p>

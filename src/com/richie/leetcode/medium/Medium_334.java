@@ -8,7 +8,7 @@ public class Medium_334 {
      * 递增的三元子序列
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/increasing-triplet-subsequence/
+     * 链接：https://leetcode-cn.com/problems/increasing-triplet-subsequence/
      * </p>
      *
      * <p>

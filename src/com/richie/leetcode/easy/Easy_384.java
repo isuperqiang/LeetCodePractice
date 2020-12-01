@@ -11,7 +11,7 @@ public class Easy_384 {
      * 打乱数组
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/shuffle-an-array/description/
+     * 链接：https://leetcode-cn.com/problems/shuffle-an-array/description/
      * </p>
      *
      * <p>

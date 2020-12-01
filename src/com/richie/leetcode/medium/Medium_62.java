@@ -10,7 +10,7 @@ public class Medium_62 {
      * 不同路径
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/unique-paths/
+     * 链接：https://leetcode-cn.com/problems/unique-paths/
      * </p>
      *
      * <p>

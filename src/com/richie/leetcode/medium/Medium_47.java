@@ -9,7 +9,7 @@ public class Medium_47 {
     /**
      * 全排列 II
      * <p>
-     * 地址：https://leetcode-cn.com/problems/permutations-ii/
+     * 链接：https://leetcode-cn.com/problems/permutations-ii/
      * </p>
      *
      * <p>

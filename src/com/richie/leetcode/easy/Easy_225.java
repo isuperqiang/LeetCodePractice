@@ -11,7 +11,7 @@ public class Easy_225 {
      * 用队列实现栈
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/implement-stack-using-queues/
+     * 链接：https://leetcode-cn.com/problems/implement-stack-using-queues/
      * </p>
      *
      * <p>

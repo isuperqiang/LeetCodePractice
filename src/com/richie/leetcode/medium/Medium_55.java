@@ -8,7 +8,7 @@ public class Medium_55 {
      * 跳跃游戏
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/jump-game/
+     * 链接：https://leetcode-cn.com/problems/jump-game/
      * </p>
      *
      * <p>

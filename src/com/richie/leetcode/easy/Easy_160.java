@@ -10,7 +10,7 @@ public class Easy_160 {
      * 相交链表
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/intersection-of-two-linked-lists/
+     * 链接：https://leetcode-cn.com/problems/intersection-of-two-linked-lists/
      * </p>
      *
      * <p>

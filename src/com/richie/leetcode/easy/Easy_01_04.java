@@ -8,7 +8,7 @@ public class Easy_01_04 {
      * 回文排列
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/palindrome-permutation-lcci/
+     * 链接：https://leetcode-cn.com/problems/palindrome-permutation-lcci/
      * </p>
      *
      * <p>

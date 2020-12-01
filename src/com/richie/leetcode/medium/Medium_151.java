@@ -8,7 +8,7 @@ public class Medium_151 {
      * 翻转字符串里的单词
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/reverse-words-in-a-string/
+     * 链接：https://leetcode-cn.com/problems/reverse-words-in-a-string/
      * </p>
      *
      * <p>

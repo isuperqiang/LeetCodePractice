@@ -12,7 +12,7 @@ public class Easy_1 {
      * 两数之和
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/two-sum/
+     * 链接：https://leetcode-cn.com/problems/two-sum/
      * </p>
      *
      * <p>

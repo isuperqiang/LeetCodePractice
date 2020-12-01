@@ -10,7 +10,7 @@ public class Easy_110 {
      * 平衡二叉树
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/balanced-binary-tree/
+     * 链接：https://leetcode-cn.com/problems/balanced-binary-tree/
      * </p>
      *
      * <p>

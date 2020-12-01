@@ -8,7 +8,7 @@ public class Easy_268 {
      * 缺失数字
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/missing-number/
+     * 链接：https://leetcode-cn.com/problems/missing-number/
      * </p>
      *
      * <p>

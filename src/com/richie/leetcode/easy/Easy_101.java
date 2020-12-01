@@ -13,7 +13,7 @@ public class Easy_101 {
      * 对称二叉树
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/symmetric-tree/
+     * 链接：https://leetcode-cn.com/problems/symmetric-tree/
      * </p>
      *
      * <p>

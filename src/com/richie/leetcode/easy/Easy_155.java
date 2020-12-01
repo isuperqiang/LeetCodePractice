@@ -17,7 +17,7 @@ public class Easy_155 {
      * 最小栈
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/min-stack/
+     * 链接：https://leetcode-cn.com/problems/min-stack/
      * </p>
      *
      * <p>

@@ -8,7 +8,7 @@ public class Medium_647 {
      * 回文子串
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/palindromic-substrings/
+     * 链接：https://leetcode-cn.com/problems/palindromic-substrings/
      * </p>
      *
      * <p>

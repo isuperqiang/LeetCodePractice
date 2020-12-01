@@ -10,7 +10,7 @@ public class Medium_236 {
      * 二叉树的最近公共祖先
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/
+     * 链接：https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/
      * </p>
      *
      * <p>

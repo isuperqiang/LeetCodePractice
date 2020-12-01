@@ -10,7 +10,7 @@ public class Easy_66 {
      * 加一
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/plus-one/description/
+     * 链接：https://leetcode-cn.com/problems/plus-one/description/
      * </p>
      *
      * <p>

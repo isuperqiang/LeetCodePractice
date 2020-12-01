@@ -10,7 +10,7 @@ public class Easy_203 {
      * 移除链表元素
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/remove-linked-list-elements/
+     * 链接：https://leetcode-cn.com/problems/remove-linked-list-elements/
      * </p>
      *
      * <p>

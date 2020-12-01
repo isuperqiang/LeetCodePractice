@@ -10,7 +10,7 @@ public class Medium_19 {
      * 删除链表的倒数第N个节点
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
+     * 链接：https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
      * </p>
      *
      * <p>

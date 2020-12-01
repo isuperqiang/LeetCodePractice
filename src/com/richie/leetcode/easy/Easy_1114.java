@@ -14,7 +14,7 @@ public class Easy_1114 {
      * 按序打印
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/print-in-order/
+     * 链接：https://leetcode-cn.com/problems/print-in-order/
      * </p>
      *
      * <p>

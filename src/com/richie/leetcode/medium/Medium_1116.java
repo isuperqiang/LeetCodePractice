@@ -14,7 +14,7 @@ public class Medium_1116 {
      * 打印零与奇偶数
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/print-zero-even-odd/
+     * 链接：https://leetcode-cn.com/problems/print-zero-even-odd/
      * </p>
      *
      * <p>

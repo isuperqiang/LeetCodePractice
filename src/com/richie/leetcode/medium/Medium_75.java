@@ -10,7 +10,7 @@ public class Medium_75 {
      * 颜色分类
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/sort-colors/
+     * 链接：https://leetcode-cn.com/problems/sort-colors/
      * </p>
      *
      * <p>

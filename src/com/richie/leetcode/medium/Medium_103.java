@@ -12,7 +12,7 @@ public class Medium_103 {
      * 二叉树的锯齿形层次遍历
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/
+     * 链接：https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/
      * </p>
      *
      * <p>

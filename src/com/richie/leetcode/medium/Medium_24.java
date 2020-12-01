@@ -10,7 +10,7 @@ public class Medium_24 {
      * 两两交换链表中的节点
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/swap-nodes-in-pairs/
+     * 链接：https://leetcode-cn.com/problems/swap-nodes-in-pairs/
      * </p>
      *
      * <p>

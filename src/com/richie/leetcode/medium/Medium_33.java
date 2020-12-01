@@ -8,7 +8,7 @@ public class Medium_33 {
      * 搜索旋转排序数组
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/search-in-rotated-sorted-array/
+     * 链接：https://leetcode-cn.com/problems/search-in-rotated-sorted-array/
      * </p>
      *
      * <p>

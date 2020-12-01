@@ -10,7 +10,7 @@ public class Easy_108 {
      * 将有序数组转换为二叉搜索树
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/
+     * 链接：https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/
      * </p>
      *
      * <p>

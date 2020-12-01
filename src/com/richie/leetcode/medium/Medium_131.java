@@ -10,7 +10,7 @@ public class Medium_131 {
      * 分割回文串
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/palindrome-partitioning/
+     * 链接：https://leetcode-cn.com/problems/palindrome-partitioning/
      * </p>
      *
      * <p>

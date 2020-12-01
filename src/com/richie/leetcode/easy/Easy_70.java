@@ -8,7 +8,7 @@ public class Easy_70 {
      * 爬楼梯
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/climbing-stairs/
+     * 链接：https://leetcode-cn.com/problems/climbing-stairs/
      * </p>
      *
      * <p>

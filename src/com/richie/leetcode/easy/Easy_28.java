@@ -8,7 +8,7 @@ public class Easy_28 {
      * 实现strStr()
      *
      * <p>
-     * 地址：https://leetcode-cn.com/problems/implement-strstr/description/
+     * 链接：https://leetcode-cn.com/problems/implement-strstr/description/
      * </p>
      *
      * <p>
