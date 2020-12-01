@@ -52,7 +52,7 @@ public class Easy_235 {
         root.right.left = new TreeNode(7);
         root.right.right = new TreeNode(9);
         TreeNode treeNode = new Easy_235().lowestCommonAncestor(root, root.left, root.right);
-        System.out.println(treeNode); // 6
+        System.out.println(treeNode != null ? treeNode.val : "null"); // 6
     }
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {

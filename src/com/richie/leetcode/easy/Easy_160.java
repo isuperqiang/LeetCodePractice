@@ -24,8 +24,13 @@ public class Easy_160 {
      * </p>
      *
      * <p>
-     * 解答：定义两个指针, 第一轮让到达末尾的节点指向另一个链表的头部, 最后如果两个指针相遇则为交点。
+     * 解答：定义两个指针, 第一轮让到达末尾的节点指向另一个链表的头部, 最后两个指针相遇点即为起始交点。
      * 两个指针移动了相同的距离, 有交点就结束, 无交点就各走了两条指针的长度。
+     * </p>
+     *
+     * <p>
+     * 时间复杂度：O(m+n)
+     * 空间复杂度：O(1)
      * </p>
      */
 
@@ -37,25 +42,23 @@ public class Easy_160 {
         ListNode headB = new ListNode(3);
         headB.next = new ListNode(2);
         headB.next.next = new ListNode(4);
-        ListNode intersectionNode = getIntersectionNode(headA, headB);
+        ListNode intersectionNode = new Easy_160().getIntersectionNode(headA, headB);
         System.out.println(intersectionNode); // 1
     }
 
-    private static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if (headA == null || headB == null) {
             return null;
         }
-
-        ListNode pointA = headA;
-        ListNode pointB = headB;
-        while (pointA != pointB) {
-            pointA = pointA == null ? headB : pointA.next;
-            pointB = pointB == null ? headA : pointB.next;
-            if (pointA != null && pointB != null && pointA.val == pointB.val) {
+        ListNode ha = headA;
+        ListNode hb = headB;
+        while (ha != hb) {
+            ha = ha == null ? headB : ha.next;
+            hb = hb == null ? headA : hb.next;
+            if (ha != null && hb != null && ha.val == hb.val) {
                 break;
             }
         }
-        return pointA;
+        return ha;
     }
-
 }
