@@ -13,6 +13,13 @@ public class ListNode {
         val = x;
     }
 
+    @Override
+    public String toString() {
+        return "ListNode{" +
+                "val=" + val +
+                '}';
+    }
+
     public static void printList(ListNode head) {
         if (head == null) {
             System.out.println("Null");
@@ -27,12 +34,4 @@ public class ListNode {
         sb.delete(sb.length() - 4, sb.length());
         System.out.println(sb);
     }
-
-    @Override
-    public String toString() {
-        return "ListNode{" +
-                "val=" + val +
-                '}';
-    }
-
 }
