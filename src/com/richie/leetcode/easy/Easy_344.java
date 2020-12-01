@@ -31,27 +31,25 @@ public class Easy_344 {
      * </p>
      *
      * <p>
-     * 时间复杂度：O(N)
+     * 时间复杂度：O(n)
      * 空间复杂度：O(1)
      * </p>
      */
 
     public static void main(String[] args) {
-        char[] chars = new char[]{'h', 'e', 'l', 'l', 'o'};
-        reverseString(chars);
+        char[] chars = {'h', 'e', 'l', 'l', 'o'};
+        new Easy_344().reverseString(chars);
         System.out.println(Arrays.toString(chars));
     }
 
-    private static void reverseString(char[] chars) {
+    public void reverseString(char[] chars) {
         if (chars == null || chars.length == 0) {
             return;
         }
-        int length = chars.length;
-        for (int i = 0, half = length / 2; i < half; i++) {
+        for (int i = 0, len = chars.length, half = len / 2; i < half; i++) {
             char temp = chars[i];
-            chars[i] = chars[length - i - 1];
-            chars[length - i - 1] = temp;
+            chars[i] = chars[len - i - 1];
+            chars[len - i - 1] = temp;
         }
     }
-
 }

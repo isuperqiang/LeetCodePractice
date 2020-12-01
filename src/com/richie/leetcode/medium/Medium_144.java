@@ -33,8 +33,8 @@ public class Medium_144 {
      *
      * <p>
      * 解答：
-     * - 递归：递归终止条件 root 为空，打印当前节点，递归左子树，递归右子树。
      * - 迭代：借助栈的后进先出特性，从根节点开始，每次迭代弹出栈顶元素，并把子节点压栈，注意先压右子点再压左子节点。
+     * - 递归：递归终止条件 root 为空，打印当前节点，递归左子树，递归右子树。
      * </p>
      *
      * <p>
@@ -51,11 +51,11 @@ public class Medium_144 {
         TreeNode root = new TreeNode(1);
         root.right = new TreeNode(2);
         root.right.left = new TreeNode(3);
-        List<Integer> result = new Medium_144().preorderTraversal2(root);
+        List<Integer> result = new Medium_144().preorderTraversal(root);
         System.out.println(result); // [1, 2, 3]
     }
 
-    public List<Integer> preorderTraversal2(TreeNode root) {
+    public List<Integer> preorderTraversal(TreeNode root) {
         if (root == null) {
             return Collections.emptyList();
         }
@@ -75,7 +75,7 @@ public class Medium_144 {
         return result;
     }
 
-    public List<Integer> preorderTraversal(TreeNode root) {
+    public List<Integer> preorderTraversal2(TreeNode root) {
         if (root == null) {
             return Collections.emptyList();
         }

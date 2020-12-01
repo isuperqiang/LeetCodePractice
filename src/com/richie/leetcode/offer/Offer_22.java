@@ -1,13 +1,13 @@
-package com.richie.leetcode.interview;
+package com.richie.leetcode.offer;
 
 import com.richie.leetcode.ListNode;
 
 /**
- * @author Richie on 2020.05.20
+ * @author Richie on 2020.12.01
  */
-public class No_22 {
+public class Offer_22 {
     /**
-     * 链表中倒数第k个节点
+     * 链表中倒数第 k 个节点
      *
      * <p>
      * 地址：https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/
@@ -31,7 +31,7 @@ public class No_22 {
      * </p>
      *
      * <p>
-     * 时间复杂度：O(N)
+     * 时间复杂度：O(n)
      * 空间复杂度：O(1)
      * </p>
      */
@@ -42,11 +42,11 @@ public class No_22 {
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
-        ListNode kthFromEnd = getKthFromEnd(head, 2);
-        System.out.println(kthFromEnd);
+        ListNode kthFromEnd = new Offer_22().getKthFromEnd(head, 2);
+        ListNode.printList(kthFromEnd);
     }
 
-    private static ListNode getKthFromEnd(ListNode head, int k) {
+    public ListNode getKthFromEnd(ListNode head, int k) {
         if (head == null || k <= 0) {
             return null;
         }
