@@ -5,20 +5,44 @@ import com.richie.leetcode.TreeNode;
 import java.util.*;
 
 /**
- * https://leetcode-cn.com/problems/binary-tree-right-side-view/
- * 二叉树的右视图
- *
  * @author Richie on 2020.12.02
  */
 public class Medium_199 {
+    /**
+     * 二叉树的右视图
+     *
+     * <p>
+     * 链接：https://leetcode-cn.com/problems/binary-tree-right-side-view/
+     * </p>
+     *
+     * <p>
+     * 描述：
+     * 给定一棵二叉树，想象自己站在它的右侧，按照从顶部到底部的顺序，返回从右侧所能看到的节点值。
+     * </p>
+     *
+     * <p>
+     * 示例：
+     * 输入: [1,2,3,null,5,null,4]
+     * 输出: [1, 3, 4]
+     * //     1            <---
+     * //   /   \
+     * //  2     3         <---
+     * //   \     \
+     * //    5     4       <---
+     * </p>
+     *
+     * <p>
+     * 解答：
+     * - BFS：广度优先遍历，记录每层最后一个元素。
+     * - DFS：深底优先遍历，按照根右左的顺序，记录当前节点的深度。
+     * </p>
+     *
+     * <p>
+     * 时间复杂度：O(N)
+     * 空间复杂度：O(N)
+     * </p>
+     */
 
-    //    输入: [1,2,3,null,5,null,4]
-//    输出: [1, 3, 4]
-//              1            <---
-//            /   \
-//            2     3         <---
-//             \     \
-//              5     4       <---
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
@@ -69,7 +93,7 @@ public class Medium_199 {
         if (depth == result.size()) {
             result.add(root.val);
         }
-        ++depth;
+        depth++;
         dfs(root.right, result, depth);
         dfs(root.left, result, depth);
     }

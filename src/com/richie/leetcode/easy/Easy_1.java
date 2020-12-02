@@ -41,12 +41,12 @@ public class Easy_1 {
 
     public static void main(String[] args) {
         int[] nums = {2, 7, 11, 5};
-        int[] ret = new Easy_1().twoSum(nums, 9);
-        System.out.println(Arrays.toString(ret)); // [0， 1]
+        int[] result = new Easy_1().twoSum(nums, 9);
+        System.out.println(Arrays.toString(result));
     }
 
     public int[] twoSum(int[] nums, int target) {
-        if (nums == null) {
+        if (nums == null || nums.length == 0) {
             return null;
         }
         Map<Integer, Integer> map = new HashMap<>();

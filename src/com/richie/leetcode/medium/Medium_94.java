@@ -39,10 +39,6 @@ public class Medium_94 {
      * </p>
      *
      * <p>
-     * - 递归：
-     * 时间复杂度：O(n)
-     * 空间复杂度：O(n)
-     * - 迭代：
      * 时间复杂度：O(n)
      * 空间复杂度：O(n)
      * </p>
@@ -52,11 +48,11 @@ public class Medium_94 {
         TreeNode root = new TreeNode(1);
         root.right = new TreeNode(2);
         root.right.left = new TreeNode(3);
-        List<Integer> result = new Medium_94().inorderTraversal2(root);
-        System.out.println(result); // [1,3,2]
+        List<Integer> result = new Medium_94().inorderTraversal(root);
+        System.out.println(result);
     }
 
-    public List<Integer> inorderTraversal2(TreeNode root) {
+    public List<Integer> inorderTraversal(TreeNode root) {
         if (root == null) {
             return Collections.emptyList();
         }
@@ -75,7 +71,7 @@ public class Medium_94 {
         return result;
     }
 
-    public List<Integer> inorderTraversal(TreeNode root) {
+    public List<Integer> inorderTraversal2(TreeNode root) {
         if (root == null) {
             return Collections.emptyList();
         }
