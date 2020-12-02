@@ -54,7 +54,7 @@ public class Medium_103 {
         root.right.left = new TreeNode(15);
         root.right.right = new TreeNode(7);
         List<List<Integer>> lists = new Medium_103().zigzagLevelOrder(root);
-        System.out.println(lists); // [[3], [20, 9], [15, 7]]
+        System.out.println(lists);
     }
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {

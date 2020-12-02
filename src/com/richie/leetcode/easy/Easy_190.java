@@ -36,12 +36,12 @@ public class Easy_190 {
 
     public static void main(String[] args) {
         int n = 0b00000010100101000001111010011100;
-        int i = reverseBits(n);
+        int i = new Easy_190().reverseBits(n);
         System.out.println(i);
     }
 
     // you need treat n as an unsigned value
-    private static int reverseBits(int n) {
+    public int reverseBits(int n) {
         int ret = 0;
         for (int bitsSize = 31; n != 0; bitsSize--) {
             ret += (n & 1) << bitsSize;

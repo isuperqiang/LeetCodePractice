@@ -13,11 +13,9 @@ public class Medium_33 {
      *
      * <p>
      * 描述：
-     * 假设按照升序排序的数组在预先未知的某个点上进行了旋转。
-     * ( 例如，数组 [0,1,2,4,5,6,7]可能变为 [4,5,6,7,0,1,2])。
-     * 搜索一个给定的目标值，如果数组中存在这个目标值，则返回它的索引，否则返回 -1。
-     * 你可以假设数组中不存在重复的元素。
-     * 你的算法时间复杂度必须是 O(logn) 级别
+     * 给你一个整数数组 nums ，和一个整数 target 。
+     * 该整数数组原本是按升序排列，但输入时在预先未知的某个点上进行了旋转。（例如，数组 [0,1,2,4,5,6,7]可能变为 [4,5,6,7,0,1,2] ）。
+     * 请你在数组中搜索 target ，如果数组中存在这个目标值，则返回它的索引，否则返回 -1。
      * </p>
      *
      * <p>
@@ -43,12 +41,12 @@ public class Medium_33 {
 
     public static void main(String[] args) {
         int[] nums = {4, 5, 6, 7, 0, 1, 2};
-        int index = search(nums, 0);
-        System.out.println(index); // 4
+        int index = new Medium_33().search(nums, 0);
+        System.out.println(index);
     }
 
-    private static int search(int[] nums, int target) {
-        if (nums == null || nums.length <= 0) {
+    public int search(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
             return -1;
         }
         int low = 0;
@@ -74,5 +72,4 @@ public class Medium_33 {
         }
         return -1;
     }
-
 }
