@@ -1,9 +1,9 @@
-package com.richie.leetcode.easy;
+package com.richie.leetcode.interview;
 
 /**
  * @author Richie on 2020.03.29
  */
-public class Easy_01_03 {
+public class Interview_01_03 {
     /**
      * URL 化
      *

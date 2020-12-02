@@ -1,9 +1,9 @@
-package com.richie.leetcode.easy;
+package com.richie.leetcode.interview;
 
 /**
  * @author Richie on 2020.03.29
  */
-public class Easy_01_01 {
+public class Interview_01_01 {
     /**
      * 判定字符是否唯一
      * <p>

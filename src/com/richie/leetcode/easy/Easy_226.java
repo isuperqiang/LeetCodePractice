@@ -2,8 +2,8 @@ package com.richie.leetcode.easy;
 
 import com.richie.leetcode.TreeNode;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
  * @author richie on 2019.06.07
@@ -39,7 +39,12 @@ public class Easy_226 {
      * <p>
      * 解答：
      * - 递归法：翻转一个二叉树，就是把根节点的左子树翻转一下，同样的把右子树翻转一下，再交换左右子树就可以了。
-     * - 迭代法：类似广度优先遍历的方式，使用队列存储尚未交换的节点，每次从队列取出一个节点，交互其左右子节点，直到队列为空。
+     * - 迭代法：类似广度优先遍历，使用队列存储尚未交换的节点，每次从队列取出一个节点，交互其左右子节点，直到队列为空。
+     * </p>
+     *
+     * <p>
+     * 时间复杂度：O(N)
+     * 空间复杂度：O(N)
      * </p>
      */
 
@@ -53,27 +58,26 @@ public class Easy_226 {
         treeNode2.right = new TreeNode(3);
         treeNode7.left = new TreeNode(6);
         treeNode7.right = new TreeNode(9);
-        TreeNode rt = new Easy_226().invertTreeIteratively(root);
-        System.out.println(rt);
+        TreeNode result = new Easy_226().invertTree(root);
+        System.out.println(result);
     }
 
-    public TreeNode invertTreeRecursively(TreeNode root) {
+    public TreeNode invertTree(TreeNode root) {
         if (root == null) {
             return null;
         }
-        TreeNode temp = root.left;
-        root.left = root.right;
-        root.right = temp;
-        invertTreeRecursively(root.left);
-        invertTreeRecursively(root.right);
+        TreeNode left = invertTree(root.left);
+        TreeNode right = invertTree(root.right);
+        root.left = right;
+        root.right = left;
         return root;
     }
 
-    public TreeNode invertTreeIteratively(TreeNode root) {
+    public TreeNode invertTree2(TreeNode root) {
         if (root == null) {
             return null;
         }
-        Queue<TreeNode> queue = new ArrayDeque<>();
+        Deque<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
             TreeNode curr = queue.poll();

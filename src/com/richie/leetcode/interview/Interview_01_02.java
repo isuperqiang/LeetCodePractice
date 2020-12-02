@@ -1,9 +1,9 @@
-package com.richie.leetcode.easy;
+package com.richie.leetcode.interview;
 
 /**
  * @author Richie on 2020.03.29
  */
-public class Easy_01_02 {
+public class Interview_01_02 {
     /**
      * 判定是否互为字符重排
      * <p>

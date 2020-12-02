@@ -6,7 +6,7 @@ import java.util.Deque;
 /**
  * @author Richie on 2020.12.01
  */
-public class Offer_09 {
+public class Offer_9 {
     /**
      * 用两个栈实现队列
      *

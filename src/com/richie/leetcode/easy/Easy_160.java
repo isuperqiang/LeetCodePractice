@@ -43,7 +43,7 @@ public class Easy_160 {
         headB.next = new ListNode(2);
         headB.next.next = new ListNode(4);
         ListNode intersectionNode = new Easy_160().getIntersectionNode(headA, headB);
-        System.out.println(intersectionNode); // 1
+        System.out.println(intersectionNode);
     }
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
