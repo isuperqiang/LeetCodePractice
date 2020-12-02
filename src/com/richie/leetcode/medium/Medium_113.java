@@ -2,10 +2,7 @@ package com.richie.leetcode.medium;
 
 import com.richie.leetcode.TreeNode;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Richie on 2020.05.23
@@ -26,13 +23,13 @@ public class Medium_113 {
      * <p>
      * 示例：
      * 给定如下二叉树，以及目标和 sum = 22，
-     * 5
-     * / \
-     * 4   8
-     * /   / \
-     * 11  13  4
-     * /  \    / \
-     * 7    2  5   1
+     * //              5
+     * //             / \
+     * //            4   8
+     * //           /   / \
+     * //          11  13  4
+     * //         /  \    / \
+     * //        7    2  5   1
      * 返回：
      * [
      * [5,4,11,2],
@@ -41,8 +38,8 @@ public class Medium_113 {
      * </p>
      *
      * <p>
-     * 解答：
-     * 递归+回溯。从根节点开始遍历，每次用目标和减去当前值，使用栈记录走过的路径。如果到达叶子节点且路径总和满足条件，则把路径添加到结果集。
+     * 解答：回溯
+     * 从根节点开始遍历，每次用目标和减去当前值，使用栈记录走过的路径。如果到达叶子节点且路径总和满足条件，则把路径添加到结果集。
      * </p>
      *
      * <p>
@@ -61,37 +58,35 @@ public class Medium_113 {
         root.right.right = new TreeNode(4);
         root.right.right.left = new TreeNode(5);
         root.right.right.right = new TreeNode(1);
-        List<List<Integer>> lists = pathSum(root, 22);
+        List<List<Integer>> lists = new Medium_113().pathSum(root, 22);
         for (List<Integer> list : lists) {
             System.out.println(list);
         }
     }
 
-    private static List<List<Integer>> pathSum(TreeNode root, int sum) {
-        List<List<Integer>> result = new ArrayList<>();
+    public List<List<Integer>> pathSum(TreeNode root, int sum) {
         if (root == null) {
-            return result;
+            return Collections.emptyList();
         }
-        Deque<Integer> path = new ArrayDeque<>();
+        List<List<Integer>> result = new ArrayList<>();
+        Deque<Integer> path = new LinkedList<>();
         dfs(root, sum, result, path);
         return result;
     }
 
-    private static void dfs(TreeNode root, int sum, List<List<Integer>> result, Deque<Integer> path) {
-        sum -= root.val;
+    private void dfs(TreeNode root, int sum, List<List<Integer>> result, Deque<Integer> path) {
         path.addLast(root.val);
-        if (root.left == null && root.right == null && sum == 0) {
+        if (root.left == null && root.right == null && sum == root.val) {
             result.add(new ArrayList<>(path));
             return;
         }
         if (root.left != null) {
-            dfs(root.left, sum, result, path);
+            dfs(root.left, sum - root.val, result, path);
             path.removeLast();
         }
         if (root.right != null) {
-            dfs(root.right, sum, result, path);
+            dfs(root.right, sum - root.val, result, path);
             path.removeLast();
         }
     }
-
 }
