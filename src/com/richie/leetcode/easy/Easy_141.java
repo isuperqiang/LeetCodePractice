@@ -44,7 +44,6 @@ public class Easy_141 {
         head.next.next.next.next = ln2;
         boolean hasCycle = new Easy_141().hasCycle(head);
         System.out.println(hasCycle);
-        // 3->2->0->4->2, true
     }
 
     public boolean hasCycle(ListNode head) {
