@@ -37,13 +37,15 @@ public class Easy_160 {
     public static void main(String[] args) {
         ListNode headA = new ListNode(9);
         headA.next = new ListNode(1);
-        headA.next.next = new ListNode(2);
-        headA.next.next.next = new ListNode(4);
+        ListNode node2 = new ListNode(2);
+        headA.next.next = node2;
+        ListNode node4 = new ListNode(4);
+        headA.next.next.next = node4;
         ListNode headB = new ListNode(3);
-        headB.next = new ListNode(2);
-        headB.next.next = new ListNode(4);
-        ListNode intersectionNode = new Easy_160().getIntersectionNode(headA, headB);
-        System.out.println(intersectionNode);
+        headB.next = node2;
+        headB.next.next = node4;
+        ListNode ans = new Easy_160().getIntersectionNode(headA, headB);
+        System.out.println(ans);
     }
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
@@ -55,9 +57,6 @@ public class Easy_160 {
         while (ha != hb) {
             ha = ha == null ? headB : ha.next;
             hb = hb == null ? headA : hb.next;
-            if (ha != null && hb != null && ha.val == hb.val) {
-                break;
-            }
         }
         return ha;
     }

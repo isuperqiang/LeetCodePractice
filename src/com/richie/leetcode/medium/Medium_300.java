@@ -46,7 +46,7 @@ public class Medium_300 {
     public static void main(String[] args) {
         int[] nums = {10, 9, 2, 5, 3, 7, 101, 18};
         int length = new Medium_300().lengthOfLIS(nums);
-        System.out.println(length); // 4
+        System.out.println(length);
     }
 
     public int lengthOfLIS(int[] nums) {
@@ -56,17 +56,15 @@ public class Medium_300 {
         int len = nums.length;
         int[] dp = new int[len];
         Arrays.fill(dp, 1);
+        int ans = dp[0];
         for (int i = 1; i < len; i++) {
             for (int j = 0; j < i; j++) {
                 if (nums[i] > nums[j]) {
                     dp[i] = Math.max(dp[i], dp[j] + 1);
                 }
             }
+            ans = Math.max(ans, dp[i]);
         }
-        int maxLen = dp[0];
-        for (int i : dp) {
-            maxLen = Math.max(maxLen, i);
-        }
-        return maxLen;
+        return ans;
     }
 }

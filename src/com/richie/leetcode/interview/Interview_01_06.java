@@ -25,7 +25,7 @@ public class Interview_01_06 {
      *
      * <p>
      * 解答：
-     * 按照题目要求做
+     * 按照题目要求，定义 count 记录每个字符出现的次数，当相邻两个字符不相等时，追加次数，并重置为 1。
      * </p>
      *
      * <p>
@@ -43,18 +43,20 @@ public class Interview_01_06 {
             return s;
         }
         StringBuilder ans = new StringBuilder();
-        ans.append(s.charAt(0));
+        char[] chars = s.toCharArray();
+        ans.append(chars[0]);
         int count = 1;
-        for (int i = 0, len = s.length() - 1; i < len; i++) {
-            if (s.charAt(i) == s.charAt(i + 1)) {
+        int length = s.length();
+        for (int i = 0, len = length - 1; i < len; i++) {
+            if (chars[i] == chars[i + 1]) {
                 count++;
             } else {
                 ans.append(count);
                 count = 1;
-                ans.append(s.charAt(i + 1));
+                ans.append(chars[i + 1]);
             }
         }
         ans.append(count);
-        return ans.length() < s.length() ? ans.toString() : s;
+        return ans.length() < length ? ans.toString() : s;
     }
 }
