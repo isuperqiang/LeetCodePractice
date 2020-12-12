@@ -23,7 +23,7 @@ public class Easy_136 {
      * </p>
      *
      * <p>
-     * 解答：
+     * 解答：位运算
      * 异或运算的性质
      * - 一个数和 0 做 XOR 运算等于本身：a⊕0 = a
      * - 一个数和其本身做 XOR 运算等于 0：a⊕a = 0
@@ -39,12 +39,12 @@ public class Easy_136 {
 
     public static void main(String[] args) {
         int[] nums = {2, 2, 4, 4, 5};
-        int i = new Easy_136().singleNumber(nums);
-        System.out.println(i); // 5
+        int ans = new Easy_136().singleNumber(nums);
+        System.out.println(ans);
     }
 
     public int singleNumber(int[] nums) {
-        if (nums == null || nums.length <= 0) {
+        if (nums == null || nums.length == 0) {
             return -1;
         }
         int single = 0;
