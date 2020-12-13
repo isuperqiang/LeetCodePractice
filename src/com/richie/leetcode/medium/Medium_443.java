@@ -48,9 +48,8 @@ public class Medium_443 {
         if (chars == null || chars.length == 0) {
             return 0;
         }
-        int left = 0;
         int size = 0;
-        for (int right = 0, len = chars.length; right <= len; right++) {
+        for (int right = 0, left = 0, len = chars.length; right <= len; right++) {
             if (right == len || chars[right] != chars[left]) {
                 chars[size++] = chars[left];
                 if (right - left > 1) { // right - 1 - left + 1 ==> right - left

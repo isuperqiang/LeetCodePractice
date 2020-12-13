@@ -26,23 +26,75 @@ public class Medium_215 {
      *
      * <p>
      * 解答：
-     * - 小顶堆：创建一个小顶堆，将所有数组中的元素加入堆中，并保持堆的大小 <= k。这样，堆中就保留了前 k 个最大的元素，堆顶的元素就是正确答案。
-     * - 快速选择：todo
+     * - 小顶堆：创建一个小顶堆，将所有数组中的元素加入堆中，并保持堆的大小 <= k。这样，堆中就保留了前 k 个最大的元素，堆顶元素就是答案。
+     * - 快速选择：要找的位置就是排序后倒数第 K 个值，其索引是 nums.length - K。
      * </p>
      *
      * <p>
-     * - 时间复杂度：O(N*logk)
-     * - 空间复杂度：O(k)
+     * 快速选择：
+     * - 时间复杂度：O(N)
+     * - 空间复杂度：O(1)
      * </p>
      */
 
     public static void main(String[] args) {
         int[] nums = {3, 2, 1, 5, 6, 4};
         int kthLargest = new Medium_215().findKthLargest(nums, 2);
-        System.out.println(kthLargest); // 5
+        System.out.println(kthLargest);
     }
 
     public int findKthLargest(int[] nums, int k) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        int length = nums.length;
+        int left = 0;
+        int right = length - 1;
+        int target = length - k;
+        while (true) {
+            int index = partition(nums, left, right);
+            if (index == target) {
+                return nums[index];
+            } else if (index < target) {
+                left = index + 1;
+            } else {
+                right = index - 1;
+            }
+        }
+    }
+
+    private int partition(int[] nums, int left, int right) {
+        int pivot = nums[left];
+        int l = left + 1;
+        int r = right;
+        while (true) {
+            while (l <= r && nums[l] < pivot) {
+                l++;
+            }
+            while (l <= r && nums[r] > pivot) {
+                r--;
+            }
+            if (l > r) {
+                break;
+            }
+            swap(nums, l, r);
+            l++;
+            r--;
+        }
+        swap(nums, left, r);
+        return r;
+    }
+
+    private void swap(int[] nums, int i1, int i2) {
+        int temp = nums[i1];
+        nums[i1] = nums[i2];
+        nums[i2] = temp;
+    }
+
+    public int findKthLargest2(int[] nums, int k) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
         PriorityQueue<Integer> minHeap = new PriorityQueue<>(k);
         for (int num : nums) {
             minHeap.offer(num);

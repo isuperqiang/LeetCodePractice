@@ -27,7 +27,7 @@ public class Medium_3 {
      * </p>
      *
      * <p>
-     * 解答：滑动窗口
+     * 解答：双指针
      * 使用哈希表记录字符的位置，left 表示子串的起始位置，right 表示子串的结束位置。当子串包含重复元素时，起始位置向后移动一位，
      * 每次遍历都要更新子串最大长度。
      * </p>
@@ -48,7 +48,7 @@ public class Medium_3 {
         if (s == null || s.isEmpty()) {
             return 0;
         }
-        int maxLen = 0;
+        int ans = 0;
         Map<Character, Integer> map = new HashMap<>();
         for (int left = 0, right = 0, length = s.length(); right < length; right++) {
             char ch = s.charAt(right);
@@ -56,9 +56,9 @@ public class Medium_3 {
             if (value != null) {
                 left = Math.max(left, value + 1);
             }
-            maxLen = Math.max(maxLen, right - left + 1);
+            ans = Math.max(ans, right - left + 1);
             map.put(ch, right);
         }
-        return maxLen;
+        return ans;
     }
 }
