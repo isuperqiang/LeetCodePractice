@@ -40,20 +40,23 @@ public class Medium_34 {
      */
     public static void main(String[] args) {
         int[] nums = {5, 7, 7, 8, 8, 10};
-        int[] range = searchRange(nums, 8);
-        System.out.println(Arrays.toString(range)); // [3, 4]
+        int[] ans = new Medium_34().searchRange(nums, 8);
+        System.out.println(Arrays.toString(ans));
     }
 
-    private static int[] searchRange(int[] nums, int target) {
-        if (nums == null) {
+    public int[] searchRange(int[] nums, int target) {
+        if (nums == null || nums.length < 2) {
             return new int[]{-1, -1};
         }
         int firstPosition = findFirstPosition(nums, target);
+        if (firstPosition == -1) {
+            return new int[]{-1, -1};
+        }
         int lastPosition = findLastPosition(nums, target);
         return new int[]{firstPosition, lastPosition};
     }
 
-    private static int findFirstPosition(int[] nums, int target) {
+    private int findFirstPosition(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;
         while (left <= right) {
@@ -70,7 +73,7 @@ public class Medium_34 {
         return -1;
     }
 
-    private static int findLastPosition(int[] nums, int target) {
+    private int findLastPosition(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;
         while (left <= right) {
@@ -86,5 +89,4 @@ public class Medium_34 {
         }
         return -1;
     }
-
 }

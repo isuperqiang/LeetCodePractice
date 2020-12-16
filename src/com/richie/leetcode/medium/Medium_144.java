@@ -52,7 +52,7 @@ public class Medium_144 {
         root.right = new TreeNode(2);
         root.right.left = new TreeNode(3);
         List<Integer> result = new Medium_144().preorderTraversal(root);
-        System.out.println(result); // [1, 2, 3]
+        System.out.println(result);
     }
 
     public List<Integer> preorderTraversal(TreeNode root) {

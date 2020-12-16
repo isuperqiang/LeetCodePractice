@@ -48,12 +48,12 @@ public class Easy_121 {
             return 0;
         }
         int maxProfit = 0;
-        int minProfit = Integer.MAX_VALUE;
+        int minPrice = Integer.MAX_VALUE;
         for (int price : prices) {
-            if (price < minProfit) {
-                minProfit = price;
+            if (price < minPrice) {
+                minPrice = price;
             } else {
-                int diff = price - minProfit;
+                int diff = price - minPrice;
                 if (diff > maxProfit) {
                     maxProfit = diff;
                 }
