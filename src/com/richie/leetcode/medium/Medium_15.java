@@ -46,8 +46,8 @@ public class Medium_15 {
 
     public static void main(String[] args) {
         int[] nums = {-1, 0, 1, 2, -1, -4};
-        List<List<Integer>> lists = new Medium_15().threeSum(nums);
-        System.out.println(lists);
+        List<List<Integer>> ans = new Medium_15().threeSum(nums);
+        System.out.println(ans);
     }
 
     public List<List<Integer>> threeSum(int[] nums) {

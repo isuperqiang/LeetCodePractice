@@ -25,9 +25,11 @@ public class Medium_5 {
      * <p>
      * 解答：
      * - 动态规划
-     * dp[i][j] 表示子串 s[i][j] 是否是回文子串，其中 i<=j，dp[i][j]=dp[i+1][j-1] && s[i]==s[j]。当 i==j 时，dp[i][j]=true，
-     * 边界条件 dp[i+1][j-1] 构成区间 (j-1)-(i+1)+1 >= 2。记录最大长度和左边界，最后做字符串截取。
-     * <p>
+     * 定义状态 dp[i][j] 表示子串 s[i][j] 是否是回文子串，其中 i<=j。
+     * 状态转移方程 dp[i][j]=dp[i+1][j-1] && s[i]==s[j]。
+     * 边界条件 dp[i+1][j-1] 构成区间 (j-1)-(i+1)+1 >= 2。
+     * 初始化 dp[i][i]=true，单个字符一定是回文串。
+     * 只要得到 dp[i][j]=true，就记录起始位置和回文长度，最后才做字符串截取。
      * - 中心扩展
      * 由于回文串一定是对称的，所以我们可以每次循环选择一个中心，进行左右扩展，判断左右字符是否相等即可。
      * 由于存在奇数的字符串和偶数的字符串，所以我们需要从一个字符开始扩展，或者从两个字符之间开始扩展，所以总共有 n+(n-1) 个中心。
@@ -45,14 +47,14 @@ public class Medium_5 {
      */
 
     public static void main(String[] args) {
-        String s = "aaabaaaa";
-        String palindrome = longestPalindrome(s);
-        System.out.println(palindrome); // aba
+        String s = "babad";
+        String palindrome = new Medium_5().longestPalindrome(s);
+        System.out.println(palindrome);
     }
 
-    private static String longestPalindrome(String s) {
-        if (s == null || s.length() == 0) {
-            return "";
+    public String longestPalindrome(String s) {
+        if (s == null || s.length() <= 1) {
+            return s;
         }
         int len = s.length();
         boolean[][] dp = new boolean[len][len];
@@ -80,9 +82,9 @@ public class Medium_5 {
         return s.substring(left, left + maxLen);
     }
 
-    private static String longestPalindrome2(String s) {
-        if (s == null || s.length() == 0) {
-            return "";
+    public String longestPalindrome2(String s) {
+        if (s == null || s.length() <= 1) {
+            return s;
         }
         int start = 0;
         int end = 0;
@@ -98,7 +100,7 @@ public class Medium_5 {
         return s.substring(start, end + 1);
     }
 
-    private static int expandAroundCenter(String s, int left, int right) {
+    private int expandAroundCenter(String s, int left, int right) {
         int L = left;
         int R = right;
         while (L >= 0 && R < s.length() && s.charAt(L) == s.charAt(R)) {

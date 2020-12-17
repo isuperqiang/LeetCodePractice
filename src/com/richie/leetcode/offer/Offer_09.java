@@ -6,7 +6,7 @@ import java.util.Deque;
 /**
  * @author Richie on 2020.12.01
  */
-public class Offer_9 {
+public class Offer_09 {
     /**
      * 用两个栈实现队列
      *
@@ -37,7 +37,7 @@ public class Offer_9 {
      *
      * <p>
      * 时间复杂度：O(1)
-     * 空间复杂度：O(n)
+     * 空间复杂度：O(N)
      * </p>
      */
 
@@ -48,7 +48,7 @@ public class Offer_9 {
         cQueue.deleteHead();
     }
 
-    public static class CQueue {
+    private static class CQueue {
         private final Deque<Integer> mStack1;
         private final Deque<Integer> mStack2;
 
@@ -69,8 +69,7 @@ public class Offer_9 {
                 return -1;
             }
             while (!mStack1.isEmpty()) {
-                Integer pop = mStack1.pop();
-                mStack2.addLast(pop);
+                mStack2.addLast(mStack1.pop());
             }
             return mStack2.pop();
         }

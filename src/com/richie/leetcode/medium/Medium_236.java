@@ -53,7 +53,7 @@ public class Medium_236 {
         root.left.right.left = new TreeNode(7);
         root.left.right.right = new TreeNode(4);
         TreeNode treeNode = new Medium_236().lowestCommonAncestor(root, root.left, root.right);
-        System.out.println(treeNode != null ? treeNode.val : "null"); // 3
+        System.out.println(treeNode != null ? treeNode.val : "null");
     }
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {

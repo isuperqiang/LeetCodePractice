@@ -37,12 +37,11 @@ public class Medium_958 {
      * 输入：[1,2,3,4,5,6]
      * 输出：true
      * 解释：最后一层前的每一层都是满的（即，结点值为 {1} 和 {2,3} 的两层），且最后一层中的所有结点（{4,5,6}）都尽可能地向左。
-     *
      * </p>
      *
      * <p>
-     * 解答：
-     * 层次遍历二叉树的节点（包括空节点），当且仅当存在两个相邻节点：前一个为null，后一个不为null时，才不是完全二叉树。
+     * 解答：BFS
+     * 层次遍历二叉树的节点（包括空节点），当且仅当存在两个相邻节点：前一个为 null，后一个不为 null 时，才不是完全二叉树。
      * </p>
      *
      * <p>
@@ -50,6 +49,7 @@ public class Medium_958 {
      * 空间复杂度：O(n)
      * </p>
      */
+
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
@@ -69,16 +69,16 @@ public class Medium_958 {
         queue.add(root);
         boolean flag = false;
         while (!queue.isEmpty()) {
-            TreeNode head = queue.remove();
-            if (head == null) {
+            TreeNode first = queue.removeFirst();
+            if (first == null) {
                 flag = true;
                 continue;
             }
             if (flag) {
                 return false;
             }
-            queue.add(head.left);
-            queue.add(head.right);
+            queue.add(first.left);
+            queue.add(first.right);
         }
         return true;
     }

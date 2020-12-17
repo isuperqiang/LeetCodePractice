@@ -1,6 +1,7 @@
 package com.richie.leetcode.medium;
 
 import java.util.PriorityQueue;
+import java.util.Random;
 
 /**
  * @author Richie on 2020.05.13
@@ -27,7 +28,8 @@ public class Medium_215 {
      * <p>
      * 解答：
      * - 小顶堆：创建一个小顶堆，将所有数组中的元素加入堆中，并保持堆的大小 <= k。这样，堆中就保留了前 k 个最大的元素，堆顶元素就是答案。
-     * - 快速选择：要找的位置就是排序后倒数第 K 个值，其索引是 nums.length - K。
+     * - 快速选择：要找的位置就是排序后倒数第 K 个值，其索引是 nums.length - K。切分 partition 总能排定一个元素，还可以知道它的最终位置，
+     * 每经过一次切分，就能够缩小搜索的范围。使用随机数选择 pivot，避免极端测试用例耗时。
      * </p>
      *
      * <p>
@@ -51,7 +53,14 @@ public class Medium_215 {
         int left = 0;
         int right = length - 1;
         int target = length - k;
+        Random random = new Random(System.currentTimeMillis());
         while (true) {
+            if (left < right) {
+                int randomIndex = left + 1 + random.nextInt(right - left);
+                int temp = nums[left];
+                nums[left] = nums[randomIndex];
+                nums[randomIndex] = temp;
+            }
             int index = partition(nums, left, right);
             if (index == target) {
                 return nums[index];
@@ -65,30 +74,25 @@ public class Medium_215 {
 
     private int partition(int[] nums, int left, int right) {
         int pivot = nums[left];
-        int l = left + 1;
+        int l = left;
         int r = right;
-        while (true) {
-            while (l <= r && nums[l] < pivot) {
-                l++;
-            }
-            while (l <= r && nums[r] > pivot) {
+        while (l < r) {
+            while (l < r && nums[r] >= pivot) {
                 r--;
             }
-            if (l > r) {
-                break;
+            while (l < r && nums[l] <= pivot) {
+                l++;
             }
             swap(nums, l, r);
-            l++;
-            r--;
         }
         swap(nums, left, r);
         return r;
     }
 
-    private void swap(int[] nums, int i1, int i2) {
-        int temp = nums[i1];
-        nums[i1] = nums[i2];
-        nums[i2] = temp;
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
 
     public int findKthLargest2(int[] nums, int k) {

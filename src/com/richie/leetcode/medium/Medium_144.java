@@ -63,13 +63,13 @@ public class Medium_144 {
         Deque<TreeNode> stack = new ArrayDeque<>();
         stack.push(root);
         while (!stack.isEmpty()) {
-            TreeNode top = stack.pop();
-            result.add(top.val);
-            if (top.right != null) {
-                stack.push(top.right);
+            TreeNode first = stack.pop();
+            result.add(first.val);
+            if (first.right != null) {
+                stack.push(first.right);
             }
-            if (top.left != null) {
-                stack.push(top.left);
+            if (first.left != null) {
+                stack.push(first.left);
             }
         }
         return result;

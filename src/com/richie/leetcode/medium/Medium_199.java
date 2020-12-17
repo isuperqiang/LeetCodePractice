@@ -34,7 +34,7 @@ public class Medium_199 {
      * <p>
      * 解答：
      * - BFS：广度优先遍历，记录每层最后一个元素。
-     * - DFS：深底优先遍历，按照根右左的顺序，记录当前节点的深度。
+     * - DFS：深度优先遍历，按照根右左的顺序，记录当前节点的深度。
      * </p>
      *
      * <p>
@@ -49,8 +49,8 @@ public class Medium_199 {
         root.left.right = new TreeNode(5);
         root.right = new TreeNode(3);
         root.right.right = new TreeNode(4);
-        List<Integer> list = new Medium_199().rightSideView(root);
-        System.out.println(list);
+        List<Integer> ans = new Medium_199().rightSideView(root);
+        System.out.println(ans);
     }
 
     public List<Integer> rightSideView(TreeNode root) {
