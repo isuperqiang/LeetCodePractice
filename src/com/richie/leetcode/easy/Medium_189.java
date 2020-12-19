@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * @author Richie on 2018.05.30
  */
-public class Easy_189 {
+public class Medium_189 {
     /**
      * 旋转数组
      *
@@ -16,14 +16,16 @@ public class Easy_189 {
      * <p>
      * 描述：
      * 给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。
-     * 输入: [1,2,3,4,5,6,7] 和 k = 3
-     * 输出: [5,6,7,1,2,3,4]
      * </p>
      *
      * <p>
-     * 说明：
-     * - 尽可能想出更多的解决方案，至少有三种不同的方法可以解决这个问题。
-     * - 要求使用空间复杂度为 O(1) 的原地算法。
+     * 示例：
+     * 输入: [1,2,3,4,5,6,7] 和 k = 3
+     * 输出: [5,6,7,1,2,3,4]
+     * 解释:
+     * 向右旋转 1 步: [7,1,2,3,4,5,6]
+     * 向右旋转 2 步: [6,7,1,2,3,4,5]
+     * 向右旋转 3 步: [5,6,7,1,2,3,4]
      * </p>
      *
      * <p>
@@ -55,76 +57,74 @@ public class Easy_189 {
      */
 
     public static void main(String[] args) {
-        int[] a = {1, 2, 3, 4, 5, 6, 7};
-        int k = 3;
-        rotate4(a, k);
-        System.out.println(Arrays.toString(a)); // [5, 6, 7, 1, 2, 3, 4]
+        int[] nums = {1, 2, 3, 4, 5, 6, 7};
+        new Medium_189().rotate3(nums, 3);
+        System.out.println(Arrays.toString(nums));
     }
 
-    private static void rotate1(int[] nums, int k) {
+    public void rotate1(int[] nums, int k) {
         if (nums == null || nums.length == 0) {
             return;
         }
-        int length = nums.length;
-        int temp;
-        for (int i = 0; i < k; i++) {
-            temp = nums[length - 1];
-            for (int j = length - 1; j > 0; j--) {
-                nums[j] = nums[j - 1];
-            }
+        k %= nums.length;
+        for (int i = 0, len = nums.length; i < k; i++) {
+            int temp = nums[len - 1];
+            System.arraycopy(nums, 0, nums, 1, len - 1);
             nums[0] = temp;
         }
     }
 
-    private static void rotate2(int[] nums, int k) {
+    public void rotate2(int[] nums, int k) {
         if (nums == null || nums.length == 0) {
             return;
         }
-        int[] temp = new int[nums.length];
-        for (int i = 0; i < nums.length; i++) {
-            temp[(i + k) % nums.length] = nums[i];
+        int length = nums.length;
+        int[] temp = new int[length];
+        for (int i = 0; i < length; i++) {
+            temp[(i + k) % length] = nums[i];
         }
-        System.arraycopy(temp, 0, nums, 0, nums.length);
+        System.arraycopy(temp, 0, nums, 0, length);
     }
 
-    private static void rotate3(int[] nums, int k) {
+    public void rotate3(int[] nums, int k) {
         if (nums == null || nums.length == 0) {
             return;
         }
-        k = k % nums.length;
+        int length = nums.length;
+        k %= length;
         int count = 0;
-        for (int start = 0; count < nums.length; start++) {
-            int currentI = start;
-            int currentE = nums[start];
+        for (int start = 0; count < length; start++) {
+            int currIdx = start;
+            int currEle = nums[start];
             do {
-                int nextI = (currentI + k) % nums.length;
-                int temp = nums[nextI];
-                nums[nextI] = currentE;
-                currentE = temp;
-                currentI = nextI;
+                int nextIdx = (currIdx + k) % length;
+                int nextEle = nums[nextIdx];
+                nums[nextIdx] = currEle;
+                currIdx = nextIdx;
+                currEle = nextEle;
                 count++;
-            } while (start != currentI);
+            } while (start != currIdx);
         }
     }
 
-    private static void rotate4(int[] nums, int k) {
+    public void rotate4(int[] nums, int k) {
         if (nums == null || nums.length == 0) {
             return;
         }
-        k = k % nums.length;
-        reverse(nums, 0, nums.length - 1);
+        int length = nums.length;
+        k %= length;
+        reverse(nums, 0, length - 1);
         reverse(nums, 0, k - 1);
-        reverse(nums, k, nums.length - 1);
+        reverse(nums, k, length - 1);
     }
 
-    private static void reverse(int[] arr, int start, int end) {
+    private void reverse(int[] nums, int start, int end) {
         while (start < end) {
-            int temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
             start++;
             end--;
         }
     }
-
 }

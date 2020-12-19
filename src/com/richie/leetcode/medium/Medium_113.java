@@ -69,24 +69,24 @@ public class Medium_113 {
             return Collections.emptyList();
         }
         List<List<Integer>> result = new ArrayList<>();
-        Deque<Integer> path = new LinkedList<>();
+        Deque<Integer> path = new ArrayDeque<>();
         dfs(root, sum, result, path);
         return result;
     }
 
     private void dfs(TreeNode root, int sum, List<List<Integer>> result, Deque<Integer> path) {
-        path.addLast(root.val);
-        if (root.left == null && root.right == null && sum == root.val) {
-            result.add(new ArrayList<>(path));
+        if (root == null) {
             return;
         }
-        if (root.left != null) {
-            dfs(root.left, sum - root.val, result, path);
+        if (sum == root.val && root.left == null && root.right == null) {
+            path.addLast(root.val);
+            result.add(new ArrayList<>(path));
             path.removeLast();
+            return;
         }
-        if (root.right != null) {
-            dfs(root.right, sum - root.val, result, path);
-            path.removeLast();
-        }
+        path.addLast(root.val);
+        dfs(root.left, sum - root.val, result, path);
+        dfs(root.right, sum - root.val, result, path);
+        path.removeLast();
     }
 }
