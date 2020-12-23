@@ -24,11 +24,11 @@ public class Easy_101 {
      * <p>
      * 示例：
      * 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
-     * 1
-     * /   \
-     * 2    2
-     * / \  / \
-     * 3 4 4  3
+     * //       1
+     * //    /    \
+     * //   2      2
+     * //  / \    / \
+     * // 3   4  4   3
      * </p>
      *
      * <p>
@@ -53,7 +53,7 @@ public class Easy_101 {
         root.right.left = new TreeNode(4);
         root.right.right = new TreeNode(3);
         boolean symmetric = new Easy_101().isSymmetric(root);
-        System.out.println(symmetric); // true
+        System.out.println(symmetric);
     }
 
     // 迭代
@@ -61,22 +61,22 @@ public class Easy_101 {
         if (root == null) {
             return true;
         }
-        Queue<TreeNode> q = new LinkedList<>();
-        q.add(root);
-        q.add(root);
-        while (q.size() > 0) {
-            TreeNode left = q.poll();
-            TreeNode right = q.poll();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode left = queue.poll();
+            TreeNode right = queue.poll();
             if (left == null && right == null) {
                 continue;
             }
             if (left == null || right == null || left.val != right.val) {
                 return false;
             }
-            q.add(left.left);
-            q.add(right.right);
-            q.add(left.right);
-            q.add(right.left);
+            queue.add(left.left);
+            queue.add(right.right);
+            queue.add(left.right);
+            queue.add(right.left);
         }
         return true;
     }
