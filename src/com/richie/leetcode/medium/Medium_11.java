@@ -25,8 +25,7 @@ public class Medium_11 {
      * </p>
      *
      * <p>
-     * 解答：
-     * 双指针
+     * 解答：双指针
      * 面积 s[i,j]=max(h[i], h[j]]) * (j-i)，i j 分别是数组的左右指针。容器容纳的水量是由短板决定的，所以，
      * - h[i]>h[j] 时，左移 j，容量可能会变大，右移 i，容量不会变大。
      * - h[i]<h[j] 时，左移 j，容量不会变大，右移 i，容量可能会变大。
@@ -38,12 +37,12 @@ public class Medium_11 {
      * </p>
      */
     public static void main(String[] args) {
-        int[] input = new int[]{1, 8, 6, 2, 5, 4, 8, 3, 7};
-        int maxArea = maxArea(input);
-        System.out.println(maxArea);
+        int[] input = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+        int ans = new Medium_11().maxArea(input);
+        System.out.println(ans);
     }
 
-    private static int maxArea(int[] height) {
+    public int maxArea(int[] height) {
         if (height == null || height.length < 2) {
             return 0;
         }

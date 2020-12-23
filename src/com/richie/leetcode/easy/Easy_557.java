@@ -22,35 +22,42 @@ public class Easy_557 {
      * </p>
      *
      * <p>
-     * 解答：先分割单词，然后逐个反转。
+     * 解答：
+     * 从头遍历字符串，遇到空格就把之前的单词反转，然后跳过空格继续遍历，每次遍历处理一个单词。
+     * </p>
+     *
+     * <p>
+     * 时间复杂度：O(N)
+     * 空间复杂度：O(N)
      * </p>
      */
 
     public static void main(String[] args) {
-        String input = "Let's take LeetCode contest";
-        String output = reverseWords(input);
-        System.out.println(output);
+        String str = "Let's take LeetCode contest";
+        String ans = new Easy_557().reverseWords(str);
+        System.out.println(ans);
     }
 
-    private static String reverseWords(String s) {
+    public String reverseWords(String s) {
         if (s == null) {
             return null;
         }
-
-        String[] split = s.split(" ");
-        StringBuilder result = new StringBuilder();
-        for (String s1 : split) {
-            char[] chars = s1.toCharArray();
-            int half = chars.length / 2;
-            for (int i = 0; i < half; i++) {
-                int right = chars.length - i - 1;
-                char temp = chars[right];
-                chars[right] = chars[i];
-                chars[i] = temp;
+        StringBuilder sb = new StringBuilder();
+        int i = 0;
+        int len = s.length();
+        while (i < len) {
+            int start = i;
+            while (i < len && s.charAt(i) != ' ') {
+                i++;
             }
-            result.append(new String(chars)).append(' ');
+            for (int j = i - 1; j >= start; j--) {
+                sb.append(s.charAt(j));
+            }
+            while (i < len && s.charAt(i) == ' ') {
+                i++;
+                sb.append(' ');
+            }
         }
-        result.delete(result.length() - 1, result.length());
-        return result.toString();
+        return sb.toString();
     }
 }

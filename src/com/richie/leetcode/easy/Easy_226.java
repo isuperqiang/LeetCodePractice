@@ -2,8 +2,8 @@ package com.richie.leetcode.easy;
 
 import com.richie.leetcode.TreeNode;
 
+import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.LinkedList;
 
 /**
  * @author richie on 2019.06.07
@@ -77,7 +77,7 @@ public class Easy_226 {
         if (root == null) {
             return null;
         }
-        Deque<TreeNode> queue = new LinkedList<>();
+        Deque<TreeNode> queue = new ArrayDeque<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
             TreeNode curr = queue.poll();
