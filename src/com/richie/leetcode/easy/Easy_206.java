@@ -46,8 +46,8 @@ public class Easy_206 {
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
-        ListNode reverseList = new Easy_206().reverseList(head);
-        ListNode.printList(reverseList);
+        ListNode ans = new Easy_206().reverseList(head);
+        ListNode.printList(ans);
     }
 
     public ListNode reverseList(ListNode head) {
