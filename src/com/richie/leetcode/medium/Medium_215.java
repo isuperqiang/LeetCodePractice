@@ -33,9 +33,12 @@ public class Medium_215 {
      * </p>
      *
      * <p>
-     * 快速选择：
-     * - 时间复杂度：O(N)
-     * - 空间复杂度：O(1)
+     * - 快速选择：
+     * 时间复杂度：O(N)
+     * 空间复杂度：O(1)
+     * - 小顶堆：
+     * 时间复杂度：O(N)
+     * 空间复杂度：O(K)
      * </p>
      */
 
@@ -90,6 +93,9 @@ public class Medium_215 {
     }
 
     private void swap(int[] nums, int i, int j) {
+        if (i == j) {
+            return;
+        }
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
