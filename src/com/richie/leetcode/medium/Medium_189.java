@@ -95,9 +95,9 @@ public class Medium_189 {
         int length = nums.length;
         k %= length;
         int count = 0;
-        for (int start = 0; count < length; start++) {
-            int currIdx = start;
-            int currEle = nums[start];
+        for (int i = 0; count < length; i++) {
+            int currIdx = i;
+            int currEle = nums[i];
             do {
                 int nextIdx = (currIdx + k) % length;
                 int nextEle = nums[nextIdx];
@@ -105,7 +105,7 @@ public class Medium_189 {
                 currIdx = nextIdx;
                 currEle = nextEle;
                 count++;
-            } while (start != currIdx);
+            } while (i != currIdx);
         }
     }
 

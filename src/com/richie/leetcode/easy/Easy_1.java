@@ -47,7 +47,7 @@ public class Easy_1 {
 
     public int[] twoSum(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
-            return null;
+            return new int[]{-1, -1};
         }
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0, len = nums.length; i < len; i++) {
@@ -58,6 +58,6 @@ public class Easy_1 {
             }
             map.put(nums[i], i);
         }
-        return null;
+        return new int[]{-1, -1};
     }
 }

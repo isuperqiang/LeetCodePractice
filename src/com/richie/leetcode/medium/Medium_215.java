@@ -27,9 +27,9 @@ public class Medium_215 {
      *
      * <p>
      * 解答：
-     * - 小顶堆：创建一个小顶堆，将所有数组中的元素加入堆中，并保持堆的大小 <= k。这样，堆中就保留了前 k 个最大的元素，堆顶元素就是答案。
      * - 快速选择：要找的位置就是排序后倒数第 K 个值，其索引是 nums.length - K。切分 partition 总能排定一个元素，还可以知道它的最终位置，
      * 每经过一次切分，就能够缩小搜索的范围。使用随机数选择 pivot，避免极端测试用例耗时。
+     * - 小顶堆：创建一个小顶堆，将所有数组中的元素加入堆中，并保持堆的大小 <= k。这样，堆中就保留了前 k 个最大的元素，堆顶元素就是答案。
      * </p>
      *
      * <p>
@@ -41,8 +41,8 @@ public class Medium_215 {
 
     public static void main(String[] args) {
         int[] nums = {3, 2, 1, 5, 6, 4};
-        int kthLargest = new Medium_215().findKthLargest(nums, 2);
-        System.out.println(kthLargest);
+        int ans = new Medium_215().findKthLargest(nums, 2);
+        System.out.println(ans);
     }
 
     public int findKthLargest(int[] nums, int k) {

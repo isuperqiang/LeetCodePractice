@@ -47,7 +47,7 @@ public class Medium_146 {
      *
      * <p>
      * 解答：
-     * 双向链表+哈希表
+     * 双向链表+哈希表，自定义的双向链表和内部节点。
      * </p>
      *
      * <p>
@@ -70,7 +70,7 @@ public class Medium_146 {
 
         public LRUCache(int capacity) {
             this.capacity = capacity;
-            map = new HashMap<>((int) ((float) capacity / 0.75 + 1));
+            map = new HashMap<>((int) ((float) capacity / 0.75f + 1));
             cache = new DoubleLinkedList();
         }
 
