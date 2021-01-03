@@ -26,12 +26,12 @@ public class Offer_42 {
      *
      * <p>
      * 解答：
-     * 贪心算法，详解见 53 题
+     * 和题目 53 相同
      * </p>
      *
      * <p>
-     * 时间复杂度：
-     * 空间复杂度：
+     * 时间复杂度：O(N)
+     * 空间复杂度：O(1)
      * </p>
      */
     public static void main(String[] args) {
