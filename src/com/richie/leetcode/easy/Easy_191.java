@@ -24,7 +24,10 @@ public class Easy_191 {
      *
      * <p>
      * 解答：
-     * 遍历整数的 32 位，使用掩码检查每位是否为 1，不断左移掩码，将 1 的个数求和。
+     * - 逐位判断
+     * 判断 n 最右一位是否为 1，如果是 1 结果加 1；将 n 右移一位，这里使用无符号右移。
+     * - n&(n-1)
+     * 这个运算的结果是，二进制数字 n 最右边的 1 变成 0，其余不变。
      * </p>
      *
      * <p>
@@ -33,21 +36,27 @@ public class Easy_191 {
      */
 
     public static void main(String[] args) {
-        int count = hammingWeight(0b00000000000000000000000000001011);
-        System.out.println(count); // 3
+        int ans = new Easy_191().hammingWeight2(0b00000000000000000000000000001011);
+        System.out.println(ans);
     }
 
     // you need to treat n as an unsigned value
-    private static int hammingWeight(int n) {
-        int bits = 0;
-        int mask = 1;
-        for (int i = 0; i < 32; i++) {
-            if ((n & mask) != 0) {
-                bits++;
-            }
-            mask <<= 1;
+    public int hammingWeight(int n) {
+        int ans = 0;
+        while (n != 0) {
+            ans += n & 1;
+            n >>>= 1;
         }
-        return bits;
+        return ans;
     }
 
+    // you need to treat n as an unsigned value
+    public int hammingWeight2(int n) {
+        int ans = 0;
+        while (n != 0) {
+            ++ans;
+            n &= n - 1;
+        }
+        return ans;
+    }
 }

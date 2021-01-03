@@ -63,15 +63,12 @@ public class Offer_09 {
 
         public int deleteHead() {
             if (!mStack2.isEmpty()) {
-                return mStack2.pop();
-            }
-            if (mStack1.isEmpty()) {
-                return -1;
+                return mStack2.removeFirst();
             }
             while (!mStack1.isEmpty()) {
-                mStack2.addLast(mStack1.pop());
+                mStack2.addLast(mStack1.removeFirst());
             }
-            return mStack2.pop();
+            return mStack2.isEmpty() ? -1 : mStack2.removeFirst();
         }
     }
 }
