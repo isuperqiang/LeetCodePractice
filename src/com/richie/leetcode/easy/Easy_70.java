@@ -35,13 +35,13 @@ public class Easy_70 {
      *
      * <p>
      * 时间复杂度：O(N)
-     * 空间复杂度：O(1)
+     * 空间复杂度：动态规划 O(N)，迭代 O(1)
      * </p>
      */
 
     public static void main(String[] args) {
-        int i = new Easy_70().climbStairs2(10);
-        System.out.println(i); // 89
+        int ans = new Easy_70().climbStairs2(3);
+        System.out.println(ans);
     }
 
     public int climbStairs(int n) {
