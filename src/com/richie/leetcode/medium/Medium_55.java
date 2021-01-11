@@ -42,8 +42,8 @@ public class Medium_55 {
 
     public static void main(String[] args) {
         int[] nums = {2, 3, 1, 1, 4};
-        boolean b = new Medium_55().canJump2(nums);
-        System.out.println(b); // true
+        boolean ans = new Medium_55().canJump(nums);
+        System.out.println(ans);
     }
 
     public boolean canJump(int[] nums) {

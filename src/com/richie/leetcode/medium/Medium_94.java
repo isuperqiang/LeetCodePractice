@@ -28,7 +28,6 @@ public class Medium_94 {
      * //     2
      * //    /
      * //   3
-     * <p>
      * 输出: [1,3,2]
      * </p>
      *
@@ -88,4 +87,23 @@ public class Medium_94 {
         result.add(root.val);
         inorderTraversalRecursive(root.right, result);
     }
+
+    public List<Integer> inorderTraversal3(TreeNode root) {
+        if (root == null) {
+            return Collections.emptyList();
+        }
+        List<Integer> result = new ArrayList<>();
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        while (root != null || stack.size() > 0) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            TreeNode top = stack.pop();
+            result.add(top.val);
+            root = top.right;
+        }
+        return result;
+    }
+
 }

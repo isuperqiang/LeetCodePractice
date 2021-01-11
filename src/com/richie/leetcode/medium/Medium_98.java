@@ -36,7 +36,7 @@ public class Medium_98 {
      *
      * <p>
      * 解答：
-     * - 递归：根据二叉搜索树的定义，确定递归函数，参数包含上下边界，访问左子树时，上边界为根节点值，方位右子树时，下边界为根节点值；
+     * - 递归：根据二叉搜索树的定义，确定递归函数，参数包含上下边界，访问左子树时，上边界为根节点值，访问右子树时，下边界为根节点值；
      * - 中序遍历：左中右遍历二叉搜索树，得到的一定是递增序列；否则就不是二叉搜索树；
      * </p>
      *
@@ -51,7 +51,7 @@ public class Medium_98 {
         root.left = new TreeNode(1);
         root.right = new TreeNode(3);
         boolean validBST = new Medium_98().isValidBST(root);
-        System.out.println(validBST); // true
+        System.out.println(validBST);
     }
 
     public boolean isValidBST(TreeNode root) {
@@ -76,13 +76,13 @@ public class Medium_98 {
             return true;
         }
         long prev = Long.MIN_VALUE;
-        Deque<TreeNode> queue = new ArrayDeque<>();
-        while (!queue.isEmpty() || root != null) {
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        while (!stack.isEmpty() || root != null) {
             while (root != null) {
-                queue.push(root);
+                stack.push(root);
                 root = root.left;
             }
-            root = queue.pop();
+            root = stack.pop();
             if (root.val <= prev) {
                 return false;
             }
